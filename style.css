@@ -13,26 +13,27 @@ body {
 /* 1. ENCABEZADO PRINCIPAL */
 header {
     background-color: #474d55;
-    padding: 16px 24px;
+    padding: 14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* 2. LOGO Y TÍTULOS */
 .logo-contenedor {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo-contenedor img {
-    max-width: 55px;
+    max-width: 50px;
     height: auto;
+    display: block;
 }
 
 .texto-iglesia {
@@ -42,34 +43,40 @@ header {
 
 .texto-iglesia h1 {
     color: #ffffff;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
 }
 
 .texto-iglesia p {
     color: #fdf907;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin: 2px 0 0 0;
     font-weight: 500;
 }
 
-/* 3. BOTÓN HAMBURGUESA (Oculto en escritorio) */
+/* 3. BOTÓN HAMBURGUESA */
 .menu-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
     color: #ffffff;
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
     padding: 4px 8px;
-    border-radius: 4px;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    color: #fdf907;
 }
 
 /* 4. NAVEGACIÓN DE ESCRITORIO */
 nav {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
 }
 
@@ -77,7 +84,7 @@ nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     padding: 8px 12px;
     border-radius: 6px;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -92,36 +99,48 @@ nav a:hover {
 /* 5. VISTA MÓVIL Y TABLET */
 @media (max-width: 900px) {
     .menu-toggle {
-        display: block;
+        display: block; /* Muestra el icono de 3 líneas */
     }
 
     nav {
-        display: none; /* Se oculta por defecto */
+        display: none !important; /* Oculto por defecto en móvil */
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
         background-color: #383d44;
-        padding: 16px 20px;
-        gap: 6px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        padding: 12px 16px;
+        gap: 4px;
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 99999;
     }
 
-    /* Clase activa que añade JavaScript */
+    /* Clase activa que inyecta JavaScript al tocar el botón */
     nav.active {
-        display: flex;
+        display: flex !important;
     }
 
     nav a {
+        display: block;
         width: 100%;
-        padding: 12px 16px;
+        padding: 12px 14px;
         font-size: 0.95rem;
         border-radius: 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
     }
 
     .texto-iglesia h1 {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .texto-iglesia p {
+        font-size: 0.72rem;
     }
 }
 
