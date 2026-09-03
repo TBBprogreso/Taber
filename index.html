@@ -365,6 +365,20 @@
     <!-- Texto flotante que aparece al pasar el cursor (o visible en PC) -->
     <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
 </a>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
 
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Cierra el menú automáticamente al tocar cualquier enlace
+    navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
