@@ -1,0 +1,1203 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333333;
+}
+/* 1. CONTENEDOR PRINCIPAL */
+header {
+    background-color: #474d55; /* Fondo azul oscuro */
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center;            /* Centrados verticalmente */
+    flex-wrap: wrap;
+}
+
+/* 2. LADO IZQUIERDO: Logo a la par de la caja de texto */
+.logo-contenedor {
+    display: flex;
+    align-items: center; /* Centra el logo con el bloque de texto */
+    gap: 15px;           /* Espacio entre el logo y el texto */
+}
+
+.logo-contenedor img {
+    max-width: 60px;
+    height: auto;
+}
+
+/* 3. TEXTOS: Título arriba, lema abajo */
+.texto-iglesia {
+    display: flex;
+    flex-direction: column; /* Obliga a que el p quede DEBAJO del h1 */
+}
+
+.texto-iglesia h1 {
+    color: #ffffff;      /* Letra blanca limpia */
+    font-size: 20px;
+    margin: 0;           /* Quita el espacio por defecto para que no se separe */
+}
+
+.texto-iglesia p {
+    color: #fdf907;      /* Color gris perla suave para el lema */
+    font-size: 13px;
+    margin: 3px 0 0 0;   /* Solo un toque de separación arriba */
+}
+
+/* 4. LADO DERECHO: Menú y Enlaces */
+nav {
+    display: flex;
+    gap: 10px;           /* Espacio entre cada botón */
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;         /* Quita el color oscuro y lo pone BLANCO */
+    text-decoration: none;  /* QUITA LA LÍNEA SUBRAYADA */
+    font-weight: bold;      /* Letra en negrita */
+    font-size: 14px;
+    padding: 8px 12px;      /* Le da relleno para que parezca un botón */
+    border-radius: 5px;     /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave de color */
+}
+
+/* Efecto al pasar el cursor sobre los enlaces */
+nav a:hover {
+    background-color: #000000; /* Fondo azul brillante */
+    color: #f7f306;
+}
+header img {
+    max-width: 60px;
+    height: auto;
+}
+
+/* Selecciona el h1 dentro del header */
+header h1 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Selecciona el párrafo que está dentro del header */
+header p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin: 3px 0 0 0;
+}
+
+
+#Inicio {
+    /* 1. Imagen al fondo con degradado oscuro a la izquierda */
+    background-image: 
+        linear-gradient(to right, rgba(10, 15, 30, 0.92) 25%, rgba(10, 15, 30, 0.60) 65%, rgba(10, 15, 30, 0.25) 100%), 
+        url('img/inicio.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    /* 2. Altura y alineación a la izquierda */
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* Centra el texto verticalmente */
+    align-items: flex-start;        /* Alinea todo el contenido a la IZQUIERDA */
+    padding: 60px 45px;            /* Espacio interno amplio */
+    border-radius: 0%;
+}
+
+/* 3. Título principal grande e imponente */
+#Inicio h2 {
+    color: #ffffff;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 520px;              /* Limita el ancho para que quiebre en 2 renglones */
+    margin: 0 0 15px 0;
+    border-bottom: none;          /* Sin línea divisoria */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 4. Subtítulo suave y legible */
+#Inicio p {
+    color: #cbd5e1;               /* Gris perla suave */
+    font-size: 18px;
+    max-width: 480px;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+/* 1. SECCIÓN GENERAL DE CULTOS */
+#Cultos {
+    text-align: center;         /* Centra el título principal y la descripción */
+    padding: 50px 30px;
+}
+
+#Cultos h2 {
+    color: #1a365d;
+    font-size: 38px;            /* Letra grande e imponente */
+    font-weight: 800;
+    margin-bottom: 10px;
+    border-bottom: none;        /* Quitamos la línea simple anterior para darle más elegancia */
+}
+
+.descripcion-seccion {
+    color: #101925;
+    font-size: 17px;
+    max-width: 650px;
+    margin: 0 auto 40px auto;   /* Centrado y separado de las tarjetas */
+}
+
+/* 2. CONTENEDOR FLEXIBLE PARA LAS 3 TARJETAS */
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;    /* Centra las tarjetas en la pantalla */
+    gap: 25px;                  /* Espacio de separación entre tarjeta y tarjeta */
+    flex-wrap: wrap;            /* Si se abre en celular, se acomodan hacia abajo */
+}
+
+/* 3. ESTILO DE CADA TARJETA INDIVIDUAL */
+.tarjeta-culto {
+    background-color: #ffffff;
+    border-radius: 12px;        /* Bordes redondeados modernos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave flotante */
+    width: 320px;               /* Ancho fijo elegante para cada cuadro */
+    overflow: hidden;           /* Mantiene la foto limpia dentro de los bordes */
+    text-align: left;           /* Texto interno alineado de forma ordenada */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+/* Efecto sutil al pasar el cursor sobre la tarjeta */
+.tarjeta-culto:hover {
+    transform: translateY(-5px); /* Eleva ligeramente la tarjeta */
+}
+
+/* 4. IMAGEN DENTRO DE LA TARJETA */
+.tarjeta-culto img {
+    width: 100%;
+    height: 180px;              /* Altura uniforme para que todas midan igual */
+    object-fit: cover;          /* Evita que la foto se deforme */
+}
+
+/* 5. TEXTOS DENTRO DE LA TARJETA */
+.tarjeta-culto h3 {
+    color: #081527;
+    font-size: 22px;
+    margin: 20px 20px 5px 20px;
+}
+
+.tarjeta-culto .hora {
+    color: #010205;             /* Azul destacado para el horario */
+    font-size: 20px;
+    margin: 0 20px 10px 20px;
+}
+
+.tarjeta-culto p:not(.hora) {
+    color: #475569;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 20px 25px 20px;
+}
+.tarjeta-culto {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 320px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    /* 1. SOMBRA BASE ELEGANTE */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    /* 2. TRANSICIÓN PARA INTERACCIÓN SUAVE */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO HOVER (Al pasar el ratón se eleva y la sombra crece) */
+.tarjeta-culto:hover {
+    transform: translateY(-8px);                  /* Sube 8px */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+}
+
+/* 1. SECCIÓN PRINCIPAL */
+#Ministerios {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+#Ministerios h2 {
+    color: #1a365d;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+/* 2. CUADRÍCULA MODERNA (GRID) */
+.cuadricula-ministerios {
+    list-style: none;             /* Elimina las viñetas/puntos de la lista */
+    padding: 0;
+    margin: 40px auto 0 auto;
+    max-width: 1100px;
+    display: grid;
+    /* Crea columnas automáticas de mínimo 240px que se adaptan solas */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;                   /* Separación entre cada cuadro */
+}
+
+/* 1. SECCIÓN DE MINISTERIOS */
+#Ministerios {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* 2. CUADRÍCULA ADAPTABLE */
+.galeria-ministerios {
+    display: grid;
+    /* Ajusta automáticamente 4 columnas en PC y las reduce solas en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+/* ==========================================
+   6. SECCIÓN MINISTERIOS (GALERÍA ELEGANTE)
+   ========================================== */
+.galeria-ministerios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-ministerio {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tarjeta-ministerio img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.tarjeta-ministerio:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 35px rgba(26, 54, 93, 0.18);
+}
+
+.tarjeta-ministerio:active {
+    transform: scale(0.97);
+}
+
+/* Centrar únicamente la tarjeta solitaria de Librería */
+@media (min-width: 800px) {
+    .tarjeta-ministerio:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 260px;
+        width: 100%;
+    }
+}
+/* ==========================================
+   8. SECCIÓN TESTIMONIO PASTOR
+   ========================================== */
+#Pastor {
+    text-align: left;
+    padding: 60px 45px;
+}
+
+#Pastor h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.bloque-testimonio {
+    overflow: hidden; /* Limpia los elementos flotantes */
+    margin-bottom: 45px;
+}
+
+/* FOTO CIRCULAR Y TEXTO QUE LA RODEA EN CURVA */
+.foto-pastor-circulo {
+    float: left;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;                 /* Círculo perfecto */
+    object-fit: cover;
+    margin: 0 35px 20px 0;
+    
+    /* Esta propiedad curva el texto alrededor del círculo real */
+    shape-outside: circle(50%);
+    
+    /* Borde fino y sombra elegante */
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(26, 54, 93, 0.25);
+}
+
+.encabezado-pastor h3 {
+    color: #1a365d;
+    font-size: 26px;
+    margin: 0;
+}
+
+.subtitulo-pastor {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cita-biblica {
+    font-style: italic;
+    color: #1e293b;
+    background-color: #f1f5f9;
+    padding: 12px 18px;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    margin: 10px 0 15px 0;
+    line-height: 1.5;
+}
+
+.texto-testimonio {
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.8;                   /* Lectura cómoda y aireada */
+    text-align: justify;                /* Bloque de lectura uniforme */
+}
+
+/* ==========================================
+   9. GALERÍA EN MOVIMIENTO (CARRUSEL INFINITO)
+   ========================================== */
+.contenedor-galeria-carrusel {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contenedor-galeria-carrusel h4 {
+    color: #1a365d;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+/* Ventana visible que oculta el desborde */
+.carrusel-pista {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 15px 0;
+}
+
+/* Tira que se traslada continuamente */
+.carrusel-contenido {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: deslizar 25s linear infinite; /* Movimiento constante de 25s */
+}
+
+/* Se pausa la animación si pasas el cursor */
+.carrusel-contenido:hover {
+    animation-play-state: paused;
+}
+
+/* Formato de las fotos dentro de la galería */
+.carrusel-contenido img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.carrusel-contenido img:hover {
+    transform: scale(1.06);
+}
+
+/* ==========================================
+   SECCIÓN TESTIMONIO PASTOR (DISEÑO MODERNO)
+   ========================================== */
+#Pastor {
+    background-color: #f8fafc;
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* TÍTULO PRINCIPAL CON ACENTO */
+.titulo-pastor-destacado {
+    color: #0f274a;
+    font-size: 38px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0 0 45px 0;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.titulo-pastor-destacado::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #2563eb;
+    border-radius: 4px;
+}
+
+/* CONTENEDOR EDITORIAL (DOS COLUMNAS) */
+.tarjeta-pastor-editorial {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 45px;
+    box-shadow: 0 10px 30px rgba(15, 39, 74, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    margin-bottom: 50px;
+}
+
+/* COLUMNA IZQUIERDA: PERFIL */
+.pastor-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid #f1f5f9;
+    padding-right: 35px;
+}
+
+.marco-foto-pastor {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+    margin-bottom: 20px;
+}
+
+.marco-foto-pastor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background-color: #ffffff;
+}
+
+.pastor-perfil h3 {
+    color: #0f274a;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+.etiqueta-cargo {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #eff6ff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+/* TARJETA DE CITA BÍBLICA */
+.tarjeta-cita {
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icono-comillas {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #93c5fd;
+    line-height: 1;
+    display: block;
+    margin-bottom: -10px;
+}
+
+.versiculo-clave {
+    color: #334155;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+}
+
+.referencia-biblica {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    display: block;
+}
+
+/* COLUMNA DERECHA: TEXTOS */
+.pastor-historia {
+    color: #475569;
+    font-size: 15.5px;
+    line-height: 1.75;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pastor-historia p {
+    margin: 0 0 18px 0;
+}
+
+.pastor-historia .parrafo-destacado {
+    color: #1e293b;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+.declaracion-cierre blockquote {
+    margin: 10px 0 0 0;
+    padding: 14px 20px;
+    background-color: #eff6ff;
+    border-radius: 8px;
+    color: #1e40af;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+    border-left: 3px solid #3b82f6;
+}
+
+/* GALERÍA HORIZONTAL CONTINUA */
+.galeria-carrusel-seccion h4 {
+    color: #0f274a;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrusel-mascara {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.carrusel-pista {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    animation: deslizarContinuo 28s linear infinite;
+}
+
+.carrusel-pista:hover {
+    animation-play-state: paused;
+}
+
+.carrusel-pista img {
+    width: 200px;
+    height: 145px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.carrusel-pista img:hover {
+    transform: translateY(-4px);
+}
+
+@keyframes deslizarContinuo {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* RESPONSIVIDAD PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 900px) {
+    .tarjeta-pastor-editorial {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .pastor-perfil {
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+        padding-right: 0;
+        padding-bottom: 25px;
+    }
+}
+/* ==========================================
+   SECCIÓN VERSÍCULO DE LA SEMANA (DEVOCIONAL)
+   ========================================== */
+#Versiculo {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+/* ENCABEZADO CON INSIGNIA */
+.encabezado-devocional {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.insignia-devocional {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #eff6ff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+#Versiculo h2 {
+    color: #0f274a;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 5px 0 15px 0;
+    border-bottom: none;
+}
+
+/* CONTENEDOR EN DOS COLUMNAS */
+.contenedor-devocional {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* TARJETA DEL VERSÍCULO PRINCIPAL */
+.caja-versiculo {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    position: relative;
+    margin: 0 0 25px 0;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.comilla-grande {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    font-size: 60px;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.cita-texto {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.referencia {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #bfdbfe;
+    text-align: right;
+    font-style: normal;
+}
+
+/* TEXTO DE LA REFLEXIÓN */
+.cuerpo-reflexion p {
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* DESTACADO TIPO CONSEJO PRÁCTICO */
+.nota-consejo {
+    background-color: #f8fafc;
+    border-left: 4px solid #f59e0b; /* Acento ámbar suave */
+    padding: 14px 18px;
+    border-radius: 6px;
+    color: #1e293b !important;
+    font-size: 15px !important;
+}
+
+.despedida-bendicion {
+    font-size: 18px !important;
+    font-weight: 800;
+    color: #1e3a8a !important;
+    margin-top: 15px;
+    text-align: left !important;
+}
+
+/* TARJETA DE LA IMAGEN DERECHA */
+.tarjeta-imagen-devocional {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-imagen-devocional:hover {
+    transform: scale(1.02);
+}
+
+.tarjeta-imagen-devocional img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ADAPTACIÓN A PANTALLAS DE CELULARES */
+@media (max-width: 850px) {
+    .contenedor-devocional {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    #Versiculo {
+        padding: 40px 20px;
+    }
+
+    .cita-texto {
+        font-size: 18px;
+    }
+}
+/* ==========================================
+   SECCIÓN PREDICACIÓN Y REDES (DISEÑO MODERNO)
+   ========================================== */
+#Redes {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    margin-bottom: 50px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* 1. ESTILO DE LA PREDICACIÓN (SPOTIFY) */
+.bloque-predicacion {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.insignia-audio {
+    display: inline-block;
+    color: #10b981;
+    background-color: #ecfdf5;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+#Redes h2 {
+    color: #0f274a;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    border-bottom: none;
+}
+
+.subtitulo-predicacion {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0 auto 30px auto;
+    max-width: 580px;
+    line-height: 1.5;
+}
+
+.reproductor-spotify {
+    background-color: #181818;
+    border-radius: 16px;
+    padding: 6px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reproductor-spotify:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* LÍNEA DIVISORIA CON EFECTO DEGRADADO */
+.divisor-seccion {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    margin: 55px auto;
+    max-width: 700px;
+}
+
+/* 2. SUBSECCIÓN DE REDES */
+.bloque-redes h3 {
+    color: #0f274a;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.subtitulo-redes {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0 0 35px 0;
+}
+
+.tarjetas-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* BOTÓN BASE COMPARTIDO */
+.btn-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 28px;
+    width: 270px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.icono-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.18);
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.texto-social {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.nombre-red {
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.accion-red {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* BOTÓN FACEBOOK LLAMATIVO */
+.btn-facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0c5dc5 100%);
+    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.38);
+}
+
+.btn-facebook:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(24, 119, 242, 0.55);
+}
+
+/* BOTÓN TIKTOK LLAMATIVO (CON BRILLO MULTICOLOR) */
+.btn-tiktok {
+    background: linear-gradient(135deg, #010101 0%, #1f2024 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+}
+
+.btn-tiktok:hover {
+    transform: translateY(-7px) scale(1.02);
+    /* Sombra doble azul/roja característica de la marca TikTok */
+    box-shadow: -4px 14px 28px rgba(37, 244, 238, 0.3), 
+                 4px 14px 28px rgba(254, 44, 85, 0.3);
+}
+
+/* ADAPTACIÓN PARA TELÉFONOS */
+@media (max-width: 650px) {
+    #Redes {
+        padding: 40px 20px;
+    }
+
+    .btn-social {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+/* ==========================================
+   PIE DE PÁGINA (FOOTER MODERNO)
+   ========================================== */
+.pie-pagina {
+    background: linear-gradient(180deg, #0f172a 0%, #090d16 100%);
+    color: #94a3b8;
+    padding-top: 60px;
+    margin-top: 60px;
+    border-top: 3px solid #2563eb;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 40px;
+}
+
+/* 1. COLUMNA DE IDENTIDAD */
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.logo-footer img {
+    width: 45px;
+    height: auto;
+}
+
+.logo-footer h3 {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.lema-footer {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 340px;
+}
+
+/* 2. ENLACES RÁPIDOS */
+.columna-footer h4 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.columna-footer h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+.enlaces-rapidos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.enlaces-rapidos li {
+    margin-bottom: 10px;
+}
+
+.enlaces-rapidos a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+    display: inline-block;
+}
+
+.enlaces-rapidos a:hover {
+    color: #ffffff;
+    padding-left: 6px; /* Desplazamiento interactivo */
+}
+
+/* 3. COLUMNA DE CONTACTO */
+.item-contacto {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.icono-contacto {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.item-contacto p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.item-contacto a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.item-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* 4. BARRA DE DERECHOS RESERVADOS */
+.barra-derechos {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.barra-derechos p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* RESPONSIVIDAD (MÓVILES Y TABLETS) */
+@media (max-width: 850px) {
+    .contenedor-footer {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .pie-pagina {
+        padding-top: 45px;
+    }
+}
+
+/* ==========================================
+   BOTÓN FLOTANTE DE WHATSAPP CON EFECTO PULSO
+   ========================================== */
+.btn-flotante-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 9999; /* Se asegura de estar siempre encima de fotos y textos */
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    
+    /* Animación de palpitación suave para llamar la atención */
+    animation: pulsoWhatsapp 2.5s infinite;
+}
+
+/* Texto que acompaña al logo */
+.btn-flotante-whatsapp .texto-flotante {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Icono centrado */
+.btn-flotante-whatsapp svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Interacción al pasar el mouse por encima */
+.btn-flotante-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.6);
+    animation: none; /* Pausa el latido al interactuar */
+}
+
+/* Efecto al presionar con el dedo o clic */
+.btn-flotante-whatsapp:active {
+    transform: scale(0.96);
+}
+
+/* ANIMACIÓN DE PULSO */
+@keyframes pulsoWhatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ADAPTACIÓN EN CELULARES (Se hace más compacto para no tapar pantalla) */
+@media (max-width: 600px) {
+    .btn-flotante-whatsapp {
+        bottom: 18px;
+        right: 18px;
+        padding: 12px;
+        border-radius: 50%; /* Se vuelve un botón redondo perfecto */
+    }
+    
+    /* Ocultamos el texto largo en pantallas chicas para no estorbar la lectura */
+    .btn-flotante-whatsapp .texto-flotante {
+        display: none;
+    }
+}
