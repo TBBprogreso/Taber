@@ -9,85 +9,120 @@ body {
     background-color: #f4f6f9;
     color: #333333;
 }
-/* 1. CONTENEDOR PRINCIPAL */
+
+/* 1. ENCABEZADO PRINCIPAL */
 header {
-    background-color: #474d55; /* Fondo azul oscuro */
-    padding: 30px 30px;
+    background-color: #474d55;
+    padding: 16px 24px;
     display: flex;
-    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
-    align-items: center;            /* Centrados verticalmente */
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* 2. LADO IZQUIERDO: Logo a la par de la caja de texto */
+/* 2. LOGO Y TÍTULOS */
 .logo-contenedor {
     display: flex;
-    align-items: center; /* Centra el logo con el bloque de texto */
-    gap: 15px;           /* Espacio entre el logo y el texto */
+    align-items: center;
+    gap: 15px;
 }
 
 .logo-contenedor img {
-    max-width: 60px;
+    max-width: 55px;
     height: auto;
 }
 
-/* 3. TEXTOS: Título arriba, lema abajo */
 .texto-iglesia {
     display: flex;
-    flex-direction: column; /* Obliga a que el p quede DEBAJO del h1 */
+    flex-direction: column;
 }
 
 .texto-iglesia h1 {
-    color: #ffffff;      /* Letra blanca limpia */
-    font-size: 20px;
-    margin: 0;           /* Quita el espacio por defecto para que no se separe */
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .texto-iglesia p {
-    color: #fdf907;      /* Color gris perla suave para el lema */
-    font-size: 13px;
-    margin: 3px 0 0 0;   /* Solo un toque de separación arriba */
+    color: #fdf907;
+    font-size: 0.8rem;
+    margin: 2px 0 0 0;
+    font-weight: 500;
 }
 
-/* 4. LADO DERECHO: Menú y Enlaces */
+/* 3. BOTÓN HAMBURGUESA (Oculto en escritorio) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* 4. NAVEGACIÓN DE ESCRITORIO */
 nav {
     display: flex;
-    gap: 10px;           /* Espacio entre cada botón */
-    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
 }
 
 nav a {
-    color: #ffffff;         /* Quita el color oscuro y lo pone BLANCO */
-    text-decoration: none;  /* QUITA LA LÍNEA SUBRAYADA */
-    font-weight: bold;      /* Letra en negrita */
-    font-size: 14px;
-    padding: 8px 12px;      /* Le da relleno para que parezca un botón */
-    border-radius: 5px;     /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave de color */
-}
-
-/* Efecto al pasar el cursor sobre los enlaces */
-nav a:hover {
-    background-color: #000000; /* Fondo azul brillante */
-    color: #f7f306;
-}
-header img {
-    max-width: 60px;
-    height: auto;
-}
-
-/* Selecciona el h1 dentro del header */
-header h1 {
     color: #ffffff;
-    font-size: 20px;
-    margin: 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
-/* Selecciona el párrafo que está dentro del header */
-header p {
-    color: #cbd5e1;
-    font-size: 13px;
-    margin: 3px 0 0 0;
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #fdf907;
+}
+
+/* 5. VISTA MÓVIL Y TABLET */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none; /* Se oculta por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #383d44;
+        padding: 16px 20px;
+        gap: 6px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Clase activa que añade JavaScript */
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        border-radius: 4px;
+    }
+
+    .texto-iglesia h1 {
+        font-size: 1rem;
+    }
 }
 
 
