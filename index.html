@@ -7,378 +7,316 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ENCABEZADO: Contiene el título y la barra de navegación -->
     <header> 
-    <div class="logo-contenedor">
-        <img src="img/logo.png" alt="LogotipoTBB">
-        <div class="texto-iglesia">
-            <h1>TBB Progreso de Adoracion</h1>
-            <p>13 años para la gloria de Dios</p>
+        <div class="logo-contenedor">
+            <img src="img/logo.png" alt="LogotipoTBB">
+            <div class="texto-iglesia">
+                <h1>TBB Progreso de Adoracion</h1>
+                <p>13 años para la gloria de Dios</p>
+            </div>
         </div>
-    </div>
-      
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        ☰
-    </button>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            ☰
+        </button>
 
-    <nav id="navbar">
-        <a href="#Inicio">INICIO</a>
-        <a href="#Cultos">NUESTROS CULTOS</a>
-        <a href="#Ministerios">NUESTROS MINISTERIOS</a>
-        <a href="#Pastor">TESTIMONIO PASTOR</a>
-        <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
-        <a href="#Redes">NUESTRAS REDES SOCIALES</a>
-    </nav>
-</header>
-    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+        <nav id="navbar">
+            <a href="#Inicio">INICIO</a>
+            <a href="#Cultos">NUESTROS CULTOS</a>
+            <a href="#Ministerios">NUESTROS MINISTERIOS</a>
+            <a href="#Pastor">TESTIMONIO PASTOR</a>
+            <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
+            <a href="#Redes">NUESTRAS REDES SOCIALES</a>
+        </nav>
+    </header>
+
     <main>
+        <section id="Inicio">
+            <h2>Bienvenidos TBB Progreso de Adoración</h2>
+            <p>Nos gozamos en recibirte, sé parte de la bendición</p>
+        </section>
 
-<section id="Inicio">
-    <h2>Bienvenidos TBB Progreso de Adoración</h2>
-    <p>Nos gozamos en recibirte, sé parte de la bendición</p>
-</section>
+        <section id="Cultos">
+            <h2>NUESTROS CULTOS</h2>
+            <p class="descripcion-seccion">Te invitamos a acompañarnos en nuestras reuniones semanales de adoración y enseñanza</p>
 
-
-   <section id="Cultos">
-    <!-- TÍTULO Y DESCRIPCIÓN GENERAL -->
-    <h2>NUESTROS CULTOS</h2>
-    <p class="descripcion-seccion">Te invitamos a acompañarnos en nuestras reuniones semanales de adoración y enseñanza</p>
-
-    <!-- CONTENEDOR DE LAS 3 TARJETAS EN FILA -->
-    <div class="contenedor-tarjetas">
-        
-        <!-- Tarjeta 1: Miércoles -->
-        <div class="tarjeta-culto">
-            <img src="img/estudiobiblico.jpg" alt="Estudio bíblico">
-            <h3>Miércoles</h3>
-            <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
-            <p>Cada miércoles, aprendemos más de la Palabra de Dios y fortalecemos nuestra fe.</p>
-        </div>
-
-        <!-- Tarjeta 2: Viernes -->
-        <div class="tarjeta-culto">
-            <img src="img/adoracionyoracion.jpg" alt="Tiempo de Adoración">
-            <h3>Viernes</h3>
-            <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
-            <p>Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
-        </div>
-
-        <!-- Tarjeta 3: Domingo -->
-        <div class="tarjeta-culto">
-            <img src="img/diadelSeñor.jpg" alt="Culto Dominical">
-            <h3>Domingo</h3>
-            <p class="hora"><strong>Hora:</strong> 9:00 am - 5:00 pm</p>
-            <p>Un día para reunirnos como iglesia, adorar a Dios y escuchar Su Palabra.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- Seccion Ministerios -->
-<section id="Ministerios">
-    <h2>Nuestros Ministerios</h2>
-    <p class="descripcion-seccion">Conoce las diferentes áreas de servicio de nuestra congregación</p>
-    
-    <div class="galeria-ministerios">
-        <div class="tarjeta-ministerio">
-            <img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/salmo41.jpg" alt="Ministerio Salmo 41">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/cafeteria.jpg" alt="Ministerio Cafetería">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/sonido.jpg" alt="Ministerio Sonido">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/taberkid.jpg" alt="Ministerio Taber Kid">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/acomodacion.jpg" alt="Ministerio Acomodación">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/evangelismo.jpg" alt="Ministerio Evangelismo">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/multimedia.jpg" alt="Ministerio Multimedia">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/libreria.jpg" alt="Ministerio Librería">
-        </div>
-    </div>
-</section>
-
-<!-- SECCIÓN: TESTIMONIO PASTOR -->
-<!-- SECCIÓN: TESTIMONIO PASTOR -->
-<section id="Pastor">
-    <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
-
-    <!-- TARJETA PRINCIPAL EDITORIAL -->
-    <div class="tarjeta-pastor-editorial">
-        
-        <!-- COLUMNA IZQUIERDA: PERFIL Y DETALLES -->
-        <aside class="pastor-perfil">
-            <div class="marco-foto-pastor">
-                <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero">
-            </div>
-            <h3>Roger Alí Caballero</h3>
-            <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
-            
-            <div class="tarjeta-cita">
-                <span class="icono-comillas">“</span>
-                <p class="versiculo-clave">
-                    Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.
-                </p>
-                <span class="referencia-biblica">— Jeremías 33:3</span>
-            </div>
-        </aside>
-
-        <!-- COLUMNA DERECHA: TEXTO COMPLETO Y NARRATIVA -->
-        <article class="pastor-historia">
-            <p class="parrafo-destacado">
-                Este versículo resume una poderosa enseñanza: debemos acercarnos a Dios, buscarlo y clamar a Él en todo momento, tanto en las dificultades como en los tiempos de bendición. El testimonio de Roger es una muestra viva de cómo Dios transforma vidas.
-            </p>
-            
-            <p>
-                Desde muy joven enfrentó dificultades económicas y comenzó a trabajar en diferentes oficios hasta que, a los 17 años, llegó al Grupo Algodón. La popularidad le permitió viajar y ganar reconocimiento, pero junto con el éxito llegaron el alcohol, las drogas y otros vicios que consumieron todo a su paso. Las amistades desaparecieron, la vida familiar cayó en caos y llegó a perder su hogar y dormir en las calles.
-            </p>
-            
-            <p>
-                En medio de la crisis y en completa soledad, escuchó una predicación televisada y el llamado de Jeremías 33:3. Comprendió el mensaje: para salir de esa condición debía clamar con sinceridad. Comenzó a orar y a buscar una oportunidad. Primero experimentó la reconciliación familiar y, tras meses de perseverancia, abandonó por completo las adicciones.
-            </p>
-            
-            <p>
-                Estudió teología en medio de severas pruebas económicas, fue ordenado como pastor y dedicó su vida al ministerio y a la alabanza. Hoy su testimonio proclama que no importa la adversidad presente: quien busca y clama a Dios encuentra transformación completa y un propósito eterno.
-            </p>
-
-            <div class="declaracion-cierre">
-                <blockquote>
-                    “Ahora ya no soy el hombre derrotado de las calles; soy un hijo de Dios que le sirve con todo el corazón.”
-                </blockquote>
-            </div>
-        </article>
-    </div>
-
-    <!-- GALERÍA EN CARRUSEL CONTINUO -->
-    <div class="galeria-carrusel-seccion">
-        <h4>Momentos del Ministerio</h4>
-        <div class="carrusel-mascara">
-            <div class="carrusel-pista">
-                <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
-                <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
-                <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
-                <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
-                <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
-                <!-- Copia espejo para bucle continuo -->
-                <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
-                <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
-                <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
-                <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
-                <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
-            </div>
-        </div>
-    </div>
-</section>
-
- <!-- Versiculo de la Semana -->
-<!-- SECCIÓN: VERSÍCULO DE LA SEMANA -->
-<section id="Versiculo">
-    <div class="encabezado-devocional">
-        <span class="insignia-devocional">PALABRA VIVA</span>
-        <h2>Versículo de la Semana</h2>
-        <div class="linea-adorno"></div>
-    </div>
-
-    <!-- CONTENEDOR MODERNO EN DOS COLUMNAS -->
-    <div class="contenedor-devocional">
-        
-        <!-- COLUMNA 1: CONTENIDO Y REFLEXIÓN -->
-        <div class="tarjeta-lectura">
-            
-            <!-- CITA DESTACADA -->
-            <blockquote class="caja-versiculo">
-                <span class="comilla-grande">“</span>
-                <p class="cita-texto">Toda palabra de Dios es limpia; Él es escudo a los que en él esperan.</p>
-                <cite class="referencia">— Proverbios 30:5</cite>
-            </blockquote>
-
-            <!-- REFLEXIÓN DIVIDIDA EN BLOQUES CÓMODOS DE LEER -->
-            <div class="cuerpo-reflexion">
-                <p>
-                    Las palabras de los hombres pueden llegar sazonadas según las intenciones: hay palabras que llevan cizaña, envidia, egoísmo, dolor, resentimiento y hasta deseo de venganza; todo depende del corazón.
-                </p>
-                <p>
-                    Cuando hablamos de Dios, su palabra es <strong>limpia, recta y pura</strong>. Sus intenciones siempre son buenas y no buscan dañar, sino corregir, instruir y moldear. Y aparte, también es escudo.
-                </p>
-                <p class="nota-consejo">
-                    💡 Podemos rechazar la palabra del hombre, pero nunca la de Dios. Cuando vayas a la iglesia, acércate más para oír que para hablar. Caminemos siempre con la palabra de Dios.
-                </p>
-                <p class="despedida-bendicion">¡Bendiciones!</p>
-            </div>
-        </div>
-
-        <!-- COLUMNA 2: IMAGEN SEMANAL DE APOYO -->
-        <div class="tarjeta-imagen-devocional">
-            <img src="img/Imagen Semanal.jpg" alt="Imagen del Versículo Semanal">
-        </div>
-
-    </div>
-</section>
- <!-- Redes sociales -->
- <!-- SECCIÓN: PREDICACIÓN Y REDES SOCIALES -->
-<section id="Redes">
-    
-    <!-- SUBSECCIÓN 1: PREDICACIÓN DE LA SEMANA -->
-    <div class="bloque-predicacion">
-        <span class="insignia-audio">MENSAJE RECOMENDADO</span>
-        <h2>Predicación de la Semana</h2>
-        <p class="subtitulo-predicacion">Escucha el mensaje especial seleccionado para ti directamente en Spotify</p>
-
-        <!-- REPRODUCTOR DE EPISODIO INDIVIDUAL -->
-        <!-- Solo cambia el código después de /episode/ cada semana -->
-        <div class="reproductor-spotify">
-            <iframe 
-                style="border-radius:12px" 
-                src="https://open.spotify.com//embed/episode/5HPxgShYrmrMPXvHA1jX4e" 
-                width="100%" 
-                height="152" 
-                frameBorder="0" 
-                allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-            </iframe>
-        </div>
-    </div>
-
-    <div class="divisor-seccion"></div>
-
-    <!-- SUBSECCIÓN 2: REDES SOCIALES LLAMATIVAS -->
-    <div class="bloque-redes">
-        <h3>Conéctate con Nosotros</h3>
-        <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
-
-        <div class="tarjetas-sociales">
-            
-            <!-- Botón Facebook -->
-            <a href="https://www.facebook.com/taberelprogreso" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook">
-                <div class="icono-red">
-                    <!-- Icono oficial de Facebook en SVG -->
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
+            <div class="contenedor-tarjetas">
+                <div class="tarjeta-culto">
+                    <img src="img/estudiobiblico.jpg" alt="Estudio bíblico">
+                    <h3>Miércoles</h3>
+                    <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
+                    <p>Cada miércoles, aprendemos más de la Palabra de Dios y fortalecemos nuestra fe.</p>
                 </div>
-                <div class="texto-social">
-                    <span class="nombre-red">Facebook</span>
-                    <span class="accion-red">Seguir en nuestra página &rarr;</span>
-                </div>
-            </a>
 
-            <!-- Botón TikTok -->
-            <a href="https://www.tiktok.com/@taber.progreso.de?_r=1" target="_blank" rel="noopener noreferrer" class="btn-social btn-tiktok">
-                <div class="icono-red">
-                    <!-- Icono oficial de TikTok en SVG -->
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                    </svg>
+                <div class="tarjeta-culto">
+                    <img src="img/adoracionyoracion.jpg" alt="Tiempo de Adoración">
+                    <h3>Viernes</h3>
+                    <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
+                    <p>Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
                 </div>
-                <div class="texto-social">
-                    <span class="nombre-red">TikTok</span>
-                    <span class="accion-red">Ver contenido diario &rarr;</span>
+
+                <div class="tarjeta-culto">
+                    <img src="img/diadelSeñor.jpg" alt="Culto Dominical">
+                    <h3>Domingo</h3>
+                    <p class="hora"><strong>Hora:</strong> 9:00 am - 5:00 pm</p>
+                    <p>Un día para reunirnos como iglesia, adorar a Dios y escuchar Su Palabra.</p>
                 </div>
-            </a>
+            </div>
+        </section>
 
-        </div>
-    </div>
+        <section id="Ministerios">
+            <h2>Nuestros Ministerios</h2>
+            <p class="descripcion-seccion">Conoce las diferentes áreas de servicio de nuestra congregación</p>
+            
+            <div class="galeria-ministerios">
+                <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate"></div>
+                <div class="tarjeta-ministerio"><img src="img/salmo41.jpg" alt="Ministerio Salmo 41"></div>
+                <div class="tarjeta-ministerio"><img src="img/cafeteria.jpg" alt="Ministerio Cafetería"></div>
+                <div class="tarjeta-ministerio"><img src="img/sonido.jpg" alt="Ministerio Sonido"></div>
+                <div class="tarjeta-ministerio"><img src="img/taberkid.jpg" alt="Ministerio Taber Kid"></div>
+                <div class="tarjeta-ministerio"><img src="img/acomodacion.jpg" alt="Ministerio Acomodación"></div>
+                <div class="tarjeta-ministerio"><img src="img/evangelismo.jpg" alt="Ministerio Evangelismo"></div>
+                <div class="tarjeta-ministerio"><img src="img/multimedia.jpg" alt="Ministerio Multimedia"></div>
+                <div class="tarjeta-ministerio"><img src="img/libreria.jpg" alt="Ministerio Librería"></div>
+            </div>
+        </section>
 
-</section>
-  <!-- FIN DEL CONTENIDO PRINCIPAL -->
+        <section id="Pastor">
+            <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
+
+            <div class="tarjeta-pastor-editorial">
+                <aside class="pastor-perfil">
+                    <div class="marco-foto-pastor">
+                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero">
+                    </div>
+                    <h3>Roger Alí Caballero</h3>
+                    <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
+                    
+                    <div class="tarjeta-cita">
+                        <span class="icono-comillas">“</span>
+                        <p class="versiculo-clave">
+                            Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.
+                        </p>
+                        <span class="referencia-biblica">— Jeremías 33:3</span>
+                    </div>
+                </aside>
+
+                <article class="pastor-historia">
+                    <p class="parrafo-destacado">
+                        Este versículo resume una poderosa enseñanza: debemos acercarnos a Dios, buscarlo y clamar a Él en todo momento, tanto en las dificultades como en los tiempos de bendición. El testimonio de Roger es una muestra viva de cómo Dios transforma vidas.
+                    </p>
+                    <p>
+                        Desde muy joven enfrentó dificultades económicas y comenzó a trabajar en diferentes oficios hasta que, a los 17 años, llegó al Grupo Algodón. La popularidad le permitió viajar y ganar reconocimiento, pero junto con el éxito llegaron el alcohol, las drogas y otros vicios que consumieron todo a su paso. Las amistades desaparecieron, la vida familiar cayó en caos y llegó a perder su hogar y dormir en las calles.
+                    </p>
+                    <p>
+                        En medio de la crisis y en completa soledad, escuchó una predicación televisada y el llamado de Jeremías 33:3. Comprendió el mensaje: para salir de esa condición debía clamar con sinceridad. Comenzó a orar y a buscar una oportunidad. Primero experimentó la reconciliación familiar y, tras meses de perseverancia, abandonó por completo las adicciones.
+                    </p>
+                    <p>
+                        Estudió teología en medio de severas pruebas económicas, fue ordenado como pastor y dedicó su vida al ministerio y a la alabanza. Hoy su testimonio proclama que no importa la adversidad presente: quien busca y clama a Dios encuentra transformación completa y un propósito eterno.
+                    </p>
+
+                    <div class="declaracion-cierre">
+                        <blockquote>
+                            “Ahora ya no soy el hombre derrotado de las calles; soy un hijo de Dios que le sirve con todo el corazón.”
+                        </blockquote>
+                    </div>
+                </article>
+            </div>
+
+            <div class="galeria-carrusel-seccion">
+                <h4>Momentos del Ministerio</h4>
+                <div class="carrusel-mascara">
+                    <div class="carrusel-pista">
+                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
+                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
+                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
+                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
+                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
+                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
+                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
+                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
+                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
+                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Versiculo">
+            <div class="encabezado-devocional">
+                <span class="insignia-devocional">PALABRA VIVA</span>
+                <h2>Versículo de la Semana</h2>
+                <div class="linea-adorno"></div>
+            </div>
+
+            <div class="contenedor-devocional">
+                <div class="tarjeta-lectura">
+                    <blockquote class="caja-versiculo">
+                        <span class="comilla-grande">“</span>
+                        <p class="cita-texto">Toda palabra de Dios es limpia; Él es escudo a los que en él esperan.</p>
+                        <cite class="referencia">— Proverbios 30:5</cite>
+                    </blockquote>
+
+                    <div class="cuerpo-reflexion">
+                        <p>
+                            Las palabras de los hombres pueden llegar sazonadas según las intenciones: hay palabras que llevan cizaña, envidia, egoísmo, dolor, resentimiento y hasta deseo de venganza; todo depende del corazón.
+                        </p>
+                        <p>
+                            Cuando hablamos de Dios, su palabra es <strong>limpia, recta y pura</strong>. Sus intenciones siempre son buenas y no buscan dañar, sino corregir, instruir y moldear. Y aparte, también es escudo.
+                        </p>
+                        <p class="nota-consejo">
+                            💡 Podemos rechazar la palabra del hombre, pero nunca la de Dios. Cuando vayas a la iglesia, acércate más para oír que para hablar. Caminemos siempre con la palabra de Dios.
+                        </p>
+                        <p class="despedida-bendicion">¡Bendiciones!</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-imagen-devocional">
+                    <img src="img/Imagen Semanal.jpg" alt="Imagen del Versículo Semanal">
+                </div>
+            </div>
+        </section>
+
+        <section id="Redes">
+            <div class="bloque-predicacion">
+                <span class="insignia-audio">MENSAJE RECOMENDADO</span>
+                <h2>Predicación de la Semana</h2>
+                <p class="subtitulo-predicacion">Escucha el mensaje especial seleccionado para ti directamente en Spotify</p>
+
+                <div class="reproductor-spotify">
+                    <iframe 
+                        style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="divisor-seccion"></div>
+
+            <div class="bloque-redes">
+                <h3>Conéctate con Nosotros</h3>
+                <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
+
+                <div class="tarjetas-sociales">
+                    <a href="https://www.facebook.com/taberelprogreso" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook">
+                        <div class="icono-red">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <div class="texto-social">
+                            <span class="nombre-red">Facebook</span>
+                            <span class="accion-red">Seguir en nuestra página →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@taber.progreso.de?_r=1" target="_blank" rel="noopener noreferrer" class="btn-social btn-tiktok">
+                        <div class="icono-red">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </div>
+                        <div class="texto-social">
+                            <span class="nombre-red">TikTok</span>
+                            <span class="accion-red">Ver contenido diario →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- Informacion abajo de pagina -->
-    <!-- PIE DE PÁGINA (FOOTER) MODERNO -->
-<footer class="pie-pagina">
-    <div class="contenedor-footer">
-        
-        <!-- COLUMNA 1: IDENTIDAD -->
-        <div class="columna-footer info-iglesia">
-            <div class="logo-footer">
-                <img src="img/logo.png" alt="Logotipo TBB">
-                <h3>TBB Progreso de Adoración</h3>
-            </div>
-            <p class="lema-footer">
-                Una casa de adoración y restauración familiar. 13 años proclamando el evangelio de Jesucristo para la gloria de Dios.
-            </p>
-        </div>
 
-        <!-- COLUMNA 2: NAVEGACIÓN RÁPIDA -->
-        <div class="columna-footer enlaces-rapidos">
-            <h4>Navegación</h4>
-            <ul>
-                <li><a href="#Inicio">Inicio</a></li>
-                <li><a href="#Cultos">Nuestros Cultos</a></li>
-                <li><a href="#Ministerios">Nuestros Ministerios</a></li>
-                <li><a href="#Pastor">Testimonio del Pastor</a></li>
-                <li><a href="#Versiculo">Versículo Semanal</a></li>
-            </ul>
-        </div>
-
-        <!-- COLUMNA 3: CONTACTO Y UBICACIÓN -->
-        <div class="columna-footer contacto-footer">
-            <h4>Visítanos</h4>
-            
-            <div class="item-contacto">
-                <span class="icono-contacto">📍</span>
-                <p>Col. Ascensión, calle El Amatillo #6, Ayutuxtepeque, San Salvador, El Salvador.</p>
-            </div>
-
-            <div class="item-contacto">
-                <span class="icono-contacto">💬</span>
-                <p>
-                    <strong>WhatsApp:</strong> 
-                    <a href="https://wa.me/50375714132" target="_blank" rel="noopener noreferrer">+503 7571-4132</a>
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <div class="columna-footer info-iglesia">
+                <div class="logo-footer">
+                    <img src="img/logo.png" alt="Logotipo TBB">
+                    <h3>TBB Progreso de Adoración</h3>
+                </div>
+                <p class="lema-footer">
+                    Una casa de adoración y restauración familiar. 13 años proclamando el evangelio de Jesucristo para la gloria de Dios.
                 </p>
             </div>
+
+            <div class="columna-footer enlaces-rapidos">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#Inicio">Inicio</a></li>
+                    <li><a href="#Cultos">Nuestros Cultos</a></li>
+                    <li><a href="#Ministerios">Nuestros Ministerios</a></li>
+                    <li><a href="#Pastor">Testimonio del Pastor</a></li>
+                    <li><a href="#Versiculo">Versículo Semanal</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer contacto-footer">
+                <h4>Visítanos</h4>
+                <div class="item-contacto">
+                    <span class="icono-contacto">📍</span>
+                    <p>Col. Ascensión, calle El Amatillo #6, Ayutuxtepeque, San Salvador, El Salvador.</p>
+                </div>
+                <div class="item-contacto">
+                    <span class="icono-contacto">💬</span>
+                    <p>
+                        <strong>WhatsApp:</strong> 
+                        <a href="https://wa.me/50375714132" target="_blank" rel="noopener noreferrer">+503 7571-4132</a>
+                    </p>
+                </div>
+            </div>
         </div>
 
-    </div>
+        <div class="barra-derechos">
+            <p>© 2026 TBB Progreso de Adoración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+        
+    <a 
+        href="https://wa.me/50375714132?text=Hola,%20deseo%20información%20y%20consejería%20pastoral%20en%20TBB%20Progreso%20de%20Adoración" 
+        class="btn-flotante-whatsapp" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="Contactar por WhatsApp para información y consejería">
+        <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
+            <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.643.17.88-.102.237-.27 1.014-1.183 1.284-1.589.27-.406.54-.338.914-.203.372.135 2.366 1.116 2.772 1.32.406.203.676.304.778.473.101.17.101.98-.227 1.904z"/>
+        </svg>
+        <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
+    </a>
 
-    <!-- BARRA INFERIOR DE DERECHOS -->
-    <div class="barra-derechos">
-        <p>&copy; 2026 TBB Progreso de Adoración. Todos los derechos reservados.</p>
-    </div>
-</footer>
-    
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-<a 
-    href="https://wa.me/50375714132?text=Hola,%20deseo%20información%20y%20consejería%20pastoral%20en%20TBB%20Progreso%20de%20Adoración" 
-    class="btn-flotante-whatsapp" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    aria-label="Contactar por WhatsApp para información y consejería">
-    
-    <!-- Icono oficial de WhatsApp en SVG (no requiere imágenes externas) -->
-    <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
-        <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.643.17.88-.102.237-.27 1.014-1.183 1.284-1.589.27-.406.54-.338.914-.203.372.135 2.366 1.116 2.772 1.32.406.203.676.304.778.473.101.17.101.98-.227 1.904z"/>
-    </svg>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navbar = document.getElementById('navbar');
 
-    <!-- Texto flotante que aparece al pasar el cursor (o visible en PC) -->
-    <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
-</a>
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navbar = document.getElementById('navbar');
+            if (menuToggle && navbar) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = navbar.classList.toggle('active');
+                    menuToggle.setAttribute('aria-expanded', isOpen);
+                });
 
-    menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-    });
+                // Cierra el menú al tocar cualquier enlace
+                navbar.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navbar.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
 
-    // Cierra el menú automáticamente al tocar cualquier enlace
-    navbar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navbar.classList.remove('active');
+                // Cierra el menú si se toca fuera de él
+                document.addEventListener('click', (e) => {
+                    if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                        navbar.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
         });
-    });
-</script>
+    </script>
 </body>
 </html>
