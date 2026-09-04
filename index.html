@@ -23,7 +23,7 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <!-- Botón condicional: Oculto por defecto -->
+            <!-- Botón condicional: Oculto fuera de horario -->
             <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none !important;">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO: Reproductor de video limpio 16:9 (sin muros ni botones externos) -->
+    <!-- SECCIÓN EN VIVO: Se activa en horario de culto -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
@@ -47,8 +47,15 @@
                 Acompáñanos y sé parte de nuestro servicio en directo.
             </p>
 
-            <!-- Marco de video cinematográfico limpio -->
+            <!-- Pantalla de video con respaldo de logo si no hay señal -->
             <div class="video-responsive">
+                <!-- Capa de fondo con logo por si no han encendido la cámara -->
+                <div class="fondo-espera-logo">
+                    <img src="img/logo.png" alt="TBB Progreso">
+                    <span>Esperando señal de transmisión...</span>
+                </div>
+
+                <!-- Reproductor de Facebook por encima -->
                 <iframe 
                     id="iframe-vivo"
                     src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaberelprogreso%2Flive%2F&show_text=0&width=560" 
@@ -223,7 +230,7 @@
                         height="152" 
                         frameBorder="0" 
                         allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
                         loading="lazy">
                     </iframe>
                 </div>
