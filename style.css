@@ -285,110 +285,109 @@ nav a:hover {
 }
 
 /* ========================================================
-   SECCIÓN MINISTERIOS (MODERNO, RESPONSIVE & ELEGANTE)
+   SECCIÓN MINISTERIOS (DISEÑO EXACTO & COMPLETO)
    ======================================================== */
 
 #Ministerios {
     text-align: center;
-    padding: 60px 20px;
-    background: #f8fafc; /* Fondo suave para resaltar las tarjetas blancas */
+    padding: 50px 16px;
+    background: #f8fafc;
     box-sizing: border-box;
+    width: 100%;
 }
 
 #Ministerios h2 {
     color: #1a365d;
-    font-size: clamp(28px, 4vw, 38px);
+    font-size: clamp(26px, 4vw, 36px);
     font-weight: 800;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     letter-spacing: -0.5px;
 }
 
-/* 1. Cuadrícula en Computadoras: 4 Columnas simétricas */
+/* En Computadoras: 4 Columnas organizadas */
 .galeria-ministerios {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 24px !important;
-    max-width: 1180px;
+    max-width: 1150px;
     margin: 0 auto !important;
-    padding: 10px !important;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. Tarjeta individual con bordes suaves y sombra estética */
+/* Tarjeta con esquinas redondeadas y sombra elegante */
 .tarjeta-ministerio {
     background: #ffffff;
-    border-radius: 18px;
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 0 8px 20px -4px rgba(26, 54, 93, 0.08), 
-                0 4px 6px -2px rgba(0, 0, 0, 0.03);
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 4px 10px -2px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.35s ease;
     display: block !important;
     height: auto !important;
 }
 
-/* 3. Imagen nítida: respeta la altura total del afiche sin cortes */
+/* La imagen conserva su proporción natural y nunca se recorta */
 .tarjeta-ministerio img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
     object-fit: contain !important;
-    transition: transform 0.4s ease;
+    border-radius: inherit;
 }
 
-/* 4. Efecto de agrandado y elevación al pasar el ratón (Hover en PC) */
+/* Efecto de agrandado en PC al pasar el cursor */
 @media (hover: hover) {
     .tarjeta-ministerio:hover {
-        transform: translateY(-8px) scale(1.04);
-        box-shadow: 0 20px 30px -8px rgba(26, 54, 93, 0.22), 
-                    0 8px 12px -4px rgba(26, 54, 93, 0.12);
-        z-index: 5;
-    }
-
-    .tarjeta-ministerio:hover img {
-        transform: scale(1.02);
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 20px 35px -5px rgba(26, 54, 93, 0.22);
     }
 }
 
-/* 5. Efecto al tocar o presionar en Pantallas Táctiles / Celular (:active y :focus) */
-.tarjeta-ministerio:active,
-.tarjeta-ministerio:focus {
-    transform: scale(1.06) translateY(-4px) !important;
-    box-shadow: 0 16px 28px -6px rgba(26, 54, 93, 0.25) !important;
-    z-index: 10;
+/* Efecto de agrandado al presionar o tocar */
+.tarjeta-ministerio:active {
+    transform: scale(0.98);
 }
 
 /* ========================================================
-   TABLETS (992px hacia abajo): 3 Columnas
+   TABLETS (Hasta 992px)
    ======================================================== */
 @media (max-width: 992px) {
     .galeria-ministerios {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 18px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        max-width: 700px;
     }
 }
 
 /* ========================================================
-   MÓVILES (650px hacia abajo): 
-   1 Columna amplia con margen óptimo para que se lea todo
-   el texto, no se corte y no se vea diminuta
+   CELULAR (Hasta 650px)
+   Estilo de tarjeta individual amplia como tu captura
    ======================================================== */
 @media (max-width: 650px) {
     #Ministerios {
-        padding: 40px 15px;
+        padding: 35px 14px;
     }
 
     .galeria-ministerios {
-        grid-template-columns: 1fr !important; /* Muestra el afiche completo */
-        gap: 22px !important;
-        max-width: 390px; /* Tamaño exacto para ver los detalles con claridad */
-        padding: 0 !important;
+        grid-template-columns: 1fr !important;
+        gap: 26px !important;
+        max-width: 390px;
+        margin: 0 auto !important;
     }
 
     .tarjeta-ministerio {
-        border-radius: 16px;
+        border-radius: 18px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.11);
+    }
+
+    /* Al tocar la tarjeta en el teléfono, se agranda ligeramente */
+    .tarjeta-ministerio:active {
+        transform: scale(1.02) !important;
+        box-shadow: 0 14px 28px rgba(26, 54, 93, 0.2) !important;
     }
 }
 /* ==========================================
