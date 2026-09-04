@@ -284,53 +284,33 @@ nav a:hover {
     padding: 50px 30px;
 }
 
-#Ministerios h2 {
-    color: #1a365d;
-    font-size: 38px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    border-bottom: none;
-}
-
-/* 2. CUADRÍCULA MODERNA (GRID) */
-.cuadricula-ministerios {
-    list-style: none;             /* Elimina las viñetas/puntos de la lista */
-    padding: 0;
-    margin: 40px auto 0 auto;
-    max-width: 1100px;
-    display: grid;
-    /* Crea columnas automáticas de mínimo 240px que se adaptan solas */
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;                   /* Separación entre cada cuadro */
-}
-
-/* 1. SECCIÓN DE MINISTERIOS */
+/* ==========================================
+   SECCIÓN MINISTERIOS
+   ========================================== */
 #Ministerios {
     text-align: center;
     padding: 60px 20px;
 }
 
-/* 2. CUADRÍCULA ADAPTABLE */
-.galeria-ministerios {
-    display: grid;
-    /* Ajusta automáticamente 4 columnas en PC y las reduce solas en móvil */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
+#Ministerios h2 {
+    color: #1a365d;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    border-bottom: none;
 }
 
-/* ==========================================
-   6. SECCIÓN MINISTERIOS (GALERÍA ELEGANTE)
-   ========================================== */
+/* Cuadrícula adaptable */
 .galeria-ministerios {
     display: grid;
+    /* Crea columnas automáticas de mínimo 240px que se adaptan a la pantalla */
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
+/* Tarjeta individual */
 .tarjeta-ministerio {
     background: #ffffff;
     border-radius: 16px;
@@ -339,25 +319,35 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     border: 1px solid rgba(0, 0, 0, 0.04);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Imágenes uniformes y ajustadas */
 .tarjeta-ministerio img {
     width: 100%;
-    height: 100%;
+    height: 220px;            /* Altura uniforme para que todas queden alineadas */
     display: block;
-    object-fit: contain;
+    object-fit: cover;        /* Llena la tarjeta sin deformar la foto */
+    transition: transform 0.35s ease;
 }
 
+/* Efectos interactivos al pasar el cursor */
 .tarjeta-ministerio:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 35px rgba(26, 54, 93, 0.18);
+}
+
+.tarjeta-ministerio:hover img {
+    transform: scale(1.04);   /* Zoom suave en la imagen */
 }
 
 .tarjeta-ministerio:active {
     transform: scale(0.97);
 }
 
-/* Centrar únicamente la tarjeta solitaria de Librería */
+/* Si la última tarjeta queda sola en una fila en pantallas grandes, se centra */
 @media (min-width: 800px) {
     .tarjeta-ministerio:last-child {
         grid-column: 1 / -1;
