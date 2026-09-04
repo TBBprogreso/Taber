@@ -372,5 +372,41 @@
             }
         });
     </script>
+    
+<script>
+    function controlarEnVivo() {
+        const ahora = new Date();
+        const dia = ahora.getDay();     // 0 = Domingo, 1 = Lunes, 2 = Martes, 3 = Miércoles, 4 = Jueves, 5 = Viernes, 6 = Sábado
+        const hora = ahora.getHours();   // 0 a 23
+
+        let enVivoActivo = false;
+
+        // EJEMPLO DE HORARIOS (Ajusta con tus horas reales):
+        // 1. Domingo (dia === 0) de 9:00 AM a 12:00 PM (hora >= 9 && hora < 12)
+        if (dia === 0 && (hora >= 9 && hora < 12)) {
+            enVivoActivo = true;
+        }
+
+        // 2. Jueves o Miércoles de culto (por ejemplo, Miércoles de 6:00 PM a 8:00 PM)
+        if (dia === 3 && (hora >= 18 && hora < 20)) {
+            enVivoActivo = true;
+        }
+
+        // Mostrar u ocultar tanto el botón del menú como la sección
+        const seccionVivo = document.getElementById("seccion-en-vivo");
+        const enlaceNav = document.getElementById("enlace-nav-vivo");
+
+        if (enVivoActivo) {
+            if (seccionVivo) seccionVivo.style.display = "block";
+            if (enlaceNav) enlaceNav.style.display = "inline-flex";
+        } else {
+            if (seccionVivo) seccionVivo.style.display = "none";
+            if (enlaceNav) enlaceNav.style.display = "none";
+        }
+    }
+
+    // Ejecuta al cargar la página
+    controlarEnVivo();
+    </script>
 </body>
 </html>
