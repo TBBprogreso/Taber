@@ -95,7 +95,7 @@ nav a:hover {
     color: #fdf907;
 }
 
-/* Botón "EN VIVO" con punto animado en el navbar */
+/* Botón "EN VIVO" con punto animado en el navbar (oculto por defecto) */
 .btn-nav-vivo {
     background: rgba(239, 68, 68, 0.15) !important;
     border: 1px solid #ef4444 !important;
@@ -103,7 +103,7 @@ nav a:hover {
     border-radius: 20px !important;
     padding: 6px 14px !important;
     font-weight: 700 !important;
-    display: inline-flex !important;
+    display: none;
     align-items: center;
     gap: 8px;
     text-decoration: none;
@@ -181,7 +181,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   2. SECCIÓN EN VIVO / TRANSMISIONES
+   2. SECCIÓN EN VIVO
    ======================================================== */
 .seccion-vivo {
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
@@ -189,6 +189,7 @@ nav a:hover {
     padding: 60px 20px;
     text-align: center;
     box-sizing: border-box;
+    display: none;
 }
 
 .vivo-contenedor {
@@ -249,7 +250,6 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* Visor oficial adaptado para escritorio y móvil */
 .contenedor-fb-stream {
     display: flex;
     justify-content: center;
