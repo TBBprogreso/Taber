@@ -368,14 +368,14 @@
 
                 let enHorarioCulto = false;
 
-                // Miércoles: 6:15 PM a 8:45 PM
-                if (dia === 3 && horaDecimal >= 18.25 && horaDecimal <= 20.75) enHorarioCulto = true;
-                // Viernes: 6:15 PM a 8:45 PM
-                if (dia === 5 && horaDecimal >= 18.25 && horaDecimal <= 20.75) enHorarioCulto = true;
-                // Domingo Mañana: 8:45 AM a 11:30 AM
-                if (dia === 0 && horaDecimal >= 8.75 && horaDecimal <= 11.5) enHorarioCulto = true;
-                // Domingo Tarde: 4:45 PM a 7:30 PM
-                if (dia === 0 && horaDecimal >= 16.75 && horaDecimal <= 19.5) enHorarioCulto = true;
+                // Miércoles: 6:05 PM a 7:40 PM
+                if (dia === 3 && horaDecimal >= 18.05 && horaDecimal <= 19.40) enHorarioCulto = true;
+                // Viernes: 6:05 PM a 7:40 PM
+                if (dia === 5 && horaDecimal >= 18.05 && horaDecimal <= 19.40) enHorarioCulto = true;
+                // Domingo Mañana: 9:05 AM a 10:45 AM
+                if (dia === 0 && horaDecimal >= 9.05 && horaDecimal <= 10.45) enHorarioCulto = true;
+                // Domingo Tarde: 5:05 PM a 6:35 PM
+                if (dia === 0 && horaDecimal >= 17.05 && horaDecimal <= 18.35) enHorarioCulto = true;
 
                 const enlaceNav = document.getElementById("enlace-nav-vivo");
                 const badgeVivo = document.getElementById("badge-vivo");
