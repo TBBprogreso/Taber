@@ -20,18 +20,48 @@
             ☰
         </button>
 
-       <nav id="navbar">
-            <a href="#Inicio">INICIO</a>
-            <!-- Botón En Vivo (oculto por defecto) -->
-            <a href="#seccion-en-vivo" id="enlace-nav-vivo" class="btn-nav-vivo" style="display: none;">
-                <span class="punto-rojo-mini"></span> EN VIVO
+      <!-- En tu navbar: el botón siempre visible -->
+<nav id="navbar">
+    <a href="#Inicio">INICIO</a>
+    <a href="#seccion-en-vivo" class="btn-nav-vivo">
+        <span class="punto-rojo-mini"></span> EN VIVO
+    </a>
+    <a href="#Cultos">NUESTROS CULTOS</a>
+    <a href="#Ministerios">NUESTROS MINISTERIOS</a>
+    <a href="#Pastor">TESTIMONIO PASTOR</a>
+    <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
+    <a href="#Redes">NUESTRAS REDES SOCIALES</a>
+</nav>
+
+<!-- La sección siempre visible -->
+<section id="seccion-en-vivo" class="seccion-vivo">
+    <div class="vivo-contenedor">
+        <div class="vivo-badge">
+            <span class="punto-rojo"></span> CULTO EN DIRECTO
+        </div>
+        <h2>Nuestras Transmisiones</h2>
+        <p>Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.</p>
+
+        <div class="video-responsive">
+            <iframe 
+                src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/tbbprogresodeadoracion/live/&show_text=0&width=560" 
+                width="560" 
+                height="315" 
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+        </div>
+
+        <div class="vivo-acciones">
+            <a href="https://www.facebook.com/tbbprogresodeadoracion/live/" target="_blank" rel="noopener noreferrer" class="btn-facebook">
+                Ver en Facebook Live
             </a>
-            <a href="#Cultos">NUESTROS CULTOS</a>
-            <a href="#Ministerios">NUESTROS MINISTERIOS</a>
-            <a href="#Pastor">TESTIMONIO PASTOR</a>
-            <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
-            <a href="#Redes">NUESTRAS REDES SOCIALES</a>
-        </nav>
+        </div>
+    </div>
+</section>
     </header>
    <!-- SECCIÓN EN VIVO (Controlada por horario) -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none;">
