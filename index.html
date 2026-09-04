@@ -29,8 +29,8 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <!-- Botón condicional: Totalmente oculto por defecto -->
-            <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none;">
+            <!-- Botón condicional: Oculto por defecto -->
+            <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none !important;">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
             <a href="#Cultos">NUESTROS CULTOS</a>
@@ -41,8 +41,8 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO: Totalmente oculta por defecto (display: none) -->
-    <section id="seccion-en-vivo" class="seccion-vivo" style="display: none;">
+    <!-- SECCIÓN EN VIVO: Oculta por defecto -->
+    <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
                 <span class="punto-rojo"></span> TRANSMISIÓN EN DIRECTO
@@ -53,7 +53,6 @@
                 Estamos transmitiendo en directo. Acompáñanos y sé parte de nuestro servicio.
             </p>
 
-            <!-- Contenedor adaptativo del reproductor de Facebook -->
             <div class="contenedor-fb-stream">
                 <div class="fb-page" 
                      data-href="https://www.facebook.com/taberelprogreso" 
@@ -331,10 +330,9 @@
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
-    <!-- Scripts de control -->
+    <!-- Scripts de interactividad y horarios -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Control del Menú Móvil (Hamburguesa)
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
 
@@ -360,10 +358,10 @@
                 });
             }
 
-            // Detección y activación del culto en vivo
+            // Control de activación por horario
             function controlarCultoEnVivo() {
                 const ahora = new Date();
-                const dia = ahora.getDay(); // 0 = Domingo, 3 = Miércoles, 5 = Viernes
+                const dia = ahora.getDay(); // 0 = Dom, 3 = Mié, 5 = Vie
                 const horaDecimal = ahora.getHours() + (ahora.getMinutes() / 60);
 
                 let enHorarioCulto = false;
@@ -384,20 +382,15 @@
                 const enlaceNav = document.getElementById("enlace-nav-vivo");
 
                 if (enHorarioCulto) {
-                    // MUESTRA la sección y el botón si es hora de culto
-                    if (seccionVivo) seccionVivo.style.display = "block";
-                    if (enlaceNav) enlaceNav.style.display = "inline-flex";
+                    if (seccionVivo) seccionVivo.style.setProperty('display', 'block', 'important');
+                    if (enlaceNav) enlaceNav.style.setProperty('display', 'inline-flex', 'important');
                 } else {
-                    // OCULTA por completo todo fuera de hora
-                    if (seccionVivo) seccionVivo.style.display = "none";
-                    if (enlaceNav) enlaceNav.style.display = "none";
+                    if (seccionVivo) seccionVivo.style.setProperty('display', 'none', 'important');
+                    if (enlaceNav) enlaceNav.style.setProperty('display', 'none', 'important');
                 }
             }
 
-            // Ejecuta inmediatamente
             controlarCultoEnVivo();
-            
-            // Revisa cada minuto de manera silenciosa
             setInterval(controlarCultoEnVivo, 60000);
         });
     </script>
