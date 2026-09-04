@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- SDK oficial de Facebook (indispensable para reproducir contenido público sin credenciales) -->
+    <!-- SDK oficial de Facebook -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" 
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
@@ -29,7 +29,7 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <!-- Botón condicional que se enciende en hora de culto -->
+            <!-- Botón condicional: Totalmente oculto por defecto -->
             <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none;">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
@@ -41,19 +41,19 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN DE TRANSMISIONES (Robusta: en vivo si están transmitiendo, o últimos videos si no) -->
-    <section id="seccion-en-vivo" class="seccion-vivo">
+    <!-- SECCIÓN EN VIVO: Totalmente oculta por defecto (display: none) -->
+    <section id="seccion-en-vivo" class="seccion-vivo" style="display: none;">
         <div class="vivo-contenedor">
-            <div class="vivo-badge" id="badge-vivo" style="display: none;">
-                <span class="punto-rojo"></span> HORARIO DE SERVICIO ACTIVO
+            <div class="vivo-badge" id="badge-vivo">
+                <span class="punto-rojo"></span> TRANSMISIÓN EN DIRECTO
             </div>
             
-            <h2 id="titulo-vivo">Nuestras Transmisiones</h2>
+            <h2 id="titulo-vivo">Culto en Vivo</h2>
             <p id="subtitulo-vivo">
-                Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.
+                Estamos transmitiendo en directo. Acompáñanos y sé parte de nuestro servicio.
             </p>
 
-            <!-- Contenedor adaptativo para el reproductor de Facebook -->
+            <!-- Contenedor adaptativo del reproductor de Facebook -->
             <div class="contenedor-fb-stream">
                 <div class="fb-page" 
                      data-href="https://www.facebook.com/taberelprogreso" 
@@ -331,10 +331,10 @@
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
-    <!-- Scripts de interactividad y horario de cultos -->
+    <!-- Scripts de control -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Control del Menú Móvil
+            // Control del Menú Móvil (Hamburguesa)
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
 
@@ -360,43 +360,45 @@
                 });
             }
 
-            // Detección de Cultos en Directo
-            function actualizarEstadoCulto() {
+            // Detección y activación del culto en vivo
+            function controlarCultoEnVivo() {
                 const ahora = new Date();
                 const dia = ahora.getDay(); // 0 = Domingo, 3 = Miércoles, 5 = Viernes
                 const horaDecimal = ahora.getHours() + (ahora.getMinutes() / 60);
 
                 let enHorarioCulto = false;
 
-                // Miércoles: 6:05 PM a 7:40 PM
-                if (dia === 3 && horaDecimal >= 18.05 && horaDecimal <= 19.40) enHorarioCulto = true;
-                // Viernes: 6:05 PM a 7:40 PM
-                if (dia === 5 && horaDecimal >= 18.05 && horaDecimal <= 19.40) enHorarioCulto = true;
-                // Domingo Mañana: 9:05 AM a 10:45 AM
-                if (dia === 0 && horaDecimal >= 9.05 && horaDecimal <= 10.45) enHorarioCulto = true;
-                // Domingo Tarde: 5:05 PM a 6:35 PM
-                if (dia === 0 && horaDecimal >= 17.05 && horaDecimal <= 18.35) enHorarioCulto = true;
+                // 1. Miércoles: 6:30 PM a 7:35 PM (18.50 a 19.58)
+                if (dia === 3 && horaDecimal >= 18.50 && horaDecimal <= 19.58) enHorarioCulto = true;
+                
+                // 2. Viernes: 6:30 PM a 7:35 PM (18.50 a 19.58)
+                if (dia === 5 && horaDecimal >= 18.50 && horaDecimal <= 19.58) enHorarioCulto = true;
+                
+                // 3. Domingo Mañana: 9:05 AM a 10:35 AM (9.08 a 10.58)
+                if (dia === 0 && horaDecimal >= 9.08 && horaDecimal <= 10.58) enHorarioCulto = true;
+                
+                // 4. Domingo Tarde: 5:00 PM a 6:35 PM (17.00 a 18.58)
+                if (dia === 0 && horaDecimal >= 17.00 && horaDecimal <= 18.58) enHorarioCulto = true;
 
+                const seccionVivo = document.getElementById("seccion-en-vivo");
                 const enlaceNav = document.getElementById("enlace-nav-vivo");
-                const badgeVivo = document.getElementById("badge-vivo");
-                const tituloVivo = document.getElementById("titulo-vivo");
-                const subtituloVivo = document.getElementById("subtitulo-vivo");
 
                 if (enHorarioCulto) {
+                    // MUESTRA la sección y el botón si es hora de culto
+                    if (seccionVivo) seccionVivo.style.display = "block";
                     if (enlaceNav) enlaceNav.style.display = "inline-flex";
-                    if (badgeVivo) badgeVivo.style.display = "inline-flex";
-                    if (tituloVivo) tituloVivo.textContent = "Culto en Directo";
-                    if (subtituloVivo) subtituloVivo.textContent = "Estamos transmitiendo en vivo. Acompáñanos y sé parte del servicio.";
                 } else {
+                    // OCULTA por completo todo fuera de hora
+                    if (seccionVivo) seccionVivo.style.display = "none";
                     if (enlaceNav) enlaceNav.style.display = "none";
-                    if (badgeVivo) badgeVivo.style.display = "none";
-                    if (tituloVivo) tituloVivo.textContent = "Nuestras Transmisiones";
-                    if (subtituloVivo) subtituloVivo.textContent = "Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.";
                 }
             }
 
-            actualizarEstadoCulto();
-            setInterval(actualizarEstadoCulto, 60000); // Evalúa cada minuto
+            // Ejecuta inmediatamente
+            controlarCultoEnVivo();
+            
+            // Revisa cada minuto de manera silenciosa
+            setInterval(controlarCultoEnVivo, 60000);
         });
     </script>
 </body>
