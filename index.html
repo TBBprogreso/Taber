@@ -8,12 +8,6 @@
 </head>
 <body>
 
-    <!-- SDK oficial de Facebook -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
-    </script>
-
     <header> 
         <div class="logo-contenedor">
             <img src="img/logo.png" alt="Logotipo TBB">
@@ -41,7 +35,7 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO: Oculta por defecto -->
+    <!-- SECCIÓN EN VIVO: Reproductor de video limpio 16:9 (sin muros ni botones externos) -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
@@ -50,26 +44,22 @@
             
             <h2 id="titulo-vivo">Culto en Vivo</h2>
             <p id="subtitulo-vivo">
-                Estamos transmitiendo en directo. Acompáñanos y sé parte de nuestro servicio.
+                Acompáñanos y sé parte de nuestro servicio en directo.
             </p>
 
-            <div class="contenedor-fb-stream">
-                <div class="fb-page" 
-                     data-href="https://www.facebook.com/taberelprogreso" 
-                     data-tabs="timeline" 
-                     data-width="500" 
-                     data-height="520" 
-                     data-small-header="true" 
-                     data-adapt-container-width="true" 
-                     data-hide-cover="true" 
-                     data-show-facepile="false">
-                </div>
-            </div>
-
-            <div class="vivo-acciones">
-                <a href="https://www.facebook.com/taberelprogreso/live" target="_blank" rel="noopener noreferrer" class="btn-facebook">
-                    Ver directo en Facebook Live →
-                </a>
+            <!-- Marco de video cinematográfico limpio -->
+            <div class="video-responsive">
+                <iframe 
+                    id="iframe-vivo"
+                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaberelprogreso%2Flive%2F&show_text=0&width=560" 
+                    width="560" 
+                    height="315" 
+                    style="border:none;overflow:hidden" 
+                    scrolling="no" 
+                    frameborder="0" 
+                    allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
             </div>
         </div>
     </section>
