@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- SDK de Facebook (necesario para incrustar transmisiones y plugins sin errores) -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
+    </script>
+
     <header> 
         <div class="logo-contenedor">
             <img src="img/logo.png" alt="LogotipoTBB">
@@ -20,62 +27,33 @@
             ☰
         </button>
 
-      <!-- En tu navbar: el botón siempre visible -->
-<nav id="navbar">
-    <a href="#Inicio">INICIO</a>
-    <a href="#seccion-en-vivo" class="btn-nav-vivo">
-        <span class="punto-rojo-mini"></span> EN VIVO
-    </a>
-    <a href="#Cultos">NUESTROS CULTOS</a>
-    <a href="#Ministerios">NUESTROS MINISTERIOS</a>
-    <a href="#Pastor">TESTIMONIO PASTOR</a>
-    <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
-    <a href="#Redes">NUESTRAS REDES SOCIALES</a>
-</nav>
-
-<!-- La sección siempre visible -->
-<section id="seccion-en-vivo" class="seccion-vivo">
-    <div class="vivo-contenedor">
-        <div class="vivo-badge">
-            <span class="punto-rojo"></span> CULTO EN DIRECTO
-        </div>
-        <h2>Nuestras Transmisiones</h2>
-        <p>Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.</p>
-
-        <div class="video-responsive">
-            <iframe 
-                src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/tbbprogresodeadoracion/live/&show_text=0&width=560" 
-                width="560" 
-                height="315" 
-                style="border:none;overflow:hidden" 
-                scrolling="no" 
-                frameborder="0" 
-                allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-            </iframe>
-        </div>
-
-        <div class="vivo-acciones">
-            <a href="https://www.facebook.com/tbbprogresodeadoracion/live/" target="_blank" rel="noopener noreferrer" class="btn-facebook">
-                Ver en Facebook Live
+        <nav id="navbar">
+            <a href="#Inicio">INICIO</a>
+            <!-- Botón condicional de EN VIVO (con id="enlace-nav-vivo") -->
+            <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none;">
+                <span class="punto-rojo-mini"></span> EN VIVO
             </a>
-        </div>
-    </div>
-</section>
+            <a href="#Cultos">NUESTROS CULTOS</a>
+            <a href="#Ministerios">NUESTROS MINISTERIOS</a>
+            <a href="#Pastor">TESTIMONIO PASTOR</a>
+            <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
+            <a href="#Redes">NUESTRAS REDES SOCIALES</a>
+        </nav>
     </header>
-   <!-- SECCIÓN EN VIVO (Controlada por horario) -->
+
+    <!-- SECCIÓN EN VIVO ÚNICA (Controlada automáticamente por horario) -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none;">
         <div class="vivo-contenedor">
             <div class="vivo-badge">
-                <span class="punto-rojo"></span> TRANSMISIÓN EN DIRECTO
+                <span class="punto-rojo"></span> CULTO EN DIRECTO
             </div>
             <h2>Culto en Vivo</h2>
             <p>Acompáñanos y sé parte de nuestro servicio en directo.</p>
 
-            <!-- Contenedor del video de Facebook -->
             <div class="video-responsive">
                 <iframe 
-                    src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/tbbprogresodeadoracion/live/&show_text=0&width=560" 
+                    id="iframe-vivo"
+                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaberelprogreso%2Flive%2F&show_text=0&width=560" 
                     width="560" 
                     height="315" 
                     style="border:none;overflow:hidden" 
@@ -87,7 +65,7 @@
             </div>
 
             <div class="vivo-acciones">
-                <a href="https://www.facebook.com/tbbprogresodeadoracion/live/" target="_blank" rel="noopener noreferrer" class="btn-facebook">
+                <a href="https://www.facebook.com/taberelprogreso/live" target="_blank" rel="noopener noreferrer" class="btn-facebook">
                     Ver directo en Facebook
                 </a>
             </div>
@@ -128,46 +106,24 @@
             </div>
         </section>
 
-       <section id="Ministerios">
-    <h2>Nuestros Ministerios</h2>
-
-    <div class="galeria-ministerios">
-        <div class="tarjeta-ministerio">
-            <img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/salmo41.jpg" alt="Ministerio Salmo 41">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/cafeteria.jpg" alt="Ministerio Cafetería">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/sonido.jpg" alt="Ministerio Sonido">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/taberkid.jpg" alt="Ministerio Taber Kid">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/acomodacion.jpg" alt="Ministerio Acomodación">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/evangelismo.jpg" alt="Ministerio Evangelismo">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/multimedia.jpg" alt="Ministerio Multimedia">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/libreria.jpg" alt="Ministerio Librería">
-        </div>
-        <div class="tarjeta-ministerio">
-            <img src="img/mujeresobreras.jpg" alt="Ministerio Mujeres Obreras">
-        </div>
-    </div>
-</section>
+        <section id="Ministerios">
+            <h2>Nuestros Ministerios</h2>
+            <div class="galeria-ministerios">
+                <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate"></div>
+                <div class="tarjeta-ministerio"><img src="img/salmo41.jpg" alt="Ministerio Salmo 41"></div>
+                <div class="tarjeta-ministerio"><img src="img/cafeteria.jpg" alt="Ministerio Cafetería"></div>
+                <div class="tarjeta-ministerio"><img src="img/sonido.jpg" alt="Ministerio Sonido"></div>
+                <div class="tarjeta-ministerio"><img src="img/taberkid.jpg" alt="Ministerio Taber Kid"></div>
+                <div class="tarjeta-ministerio"><img src="img/acomodacion.jpg" alt="Ministerio Acomodación"></div>
+                <div class="tarjeta-ministerio"><img src="img/evangelismo.jpg" alt="Ministerio Evangelismo"></div>
+                <div class="tarjeta-ministerio"><img src="img/multimedia.jpg" alt="Ministerio Multimedia"></div>
+                <div class="tarjeta-ministerio"><img src="img/libreria.jpg" alt="Ministerio Librería"></div>
+                <div class="tarjeta-ministerio"><img src="img/mujeresobreras.jpg" alt="Ministerio Mujeres Obreras"></div>
+            </div>
+        </section>
 
         <section id="Pastor">
             <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
-
             <div class="tarjeta-pastor-editorial">
                 <aside class="pastor-perfil">
                     <div class="marco-foto-pastor">
@@ -270,7 +226,7 @@
                 <div class="reproductor-spotify">
                     <iframe 
                         style="border-radius:12px" 
-                        src="https://open.spotify.com//embed/episode/5HPxgShYrmrMPXvHA1jX4e" 
+                        src="https://open.spotify.com/embed/episode/5HPxgShYrmrMPXvHA1jX4e" 
                         width="100%" 
                         height="152" 
                         frameBorder="0" 
@@ -372,8 +328,10 @@
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
+    <!-- Scripts de navegación y control de horarios -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Control del Menú Hamburguesa
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
 
@@ -384,7 +342,6 @@
                     menuToggle.setAttribute('aria-expanded', isOpen);
                 });
 
-                // Cierra el menú al tocar cualquier enlace
                 navbar.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         navbar.classList.remove('active');
@@ -392,7 +349,6 @@
                     });
                 });
 
-                // Cierra el menú si se toca fuera de él
                 document.addEventListener('click', (e) => {
                     if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
                         navbar.classList.remove('active');
@@ -400,43 +356,51 @@
                     }
                 });
             }
+
+            // Control de En Vivo por Horario Real
+            function controlarEnVivo() {
+                const ahora = new Date();
+                const dia = ahora.getDay();           // 0 = Dom, 3 = Mié, 5 = Vie
+                const horaTotal = ahora.getHours() + ahora.getMinutes() / 60; // Formato decimal (ej. 18.5 = 6:30 PM)
+
+                let enVivoActivo = false;
+
+                // 1. Miércoles: 6:15 PM a 8:30 PM (18.25 a 20.5)
+                if (dia === 3 && horaTotal >= 18.25 && horaTotal <= 20.5) {
+                    enVivoActivo = true;
+                }
+
+                // 2. Viernes: 6:15 PM a 8:30 PM (18.25 a 20.5)
+                if (dia === 5 && horaTotal >= 18.25 && horaTotal <= 20.5) {
+                    enVivoActivo = true;
+                }
+
+                // 3. Domingo Culto Mañana: 8:45 AM a 12:00 PM (8.75 a 12.0)
+                if (dia === 0 && horaTotal >= 8.75 && horaTotal <= 12.0) {
+                    enVivoActivo = true;
+                }
+
+                // 4. Domingo Culto Tarde: 4:45 PM a 7:30 PM (16.75 a 19.5)
+                if (dia === 0 && horaTotal >= 16.75 && horaTotal <= 19.5) {
+                    enVivoActivo = true;
+                }
+
+                const seccionVivo = document.getElementById("seccion-en-vivo");
+                const enlaceNav = document.getElementById("enlace-nav-vivo");
+
+                if (enVivoActivo) {
+                    if (seccionVivo) seccionVivo.style.display = "block";
+                    if (enlaceNav) enlaceNav.style.display = "inline-flex";
+                } else {
+                    if (seccionVivo) seccionVivo.style.display = "none";
+                    if (enlaceNav) enlaceNav.style.display = "none";
+                }
+            }
+
+            controlarEnVivo();
+            // Revisa cada minuto automáticamente sin recargar la página
+            setInterval(controlarEnVivo, 60000);
         });
-    </script>
-    
-<script>
-    function controlarEnVivo() {
-        const ahora = new Date();
-        const dia = ahora.getDay();     // 0 = Domingo, 1 = Lunes, 2 = Martes, 3 = Miércoles, 4 = Jueves, 5 = Viernes, 6 = Sábado
-        const hora = ahora.getHours();   // 0 a 23
-
-        let enVivoActivo = false;
-
-        // EJEMPLO DE HORARIOS (Ajusta con tus horas reales):
-        // 1. Domingo (dia === 0) de 9:00 AM a 12:00 PM (hora >= 9 && hora < 12)
-        if (dia === 0 && (hora >= 9 && hora < 12)) {
-            enVivoActivo = true;
-        }
-
-        // 2. Jueves o Miércoles de culto (por ejemplo, Miércoles de 6:00 PM a 8:00 PM)
-        if (dia === 3 && (hora >= 18 && hora < 20)) {
-            enVivoActivo = true;
-        }
-
-        // Mostrar u ocultar tanto el botón del menú como la sección
-        const seccionVivo = document.getElementById("seccion-en-vivo");
-        const enlaceNav = document.getElementById("enlace-nav-vivo");
-
-        if (enVivoActivo) {
-            if (seccionVivo) seccionVivo.style.display = "block";
-            if (enlaceNav) enlaceNav.style.display = "inline-flex";
-        } else {
-            if (seccionVivo) seccionVivo.style.display = "none";
-            if (enlaceNav) enlaceNav.style.display = "none";
-        }
-    }
-
-    // Ejecuta al cargar la página
-    controlarEnVivo();
     </script>
 </body>
 </html>
