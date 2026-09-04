@@ -95,7 +95,7 @@ nav a:hover {
     color: #fdf907;
 }
 
-/* Botón "EN VIVO" con punto animado en el navbar (oculto por defecto) */
+/* Botón "EN VIVO" con punto animado en el navbar */
 .btn-nav-vivo {
     background: rgba(239, 68, 68, 0.15) !important;
     border: 1px solid #ef4444 !important;
@@ -181,7 +181,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   2. SECCIÓN EN VIVO (REPRODUCTOR 16:9 LIMPIO)
+   2. SECCIÓN EN VIVO (REPRODUCTOR 16:9 CON CAPA DE LOGO)
    ======================================================== */
 .seccion-vivo {
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
@@ -250,18 +250,53 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* REPRODUCTOR 16:9 RESPONSIVE (Solo video, sin marcos) */
+/* MARCO RESPONSIVE 16:9 */
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%; /* Proporción panorámica 16:9 */
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
-    background: #000000;
+    background: #0a0f1d;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Capa de fondo con el logotipo para evitar pantallas rotas */
+.fondo-espera-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #090d16 100%);
+    z-index: 1;
+}
+
+.fondo-espera-logo img {
+    width: 75px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+    margin-bottom: 14px;
+    animation: flotarSuave 3s ease-in-out infinite alternate;
+}
+
+.fondo-espera-logo span {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+@keyframes flotarSuave {
+    from { transform: translateY(0); }
+    to { transform: translateY(-6px); }
+}
+
+/* El iframe se ubica por encima de la capa de fondo */
 .video-responsive iframe {
     position: absolute;
     top: 0;
@@ -269,6 +304,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     border: 0;
+    z-index: 2;
 }
 
 @media (max-width: 600px) {
@@ -278,6 +314,14 @@ nav a:hover {
 
     .video-responsive {
         border-radius: 12px;
+    }
+
+    .fondo-espera-logo img {
+        width: 60px;
+    }
+
+    .fondo-espera-logo span {
+        font-size: 0.85rem;
     }
 }
 
