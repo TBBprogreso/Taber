@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- SDK de Facebook (necesario para incrustar transmisiones y plugins sin errores) -->
+    <!-- SDK oficial de Facebook (indispensable para reproducir contenido público sin credenciales) -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" 
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
@@ -16,7 +16,7 @@
 
     <header> 
         <div class="logo-contenedor">
-            <img src="img/logo.png" alt="LogotipoTBB">
+            <img src="img/logo.png" alt="Logotipo TBB">
             <div class="texto-iglesia">
                 <h1>TBB Progreso de Adoracion</h1>
                 <p>13 años para la gloria de Dios</p>
@@ -29,7 +29,7 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <!-- Botón condicional de EN VIVO (con id="enlace-nav-vivo") -->
+            <!-- Botón condicional que se enciende en hora de culto -->
             <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none;">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
@@ -41,32 +41,35 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO ÚNICA (Controlada automáticamente por horario) -->
-    <section id="seccion-en-vivo" class="seccion-vivo" style="display: none;">
+    <!-- SECCIÓN DE TRANSMISIONES (Robusta: en vivo si están transmitiendo, o últimos videos si no) -->
+    <section id="seccion-en-vivo" class="seccion-vivo">
         <div class="vivo-contenedor">
-            <div class="vivo-badge">
-                <span class="punto-rojo"></span> CULTO EN DIRECTO
+            <div class="vivo-badge" id="badge-vivo" style="display: none;">
+                <span class="punto-rojo"></span> HORARIO DE SERVICIO ACTIVO
             </div>
-            <h2>Culto en Vivo</h2>
-            <p>Acompáñanos y sé parte de nuestro servicio en directo.</p>
+            
+            <h2 id="titulo-vivo">Nuestras Transmisiones</h2>
+            <p id="subtitulo-vivo">
+                Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.
+            </p>
 
-            <div class="video-responsive">
-                <iframe 
-                    id="iframe-vivo"
-                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaberelprogreso%2Flive%2F&show_text=0&width=560" 
-                    width="560" 
-                    height="315" 
-                    style="border:none;overflow:hidden" 
-                    scrolling="no" 
-                    frameborder="0" 
-                    allowfullscreen="true" 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
+            <!-- Contenedor adaptativo para el reproductor de Facebook -->
+            <div class="contenedor-fb-stream">
+                <div class="fb-page" 
+                     data-href="https://www.facebook.com/taberelprogreso" 
+                     data-tabs="timeline" 
+                     data-width="500" 
+                     data-height="520" 
+                     data-small-header="true" 
+                     data-adapt-container-width="true" 
+                     data-hide-cover="true" 
+                     data-show-facepile="false">
+                </div>
             </div>
 
             <div class="vivo-acciones">
                 <a href="https://www.facebook.com/taberelprogreso/live" target="_blank" rel="noopener noreferrer" class="btn-facebook">
-                    Ver directo en Facebook
+                    Ver directo en Facebook Live →
                 </a>
             </div>
         </div>
@@ -328,10 +331,10 @@
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
-    <!-- Scripts de navegación y control de horarios -->
+    <!-- Scripts de interactividad y horario de cultos -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Control del Menú Hamburguesa
+            // Control del Menú Móvil
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
 
@@ -357,49 +360,43 @@
                 });
             }
 
-            // Control de En Vivo por Horario Real
-            function controlarEnVivo() {
+            // Detección de Cultos en Directo
+            function actualizarEstadoCulto() {
                 const ahora = new Date();
-                const dia = ahora.getDay();           // 0 = Dom, 3 = Mié, 5 = Vie
-                const horaTotal = ahora.getHours() + ahora.getMinutes() / 60; // Formato decimal (ej. 18.5 = 6:30 PM)
+                const dia = ahora.getDay(); // 0 = Domingo, 3 = Miércoles, 5 = Viernes
+                const horaDecimal = ahora.getHours() + (ahora.getMinutes() / 60);
 
-                let enVivoActivo = false;
+                let enHorarioCulto = false;
 
-                // 1. Miércoles: 6:15 PM a 8:30 PM (18.25 a 20.5)
-                if (dia === 3 && horaTotal >= 18.25 && horaTotal <= 20.5) {
-                    enVivoActivo = true;
-                }
+                // Miércoles: 6:15 PM a 8:45 PM
+                if (dia === 3 && horaDecimal >= 18.25 && horaDecimal <= 20.75) enHorarioCulto = true;
+                // Viernes: 6:15 PM a 8:45 PM
+                if (dia === 5 && horaDecimal >= 18.25 && horaDecimal <= 20.75) enHorarioCulto = true;
+                // Domingo Mañana: 8:45 AM a 11:30 AM
+                if (dia === 0 && horaDecimal >= 8.75 && horaDecimal <= 11.5) enHorarioCulto = true;
+                // Domingo Tarde: 4:45 PM a 7:30 PM
+                if (dia === 0 && horaDecimal >= 16.75 && horaDecimal <= 19.5) enHorarioCulto = true;
 
-                // 2. Viernes: 6:15 PM a 8:30 PM (18.25 a 20.5)
-                if (dia === 5 && horaTotal >= 18.25 && horaTotal <= 20.5) {
-                    enVivoActivo = true;
-                }
-
-                // 3. Domingo Culto Mañana: 8:45 AM a 12:00 PM (8.75 a 12.0)
-                if (dia === 0 && horaTotal >= 8.75 && horaTotal <= 12.0) {
-                    enVivoActivo = true;
-                }
-
-                // 4. Domingo Culto Tarde: 4:45 PM a 7:30 PM (16.75 a 19.5)
-                if (dia === 0 && horaTotal >= 16.75 && horaTotal <= 19.5) {
-                    enVivoActivo = true;
-                }
-
-                const seccionVivo = document.getElementById("seccion-en-vivo");
                 const enlaceNav = document.getElementById("enlace-nav-vivo");
+                const badgeVivo = document.getElementById("badge-vivo");
+                const tituloVivo = document.getElementById("titulo-vivo");
+                const subtituloVivo = document.getElementById("subtitulo-vivo");
 
-                if (enVivoActivo) {
-                    if (seccionVivo) seccionVivo.style.display = "block";
+                if (enHorarioCulto) {
                     if (enlaceNav) enlaceNav.style.display = "inline-flex";
+                    if (badgeVivo) badgeVivo.style.display = "inline-flex";
+                    if (tituloVivo) tituloVivo.textContent = "Culto en Directo";
+                    if (subtituloVivo) subtituloVivo.textContent = "Estamos transmitiendo en vivo. Acompáñanos y sé parte del servicio.";
                 } else {
-                    if (seccionVivo) seccionVivo.style.display = "none";
                     if (enlaceNav) enlaceNav.style.display = "none";
+                    if (badgeVivo) badgeVivo.style.display = "none";
+                    if (tituloVivo) tituloVivo.textContent = "Nuestras Transmisiones";
+                    if (subtituloVivo) subtituloVivo.textContent = "Acompáñanos en directo cuando comience el servicio o revive nuestras reuniones anteriores.";
                 }
             }
 
-            controlarEnVivo();
-            // Revisa cada minuto automáticamente sin recargar la página
-            setInterval(controlarEnVivo, 60000);
+            actualizarEstadoCulto();
+            setInterval(actualizarEstadoCulto, 60000); // Evalúa cada minuto
         });
     </script>
 </body>
