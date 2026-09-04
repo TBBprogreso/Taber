@@ -1313,48 +1313,87 @@ nav a:hover {
 }
 
 /* ========================================================
-   SECCIÓN DE TRANSMISIÓN EN VIVO
+   BOTÓN "EN VIVO" EN LA BARRA DE NAVEGACIÓN (NAVBAR)
+   ======================================================== */
+.btn-nav-vivo {
+    background: rgba(239, 68, 68, 0.12) !important;
+    border: 1px solid #ef4444 !important;
+    color: #ef4444 !important;
+    border-radius: 20px !important;
+    padding: 6px 14px !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease !important;
+}
+
+.btn-nav-vivo:hover {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+}
+
+/* Punto rojo parpadeante en el menú */
+.punto-rojo-mini {
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    animation: pulsarAlerta 1.4s infinite;
+}
+
+.btn-nav-vivo:hover .punto-rojo-mini {
+    background-color: #ffffff;
+}
+
+/* ========================================================
+   SECCIÓN EN VIVO (CONTENEDOR OSCURO Y ELEGANTE)
    ======================================================== */
 .seccion-vivo {
-    background: linear-gradient(180deg, #0b1329 0%, #1a2744 100%);
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     color: #ffffff;
-    padding: 55px 20px;
+    padding: 60px 20px;
     text-align: center;
     box-sizing: border-box;
 }
 
 .vivo-contenedor {
-    max-width: 820px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
+/* Insignia arriba del título: "CULTO EN DIRECTO" */
 .vivo-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(239, 68, 68, 0.18);
     border: 1px solid #ef4444;
     color: #fca5a5;
-    padding: 6px 16px;
+    padding: 6px 18px;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
+/* Punto rojo parpadeante principal */
 .punto-rojo {
     width: 10px;
     height: 10px;
     background-color: #ef4444;
     border-radius: 50%;
-    animation: animPulsar 1.4s infinite;
+    animation: pulsarAlerta 1.4s infinite;
 }
 
-@keyframes animPulsar {
+/* Animación de pulso */
+@keyframes pulsarAlerta {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
     }
     70% {
         transform: scale(1);
@@ -1368,27 +1407,29 @@ nav a:hover {
 
 .seccion-vivo h2 {
     color: #ffffff !important;
-    font-size: clamp(24px, 4vw, 34px);
-    margin-bottom: 8px;
+    font-size: clamp(26px, 4vw, 36px);
     font-weight: 800;
+    margin-bottom: 10px;
+    border: none !important;
 }
 
 .seccion-vivo p {
     color: #cbd5e1;
-    margin-bottom: 24px;
-    font-size: 1rem;
+    margin-bottom: 30px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.5;
 }
 
-/* Reproductor 16:9 adaptable a celulares */
+/* REPRODUCTOR 16:9 RESPONSIVE (Se adapta perfecto a PC y Móvil) */
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* Relación de aspecto panorámica 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
-    background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .video-responsive iframe {
@@ -1397,26 +1438,49 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
 }
 
+/* BOTÓN DE ACCESO DIRECTO A FACEBOOK */
 .vivo-acciones {
     margin-top: 25px;
 }
 
 .btn-facebook {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background-color: #1877f2;
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 12px 26px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    box-shadow: 0 6px 16px rgba(24, 119, 242, 0.35);
-    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 6px 18px rgba(24, 119, 242, 0.35);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-facebook:hover {
     background-color: #1464cc;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(24, 119, 242, 0.45);
+}
+
+/* ========================================================
+   ADAPTACIÓN PARA CELULARES
+   ======================================================== */
+@media (max-width: 600px) {
+    .seccion-vivo {
+        padding: 45px 15px;
+    }
+
+    .video-responsive {
+        border-radius: 12px;
+    }
+
+    .btn-facebook {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }
