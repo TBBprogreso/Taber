@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- SDK oficial de Facebook -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" 
         src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
@@ -40,7 +39,6 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO: Se activa solo cuando activas el live desde admin.html -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
@@ -53,8 +51,7 @@
             </p>
 
             <div class="marco-reproductor-vivo" id="contenedor-reproductor">
-                <!-- El reproductor se inyecta dinámicamente -->
-            </div>
+                </div>
         </div>
     </section>
 
@@ -314,38 +311,6 @@
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
-    <!-- Scripts de interactividad y sincronización con el panel -->
-    <script>
-        // PEGA AQUÍ LA URL DE TU IMPLEMENTACIÓN WEB DE GOOGLE APPS SCRIPT
-        const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const navbar = document.getElementById('navbar');
-
-            if (menuToggle && navbar) {
-                menuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isOpen = navbar.classList.toggle('active');
-                    menuToggle.setAttribute('aria-expanded', isOpen);
-                });
-
-                navbar.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navbar.classList.remove('active');
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
-                        navbar.classList.remove('active');
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-
-          <!-- Script de interactividad y sincronización garantizada con iframe -->
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
 
@@ -377,22 +342,32 @@
 
             async function sincronizarEnVivo() {
                 try {
-                    const respuesta = await fetch(`${API_URL}?t=${Date.now()}`);
-                    const datos = await respuesta.json();
-                    let urlVideo = datos.url ? datos.url.trim() : "";
+                    const respuesta = await fetch(`${API_URL}?t=${Date.now()}`, {
+                        method: "GET",
+                        redirect: "follow"
+                    });
+                    
+                    const texto = await respuesta.text();
+                    let datos;
+                    try {
+                        datos = JSON.parse(texto);
+                    } catch (errJson) {
+                        return;
+                    }
+
+                    let urlVideo = datos.url ? String(datos.url).trim() : "";
 
                     const seccionVivo = document.getElementById("seccion-en-vivo");
                     const enlaceNav = document.getElementById("enlace-nav-vivo");
                     const contenedor = document.getElementById("contenedor-reproductor");
 
                     if (urlVideo && urlVideo.startsWith("http")) {
-                        // Limpia parámetros sobrantes por seguridad
+                        // Limpia parámetros sobrantes
                         urlVideo = urlVideo.split('?')[0].split('#')[0];
 
                         if (seccionVivo) seccionVivo.style.setProperty('display', 'block', 'important');
                         if (enlaceNav) enlaceNav.style.setProperty('display', 'inline-flex', 'important');
 
-                        // Si la URL cambió o el contenedor está vacío, inyecta el iframe directo
                         if (contenedor && contenedor.getAttribute("data-actual") !== urlVideo) {
                             contenedor.setAttribute("data-actual", urlVideo);
                             const urlIframe = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(urlVideo)}&show_text=false&width=720`;
@@ -411,7 +386,6 @@
                             `;
                         }
                     } else {
-                        // Si no hay link en la hoja, oculta todo
                         if (seccionVivo) seccionVivo.style.setProperty('display', 'none', 'important');
                         if (enlaceNav) enlaceNav.style.setProperty('display', 'none', 'important');
                         if (contenedor) {
