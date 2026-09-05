@@ -347,7 +347,7 @@
 
             // Sincronización en tiempo real con Google Sheets / Panel
             async function sincronizarEnVivo() {
-                if (!API_URL || API_URL === "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT") return;
+                if (!API_URL || API_URL === "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec") return;
 
                 try {
                     const respuesta = await fetch(`${API_URL}?t=${Date.now()}`);
