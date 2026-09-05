@@ -8,6 +8,12 @@
 </head>
 <body>
 
+    <!-- SDK oficial de Facebook: Permite la reproducción nativa en el sitio -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
+    </script>
+
     <header> 
         <div class="logo-contenedor">
             <img src="img/logo.png" alt="Logotipo TBB">
@@ -23,7 +29,6 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <!-- Botón condicional: Oculto fuera de horario -->
             <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none !important;">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
@@ -35,7 +40,7 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN EN VIVO: Se activa en horario de culto -->
+    <!-- SECCIÓN EN VIVO: Reproductor de Video Nativo -->
     <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
@@ -47,26 +52,14 @@
                 Acompáñanos y sé parte de nuestro servicio en directo.
             </p>
 
-            <!-- Pantalla de video con respaldo de logo si no hay señal -->
-            <div class="video-responsive">
-                <!-- Capa de fondo con logo por si no han encendido la cámara -->
-                <div class="fondo-espera-logo">
-                    <img src="img/logo.png" alt="TBB Progreso">
-                    <span>Esperando señal de transmisión...</span>
+            <div class="marco-reproductor-vivo">
+                <div class="fb-video" 
+                     data-href="https://www.facebook.com/taberelprogreso/live" 
+                     data-width="auto" 
+                     data-show-text="false" 
+                     data-allowfullscreen="true"
+                     data-autoplay="false">
                 </div>
-
-                <!-- Reproductor de Facebook por encima -->
-                <iframe 
-                    id="iframe-vivo"
-                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftaberelprogreso%2Flive%2F&show_text=0&width=560" 
-                    width="560" 
-                    height="315" 
-                    style="border:none;overflow:hidden" 
-                    scrolling="no" 
-                    frameborder="0" 
-                    allowfullscreen="true" 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
             </div>
         </div>
     </section>
@@ -230,7 +223,7 @@
                         height="152" 
                         frameBorder="0" 
                         allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                         loading="lazy">
                     </iframe>
                 </div>
@@ -355,24 +348,23 @@
                 });
             }
 
-            // Control de activación por horario
             function controlarCultoEnVivo() {
                 const ahora = new Date();
-                const dia = ahora.getDay(); // 0 = Dom, 3 = Mié, 5 = Vie
+                const dia = ahora.getDay();
                 const horaDecimal = ahora.getHours() + (ahora.getMinutes() / 60);
 
                 let enHorarioCulto = false;
 
-                // 1. Miércoles: 6:30 PM a 7:35 PM (18.50 a 19.58)
+                // 1. Miércoles: 6:30 PM a 7:35 PM
                 if (dia === 3 && horaDecimal >= 18.50 && horaDecimal <= 19.58) enHorarioCulto = true;
                 
-                // 2. Viernes: 6:30 PM a 7:35 PM (18.50 a 19.58)
+                // 2. Viernes: 6:30 PM a 7:35 PM
                 if (dia === 5 && horaDecimal >= 18.50 && horaDecimal <= 19.58) enHorarioCulto = true;
                 
-                // 3. Domingo Mañana: 9:05 AM a 10:35 AM (9.08 a 10.58)
+                // 3. Domingo Mañana: 9:05 AM a 10:35 AM
                 if (dia === 0 && horaDecimal >= 9.08 && horaDecimal <= 10.58) enHorarioCulto = true;
                 
-                // 4. Domingo Tarde: 5:00 PM a 6:35 PM (17.00 a 18.58)
+                // 4. Domingo Tarde: 5:00 PM a 6:35 PM
                 if (dia === 0 && horaDecimal >= 17.00 && horaDecimal <= 18.58) enHorarioCulto = true;
 
                 const seccionVivo = document.getElementById("seccion-en-vivo");
