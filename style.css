@@ -179,7 +179,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   2. SECCIÓN EN VIVO (REPRODUCTOR NATIVO)
+   2. SECCIÓN EN VIVO (SIN MUROS, SOLO REPRODUCTOR)
    ======================================================== */
 .seccion-vivo {
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
