@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instalar TBB Progreso de Adoración</title>
+
+  <!-- Conexión de la app -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2b6cb0">
+
+  <!-- Registro del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .tarjeta-descarga {
+      background: #ffffff;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    .contenedor-logo {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contenedor-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 1.35rem;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+
+    p.descripcion {
+      font-size: 0.95rem;
+      color: #718096;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .btn-instalar {
+      background-color: #2b6cb0;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      display: none; /* Se muestra si el teléfono soporta instalación directa */
+      box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+      transition: background 0.2s;
+    }
+
+    .btn-instalar:hover {
+      background-color: #2c5282;
+    }
+
+    .caja-instrucciones {
+      background-color: #edf2f7;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      font-size: 0.88rem;
+      color: #2d3748;
+      line-height: 1.5;
+      margin-top: 15px;
+    }
+
+    .caja-instrucciones ol {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    .enlace-volver {
+      display: inline-block;
+      margin-top: 25px;
+      color: #718096;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .enlace-volver:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tarjeta-descarga">
+    <!-- Contenedor del Logo (usa la ruta dentro de img) -->
+    <div class="contenedor-logo">
+      <img src="img/logo.png" alt="Logo TBB Progreso de Adoración">
+    </div>
+
+    <h1>TBB Progreso de Adoración</h1>
+    <p class="descripcion">Instala nuestra aplicación en tu teléfono para entrar directamente desde la pantalla de inicio.</p>
+
+    <!-- Botón directo de Android -->
+    <button id="btnInstalar" class="btn-instalar">
+      📲 Instalar en el teléfono
+    </button>
+
+    <!-- Pasos para iPhone o navegadores sin botón automático -->
+    <div class="caja-instrucciones" id="cajaGuia">
+      <strong>¿Cómo instalarla?</strong>
+      <ol>
+        <li>En <b>Android</b>: si no aparece el botón, pulsa los <b>tres puntos (⋮)</b> arriba a la derecha y elige <i>"Instalar app"</i> o <i>"Agregar a la pantalla principal"</i>.</li>
+        <li>En <b>iPhone</b>: toca el botón <b>Compartir</b> (el cuadrado con la flecha hacia arriba ⎋) y elige <i>"Agregar al inicio"</i> (+).</li>
+      </ol>
+    </div>
+
+    <a href="index.html" class="enlace-volver">← Volver al inicio</a>
+  </div>
+
+  <script>
+    let eventoInstalacion;
+    const btnInstalar = document.getElementById('btnInstalar');
+    const cajaGuia = document.getElementById('cajaGuia');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      eventoInstalacion = e;
+      btnInstalar.style.display = 'block';
+    });
+
+    btnInstalar.addEventListener('click', async () => {
+      if (eventoInstalacion) {
+        eventoInstalacion.prompt();
+        const { outcome } = await eventoInstalacion.userChoice;
+        if (outcome === 'accepted') {
+          btnInstalar.style.display = 'none';
+          cajaGuia.innerHTML = '✅ <strong>¡Aplicación instalada con éxito!</strong> Ya puedes encontrarla en tus aplicaciones.';
+        }
+        eventoInstalacion = null;
+      }
+    });
+
+    window.addEventListener('appinstalled', () => {
+      btnInstalar.style.display = 'none';
+      cajaGuia.innerHTML = '✅ <strong>¡Aplicación instalada con éxito!</strong>';
+    });
+  </script>
+
+</body>
+</html>
