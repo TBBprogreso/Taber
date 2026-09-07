@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TBB Progreso de Adoracion</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>TBB Progreso de Adoración</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
-        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0">
-    </script>
-
     <header> 
         <div class="logo-contenedor">
-            <img src="img/logo.png" alt="Logotipo TBB">
+            <img src="img/logo.png" alt="Logotipo TBB Progreso de Adoración" width="50" height="50">
             <div class="texto-iglesia">
-                <h1>TBB Progreso de Adoracion</h1>
+                <span class="titulo-sitio">TBB Progreso de Adoración</span>
                 <p>13 años para la gloria de Dios</p>
             </div>
         </div>
@@ -28,18 +24,18 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <a href="#seccion-en-vivo" class="btn-nav-vivo" id="enlace-nav-vivo" style="display: none !important;">
+            <a href="#seccion-en-vivo" class="btn-nav-vivo oculto" id="enlace-nav-vivo">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
             <a href="#Cultos">NUESTROS CULTOS</a>
             <a href="#Ministerios">NUESTROS MINISTERIOS</a>
             <a href="#Pastor">TESTIMONIO PASTOR</a>
-            <a href="#Versiculo">VERSICULO DE LA SEMANA</a>
+            <a href="#Versiculo">VERSÍCULO DE LA SEMANA</a>
             <a href="#Redes">NUESTRAS REDES SOCIALES</a>
         </nav>
     </header>
 
-    <section id="seccion-en-vivo" class="seccion-vivo" style="display: none !important;">
+    <section id="seccion-en-vivo" class="seccion-vivo oculto">
         <div class="vivo-contenedor">
             <div class="vivo-badge" id="badge-vivo">
                 <span class="punto-rojo"></span> TRANSMISIÓN EN DIRECTO
@@ -50,15 +46,26 @@
                 Acompáñanos y sé parte de nuestro servicio en directo.
             </p>
 
-            <div class="marco-reproductor-vivo" id="contenedor-reproductor">
-                </div>
+            <div class="marco-reproductor-vivo" id="contenedor-reproductor"></div>
         </div>
     </section>
 
     <main>
         <section id="Inicio">
-            <h2>Bienvenidos TBB Progreso de Adoración</h2>
+            <h1>Bienvenidos a TBB Progreso de Adoración</h1>
             <p>Nos gozamos en recibirte, sé parte de la bendición</p>
+            
+            <div class="hero-acciones">
+                <a href="#Cultos" class="btn-hero btn-hero-primario">
+                    Ver horarios de cultos
+                </a>
+                <a href="https://wa.me/50375714132?text=Hola,%20quisiera%20más%20información%20sobre%20la%20iglesia" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-hero btn-hero-secundario">
+                    Escríbenos por WhatsApp
+                </a>
+            </div>
         </section>
 
         <section id="Cultos">
@@ -67,21 +74,21 @@
 
             <div class="contenedor-tarjetas">
                 <div class="tarjeta-culto">
-                    <img src="img/estudiobiblico.jpg" alt="Estudio bíblico">
+                    <img src="img/estudiobiblico.jpg" alt="Estudio bíblico" loading="lazy" decoding="async">
                     <h3>Miércoles</h3>
                     <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
                     <p>Cada miércoles, aprendemos más de la Palabra de Dios y fortalecemos nuestra fe.</p>
                 </div>
 
                 <div class="tarjeta-culto">
-                    <img src="img/adoracionyoracion.jpg" alt="Tiempo de Adoración">
+                    <img src="img/adoracionyoracion.jpg" alt="Tiempo de Adoración y Oración" loading="lazy" decoding="async">
                     <h3>Viernes</h3>
                     <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
                     <p>Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
                 </div>
 
                 <div class="tarjeta-culto">
-                    <img src="img/diadelSeñor.jpg" alt="Culto Dominical">
+                    <img src="img/diadelSeñor.jpg" alt="Culto Dominical Día del Señor" loading="lazy" decoding="async">
                     <h3>Domingo</h3>
                     <p class="hora"><strong>Hora:</strong> 9:00 am - 5:00 pm</p>
                     <p>Un día para reunirnos como iglesia, adorar a Dios y escuchar Su Palabra.</p>
@@ -92,16 +99,16 @@
         <section id="Ministerios">
             <h2>Nuestros Ministerios</h2>
             <div class="galeria-ministerios">
-                <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate"></div>
-                <div class="tarjeta-ministerio"><img src="img/salmo41.jpg" alt="Ministerio Salmo 41"></div>
-                <div class="tarjeta-ministerio"><img src="img/cafeteria.jpg" alt="Ministerio Cafetería"></div>
-                <div class="tarjeta-ministerio"><img src="img/sonido.jpg" alt="Ministerio Sonido"></div>
-                <div class="tarjeta-ministerio"><img src="img/taberkid.jpg" alt="Ministerio Taber Kid"></div>
-                <div class="tarjeta-ministerio"><img src="img/acomodacion.jpg" alt="Ministerio Acomodación"></div>
-                <div class="tarjeta-ministerio"><img src="img/evangelismo.jpg" alt="Ministerio Evangelismo"></div>
-                <div class="tarjeta-ministerio"><img src="img/multimedia.jpg" alt="Ministerio Multimedia"></div>
-                <div class="tarjeta-ministerio"><img src="img/libreria.jpg" alt="Ministerio Librería"></div>
-                <div class="tarjeta-ministerio"><img src="img/mujeresobreras.jpg" alt="Ministerio Mujeres Obreras"></div>
+                <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/salmo41.jpg" alt="Ministerio Salmo 41" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/cafeteria.jpg" alt="Ministerio Cafetería" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/sonido.jpg" alt="Ministerio Sonido" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/taberkid.jpg" alt="Ministerio Taber Kid" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/acomodacion.jpg" alt="Ministerio Acomodación" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/evangelismo.jpg" alt="Ministerio Evangelismo" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/multimedia.jpg" alt="Ministerio Multimedia" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/libreria.jpg" alt="Ministerio Librería" loading="lazy" decoding="async"></div>
+                <div class="tarjeta-ministerio"><img src="img/mujeresobreras.jpg" alt="Ministerio Mujeres Obreras" loading="lazy" decoding="async"></div>
             </div>
         </section>
 
@@ -110,7 +117,7 @@
             <div class="tarjeta-pastor-editorial">
                 <aside class="pastor-perfil">
                     <div class="marco-foto-pastor">
-                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero">
+                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async">
                     </div>
                     <h3>Roger Alí Caballero</h3>
                     <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
@@ -150,16 +157,16 @@
                 <h4>Momentos del Ministerio</h4>
                 <div class="carrusel-mascara">
                     <div class="carrusel-pista">
-                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
-                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
-                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
-                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
-                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
-                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón">
-                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2">
-                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas">
-                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación">
-                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción">
+                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón" loading="lazy">
+                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2" loading="lazy">
+                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas" loading="lazy">
+                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación" loading="lazy">
+                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción" loading="lazy">
+                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón copia" loading="lazy">
+                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2 copia" loading="lazy">
+                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas copia" loading="lazy">
+                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación copia" loading="lazy">
+                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción copia" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -195,7 +202,7 @@
                 </div>
 
                 <div class="tarjeta-imagen-devocional">
-                    <img src="img/Imagen Semanal.jpg" alt="Imagen del Versículo Semanal">
+                    <img src="img/Imagen Semanal.jpg" alt="Imagen del Versículo Semanal" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -207,17 +214,17 @@
                 <p class="subtitulo-predicacion">Escucha el mensaje especial seleccionado para ti directamente en Spotify</p>
 
                 <div class="reproductor-spotify">
-                    <iframe 
-                        style="border-radius:12px" 
-                        src="https://open.spotify.com/embed/episode/5HPxgShYrmrMPXvHA1jX4e" 
-                        width="100%" 
-                        height="152" 
-                        frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                    </iframe>
-                </div>
+    <iframe 
+        style="border-radius:12px;" 
+        src="https://open.spotify.com/embed/episode/5HPxgShYrmrMPXvHA1jX4e" 
+        width="100%" 
+        height="152" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"
+        title="Episodio recomendado en Spotify">
+    </iframe>
+</div>
             </div>
 
             <div class="divisor-seccion"></div>
@@ -227,7 +234,7 @@
                 <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
 
                 <div class="tarjetas-sociales">
-                    <a href="https://www.facebook.com/taberelprogreso" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook">
+                    <a href="https://www.facebook.com/taberelprogreso" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" aria-label="Visitar página oficial de Facebook">
                         <div class="icono-red">
                             <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -239,7 +246,7 @@
                         </div>
                     </a>
 
-                    <a href="https://www.tiktok.com/@taber.progreso.de?_r=1" target="_blank" rel="noopener noreferrer" class="btn-social btn-tiktok">
+                    <a href="https://www.tiktok.com/@taber.progreso.de?_r=1" target="_blank" rel="noopener noreferrer" class="btn-social btn-tiktok" aria-label="Visitar perfil oficial de TikTok">
                         <div class="icono-red">
                             <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
                                 <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
@@ -259,7 +266,7 @@
         <div class="contenedor-footer">
             <div class="columna-footer info-iglesia">
                 <div class="logo-footer">
-                    <img src="img/logo.png" alt="Logotipo TBB">
+                    <img src="img/logo.png" alt="Logotipo TBB Progreso" width="45" height="45" loading="lazy">
                     <h3>TBB Progreso de Adoración</h3>
                 </div>
                 <p class="lema-footer">
@@ -314,6 +321,25 @@
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
 
+        function esUrlFacebookValida(cadenaUrl) {
+            try {
+                const urlObjeto = new URL(cadenaUrl);
+                if (urlObjeto.protocol !== "https:") return false;
+
+                const dominiosPermitidos = [
+                    "facebook.com",
+                    "www.facebook.com",
+                    "web.facebook.com",
+                    "m.facebook.com",
+                    "fb.watch"
+                ];
+
+                return dominiosPermitidos.includes(urlObjeto.hostname.toLowerCase());
+            } catch (e) {
+                return false;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
@@ -361,12 +387,11 @@
                     const enlaceNav = document.getElementById("enlace-nav-vivo");
                     const contenedor = document.getElementById("contenedor-reproductor");
 
-                    if (urlVideo && urlVideo.startsWith("http")) {
-                        // Limpia parámetros sobrantes
+                    if (urlVideo && esUrlFacebookValida(urlVideo)) {
                         urlVideo = urlVideo.split('?')[0].split('#')[0];
 
-                        if (seccionVivo) seccionVivo.style.setProperty('display', 'block', 'important');
-                        if (enlaceNav) enlaceNav.style.setProperty('display', 'inline-flex', 'important');
+                        if (seccionVivo) seccionVivo.classList.remove("oculto");
+                        if (enlaceNav) enlaceNav.classList.remove("oculto");
 
                         if (contenedor && contenedor.getAttribute("data-actual") !== urlVideo) {
                             contenedor.setAttribute("data-actual", urlVideo);
@@ -376,18 +401,20 @@
                                 <iframe 
                                     src="${urlIframe}" 
                                     width="100%" 
-                                    height="100" 
+                                    height="100%" 
+                                    title="Transmisión del Culto en Directo"
                                     style="border:none;overflow:hidden;border-radius:14px;" 
                                     scrolling="no" 
                                     frameborder="0" 
                                     allowfullscreen="true" 
-                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    sandbox="allow-scripts allow-same-origin allow-presentation">
                                 </iframe>
                             `;
                         }
                     } else {
-                        if (seccionVivo) seccionVivo.style.setProperty('display', 'none', 'important');
-                        if (enlaceNav) enlaceNav.style.setProperty('display', 'none', 'important');
+                        if (seccionVivo) seccionVivo.classList.add("oculto");
+                        if (enlaceNav) enlaceNav.classList.add("oculto");
                         if (contenedor) {
                             contenedor.removeAttribute("data-actual");
                             contenedor.innerHTML = "";
@@ -399,7 +426,7 @@
             }
 
             sincronizarEnVivo();
-            setInterval(sincronizarEnVivo, 20000);
+            setInterval(sincronizarEnVivo, 60000);
         });
     </script>
 </body>
