@@ -10,6 +10,10 @@ body {
     color: #333333;
 }
 
+.oculto {
+    display: none !important;
+}
+
 /* ========================================================
    1. ENCABEZADO Y NAVEGACIÓN
    ======================================================== */
@@ -42,9 +46,10 @@ header {
     flex-direction: column;
 }
 
-.texto-iglesia h1 {
+.titulo-sitio {
     color: #ffffff;
     font-size: 1.1rem;
+    font-weight: 700;
     margin: 0;
     letter-spacing: 0.3px;
     line-height: 1.2;
@@ -77,6 +82,7 @@ nav {
     display: flex;
     gap: 6px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -96,22 +102,22 @@ nav a:hover {
 }
 
 .btn-nav-vivo {
-    background: rgba(239, 68, 68, 0.15) !important;
-    border: 1px solid #ef4444 !important;
-    color: #ffffff !important;
-    border-radius: 20px !important;
-    padding: 6px 14px !important;
-    font-weight: 700 !important;
-    display: none;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-weight: 700;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    transition: all 0.3s ease !important;
+    transition: all 0.3s ease;
 }
 
 .btn-nav-vivo:hover {
-    background: #ef4444 !important;
-    color: #ffffff !important;
+    background: #ef4444;
+    color: #ffffff;
     box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
 }
 
@@ -127,13 +133,13 @@ nav a:hover {
     background-color: #ffffff;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 990px) {
     .menu-toggle {
         display: block;
     }
 
     nav {
-        display: none !important;
+        display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -148,7 +154,7 @@ nav a:hover {
     }
 
     nav.active {
-        display: flex !important;
+        display: flex;
     }
 
     nav a {
@@ -169,7 +175,7 @@ nav a:hover {
         margin: 6px 0;
     }
 
-    .texto-iglesia h1 {
+    .titulo-sitio {
         font-size: 0.95rem;
     }
 
@@ -179,7 +185,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   2. SECCIÓN EN VIVO (SIN MUROS, SOLO REPRODUCTOR)
+   2. SECCIÓN EN VIVO
    ======================================================== */
 .seccion-vivo {
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
@@ -187,7 +193,6 @@ nav a:hover {
     padding: 60px 20px;
     text-align: center;
     box-sizing: border-box;
-    display: none;
 }
 
 .vivo-contenedor {
@@ -234,11 +239,11 @@ nav a:hover {
 }
 
 .seccion-vivo h2 {
-    color: #ffffff !important;
+    color: #ffffff;
     font-size: clamp(26px, 4vw, 36px);
     font-weight: 800;
     margin-bottom: 10px;
-    border: none !important;
+    border: none;
 }
 
 .seccion-vivo p {
@@ -253,7 +258,7 @@ nav a:hover {
     width: 100%;
     max-width: 720px;
     margin: 0 auto;
-    aspect-ratio: 16 / 9; /* Mantiene la proporción exacta del video */
+    aspect-ratio: 16 / 9;
     background: #000000;
     border-radius: 16px;
     overflow: hidden;
@@ -265,19 +270,9 @@ nav a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     border: none;
-}
-
-@media (max-width: 600px) {
-    .marco-reproductor-vivo {
-        border-radius: 12px;
-    }
-}
-
-.marco-reproductor-vivo .fb-video {
-    width: 100% !important;
 }
 
 @media (max-width: 600px) {
@@ -299,7 +294,7 @@ nav a:hover {
         linear-gradient(to right, rgba(10, 15, 30, 0.92) 25%, rgba(10, 15, 30, 0.60) 65%, rgba(10, 15, 30, 0.25) 100%), 
         url('img/inicio.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     background-repeat: no-repeat;
     min-height: 420px;
     display: flex;
@@ -309,14 +304,13 @@ nav a:hover {
     padding: 60px 45px;
 }
 
-#Inicio h2 {
+#Inicio h1 {
     color: #ffffff;
     font-size: 44px;
     font-weight: 800;
     line-height: 1.15;
     max-width: 520px;
     margin: 0 0 15px 0;
-    border-bottom: none;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -328,36 +322,77 @@ nav a:hover {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-/* Ajuste idéntico a tu captura para móviles */
+.hero-acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-hero-primario {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-hero-primario:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.6);
+}
+
+.btn-hero-secundario {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.btn-hero-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
     #Inicio {
-        background-image: 
-            linear-gradient(to right, rgba(10, 15, 30, 0.92) 0%, rgba(10, 15, 30, 0.65) 55%, rgba(10, 15, 30, 0.15) 100%), 
-            url('img/inicio.png');
-        background-position: 68% 25%; /* Desplaza la foto para que el pastor se vea a la derecha */
-        min-height: 250px;
-        padding: 24px 18px;
-        justify-content: center;
-        align-items: flex-start;
-        text-align: left;
+        padding: 45px 20px;
+        min-height: 340px;
     }
 
-    #Inicio h2 {
-        font-size: 20px;
-        line-height: 1.2;
-        margin-bottom: 6px;
-        max-width: 62%;             /* Evita que el texto invada el lado derecho del pastor */
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    #Inicio h1 {
+        font-size: 32px;
     }
 
     #Inicio p {
-        font-size: 12.5px;
-        line-height: 1.35;
-        max-width: 60%;
-        color: #e2e8f0;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+        font-size: 16px;
+    }
+
+    .hero-acciones {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-hero {
+        width: 100%;
+        text-align: center;
     }
 }
+
 /* ========================================================
    4. SECCIÓN NUESTROS CULTOS
    ======================================================== */
@@ -375,10 +410,11 @@ nav a:hover {
 }
 
 .descripcion-seccion {
-    color: #101925;
+    color: #475569;
     font-size: 17px;
     max-width: 650px;
     margin: 0 auto 40px auto;
+    line-height: 1.5;
 }
 
 .contenedor-tarjetas {
@@ -431,7 +467,211 @@ nav a:hover {
 }
 
 /* ========================================================
-   5. SECCIÓN MINISTERIOS
+   5. SECCIÓN PRÓXIMOS EVENTOS (NUEVA)
+   ======================================================== */
+#Eventos {
+    background-color: #ffffff;
+    padding: 60px 25px;
+    margin: 40px 0;
+    border-radius: 18px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+}
+
+.encabezado-eventos {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.insignia-eventos {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #eff6ff;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+#Eventos h2 {
+    color: #0f274a;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.contenedor-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-evento {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(15, 39, 74, 0.08);
+}
+
+.evento-imagen-marco {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Formato afiche vertical */
+    overflow: hidden;
+    cursor: pointer;
+    background: #0f172a;
+}
+
+.evento-imagen-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.evento-imagen-marco:hover img {
+    transform: scale(1.04);
+}
+
+.capa-lupa {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capa-lupa span {
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.evento-imagen-marco:hover .capa-lupa {
+    opacity: 1;
+}
+
+.evento-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.evento-fecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.evento-titulo {
+    color: #0f274a;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.evento-descripcion {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal / Lightbox para ver afiches en grande */
+.modal-afiche {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal-afiche.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-contenido {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+    color: #ef4444;
+    transform: scale(1.15);
+}
+
+.modal-contenido img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-pie-titulo {
+    color: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 14px;
+    text-align: center;
+}
+
+/* ========================================================
+   6. SECCIÓN MINISTERIOS
    ======================================================== */
 #Ministerios {
     text-align: center;
@@ -449,11 +689,11 @@ nav a:hover {
 }
 
 .galeria-ministerios {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 24px !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
     max-width: 1150px;
-    margin: 0 auto !important;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -467,14 +707,14 @@ nav a:hover {
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.35s ease;
-    display: block !important;
+    display: block;
 }
 
 .tarjeta-ministerio img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: contain !important;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
     border-radius: inherit;
 }
 
@@ -491,8 +731,8 @@ nav a:hover {
 
 @media (max-width: 992px) {
     .galeria-ministerios {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
         max-width: 700px;
     }
 }
@@ -503,8 +743,8 @@ nav a:hover {
     }
 
     .galeria-ministerios {
-        grid-template-columns: 1fr !important;
-        gap: 26px !important;
+        grid-template-columns: 1fr;
+        gap: 26px;
         max-width: 390px;
     }
 
@@ -514,7 +754,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   6. SECCIÓN TESTIMONIO PASTOR
+   7. SECCIÓN TESTIMONIO PASTOR
    ======================================================== */
 #Pastor {
     background-color: #f8fafc;
@@ -731,7 +971,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   7. SECCIÓN VERSÍCULO DE LA SEMANA
+   8. SECCIÓN VERSÍCULO DE LA SEMANA
    ======================================================== */
 #Versiculo {
     background-color: #ffffff;
@@ -827,16 +1067,16 @@ nav a:hover {
     border-left: 4px solid #f59e0b;
     padding: 14px 18px;
     border-radius: 6px;
-    color: #1e293b !important;
-    font-size: 15px !important;
+    color: #1e293b;
+    font-size: 15px;
 }
 
 .despedida-bendicion {
-    font-size: 18px !important;
+    font-size: 18px;
     font-weight: 800;
-    color: #1e3a8a !important;
+    color: #1e3a8a;
     margin-top: 15px;
-    text-align: left !important;
+    text-align: left;
 }
 
 .tarjeta-imagen-devocional {
@@ -875,7 +1115,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   8. SECCIÓN SPOTIFY Y REDES
+   9. SECCIÓN SPOTIFY Y REDES
    ======================================================== */
 #Redes {
     background-color: #ffffff;
@@ -1012,7 +1252,7 @@ nav a:hover {
     gap: 8px;
     background: linear-gradient(135deg, #1877f2 0%, #0c5dc5 100%);
     box-shadow: 0 10px 25px rgba(24, 119, 242, 0.38);
-    color: #ffffff !important;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 700;
     padding: 12px 26px;
@@ -1049,7 +1289,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   9. PIE DE PÁGINA (FOOTER)
+   10. PIE DE PÁGINA (FOOTER)
    ======================================================== */
 .pie-pagina {
     background: linear-gradient(180deg, #0f172a 0%, #090d16 100%);
@@ -1191,7 +1431,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   10. BOTÓN FLOTANTE DE WHATSAPP
+   11. BOTÓN FLOTANTE DE WHATSAPP
    ======================================================== */
 .btn-flotante-whatsapp {
     position: fixed;
