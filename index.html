@@ -9,6 +9,21 @@
 <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="style.css">
+<!-- OneSignal Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
+      safari_web_id: "web.onesignal.auto.473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
+
 </head>
 <body>
 
