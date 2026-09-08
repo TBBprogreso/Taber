@@ -7,7 +7,10 @@
 
   <!-- Conexión de la app -->
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="img/logo.png">
   <meta name="theme-color" content="#2b6cb0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
   <!-- Registro del Service Worker -->
   <script>
@@ -85,7 +88,7 @@
       font-weight: 600;
       border-radius: 12px;
       cursor: pointer;
-      display: none; /* Se muestra si el teléfono soporta instalación directa */
+      display: none; /* Se muestra si el dispositivo soporta instalación directa */
       box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
       transition: background 0.2s;
     }
@@ -122,26 +125,26 @@
       text-decoration: underline;
     }
   </style>
-<!-- OneSignal Push Notifications -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
-      safari_web_id: "web.onesignal.auto.473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
-      notifyButton: {
-        enable: true,
-      },
+
+  <!-- OneSignal Push Notifications -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
+        appId: "473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
+        safari_web_id: "web.onesignal.auto.473ceaa2-aabb-4fb0-99c1-6e8d3b69e72e",
+        notifyButton: {
+          enable: false, /* Se oculta la campana roja fija */
+        },
+      });
     });
-  });
-</script>
-  
+  </script>
 </head>
 <body>
 
   <div class="tarjeta-descarga">
-    <!-- Contenedor del Logo (usa la ruta dentro de img) -->
+    <!-- Contenedor del Logo -->
     <div class="contenedor-logo">
       <img src="img/logo.png" alt="Logo TBB Progreso de Adoración">
     </div>
@@ -149,7 +152,7 @@
     <h1>TBB Progreso de Adoración</h1>
     <p class="descripcion">Instala nuestra aplicación en tu teléfono para entrar directamente desde la pantalla de inicio.</p>
 
-    <!-- Botón directo de Android -->
+    <!-- Botón directo de instalación -->
     <button id="btnInstalar" class="btn-instalar">
       📲 Instalar en el teléfono
     </button>
@@ -181,9 +184,21 @@
       if (eventoInstalacion) {
         eventoInstalacion.prompt();
         const { outcome } = await eventoInstalacion.userChoice;
+
         if (outcome === 'accepted') {
           btnInstalar.style.display = 'none';
           cajaGuia.innerHTML = '✅ <strong>¡Aplicación instalada con éxito!</strong> Ya puedes encontrarla en tus aplicaciones.';
+
+          // Disparador de suscripción inmediata a notificaciones
+          if (window.OneSignalDeferred) {
+            OneSignalDeferred.push(async function(OneSignal) {
+              try {
+                await OneSignal.Notifications.requestPermission();
+              } catch (err) {
+                console.log("Notificaciones canceladas o no soportadas:", err);
+              }
+            });
+          }
         }
         eventoInstalacion = null;
       }
