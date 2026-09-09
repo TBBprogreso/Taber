@@ -467,13 +467,15 @@ nav a:hover {
 }
 
 /* ========================================================
-   5. SECCIÓN MINISTERIOS
+   5. SECCIÓN MINISTERIOS (Optimizado con content-visibility)
    ======================================================== */
 #Ministerios {
     text-align: center;
     padding: 50px 16px;
     background: #f8fafc;
     width: 100%;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 #Ministerios h2 {
@@ -557,6 +559,8 @@ nav a:hover {
     border-radius: 16px;
     padding: 60px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
 }
 
 .titulo-pastor-destacado {
@@ -1099,6 +1103,8 @@ nav a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     margin-bottom: 50px;
     border: 1px solid rgba(226, 232, 240, 0.85);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 .contenedor-scroll-moderno {
@@ -1647,5 +1653,15 @@ nav a:hover {
     
     .btn-flotante-whatsapp .texto-flotante {
         display: none;
+    }
+}
+
+/* Optimización para movimiento reducido (Accesibilidad) */
+@media (prefers-reduced-motion: reduce) {
+    .carrusel-pista,
+    .btn-flotante-whatsapp,
+    .punto-rojo,
+    .punto-rojo-mini {
+        animation: none;
     }
 }
