@@ -467,7 +467,211 @@ nav a:hover {
 }
 
 /* ========================================================
-   5. SECCIÓN MINISTERIOS
+   5. SECCIÓN PRÓXIMOS EVENTOS (NUEVA)
+   ======================================================== */
+#Eventos {
+    background-color: #ffffff;
+    padding: 60px 25px;
+    margin: 40px 0;
+    border-radius: 18px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+}
+
+.encabezado-eventos {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.insignia-eventos {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #eff6ff;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+#Eventos h2 {
+    color: #0f274a;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.contenedor-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-evento {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(15, 39, 74, 0.08);
+}
+
+.evento-imagen-marco {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Formato afiche vertical */
+    overflow: hidden;
+    cursor: pointer;
+    background: #0f172a;
+}
+
+.evento-imagen-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.evento-imagen-marco:hover img {
+    transform: scale(1.04);
+}
+
+.capa-lupa {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capa-lupa span {
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.evento-imagen-marco:hover .capa-lupa {
+    opacity: 1;
+}
+
+.evento-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.evento-fecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.evento-titulo {
+    color: #0f274a;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.evento-descripcion {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal / Lightbox para ver afiches en grande */
+.modal-afiche {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal-afiche.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-contenido {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+    color: #ef4444;
+    transform: scale(1.15);
+}
+
+.modal-contenido img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-pie-titulo {
+    color: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 14px;
+    text-align: center;
+}
+
+/* ========================================================
+   6. SECCIÓN MINISTERIOS
    ======================================================== */
 #Ministerios {
     text-align: center;
@@ -550,7 +754,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   6. SECCIÓN TESTIMONIO PASTOR
+   7. SECCIÓN TESTIMONIO PASTOR
    ======================================================== */
 #Pastor {
     background-color: #f8fafc;
@@ -767,170 +971,6 @@ nav a:hover {
 }
 
 /* ========================================================
-   7. SECCIÓN LA PRÉDICA DE LA SEMANA (NUEVA UBICACIÓN)
-   ======================================================== */
-.seccion-predica-semana {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 60px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    margin-bottom: 45px;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-}
-
-.encabezado-seccion-centro {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 35px auto;
-}
-
-.insignia-audio {
-    display: inline-block;
-    color: #10b981;
-    background-color: #ecfdf5;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-}
-
-.encabezado-seccion-centro h2 {
-    color: #0f274a;
-    font-size: clamp(28px, 4vw, 38px);
-    font-weight: 800;
-    margin: 0 0 10px 0;
-    letter-spacing: -0.5px;
-}
-
-.subtitulo-seccion-centro {
-    color: #64748b;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.tarjeta-player-destacado {
-    background: #0f172a;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 820px;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.badge-reproduciendo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #38bdf8;
-    font-size: 0.88rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.onda-animada {
-    display: inline-flex;
-    align-items: flex-end;
-    gap: 3px;
-    height: 14px;
-}
-
-.onda-animada span {
-    width: 3px;
-    background: #38bdf8;
-    border-radius: 3px;
-    animation: barraSonido 1s ease-in-out infinite alternate;
-}
-
-.onda-animada span:nth-child(1) { height: 6px; animation-delay: 0.1s; }
-.onda-animada span:nth-child(2) { height: 14px; animation-delay: 0.3s; }
-.onda-animada span:nth-child(3) { height: 9px; animation-delay: 0.2s; }
-
-@keyframes barraSonido {
-    0% { height: 4px; }
-    100% { height: 14px; }
-}
-
-.cuerpo-player-destacado {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 28px;
-    align-items: center;
-}
-
-.caratula-destacada {
-    width: 170px;
-    height: 170px;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-    background-color: #1e293b;
-}
-
-.caratula-destacada img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background-color: #1e293b;
-}
-
-.info-player-destacado {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.fecha-destacada {
-    color: #38bdf8;
-    font-size: 0.88rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
-#semana-titulo {
-    color: #ffffff;
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin: 0 0 16px 0;
-    line-height: 1.3;
-}
-
-#semana-audio {
-    width: 100%;
-    height: 44px;
-    border-radius: 10px;
-    outline: none;
-}
-
-.nota-player-destacado {
-    color: #94a3b8;
-    font-size: 0.85rem;
-    margin: 14px 0 0 0;
-    line-height: 1.4;
-}
-
-@media (max-width: 700px) {
-    .cuerpo-player-destacado {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .caratula-destacada {
-        margin: 0 auto;
-    }
-
-    .info-player-destacado {
-        text-align: center;
-    }
-}
-
-/* ========================================================
    8. SECCIÓN VERSÍCULO DE LA SEMANA
    ======================================================== */
 #Versiculo {
@@ -938,7 +978,7 @@ nav a:hover {
     border-radius: 16px;
     padding: 60px 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .encabezado-devocional {
@@ -1075,184 +1115,71 @@ nav a:hover {
 }
 
 /* ========================================================
-   9. SECCIÓN EDIFICANDO TU FE (AL FINAL)
-   ======================================================== */
-.seccion-edificando-fe {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 60px 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    margin-bottom: 50px;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-}
-
-/* Reproductor emergente de prédicas anteriores */
-.reproductor-secundario-activo {
-    background: #0f172a;
-    border-radius: 16px;
-    padding: 18px 24px;
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
-    display: none; /* Oculto hasta que el usuario elija una prédica */
-}
-
-.reproductor-secundario-activo.visible {
-    display: block;
-    animation: fadeInPlayer 0.3s ease;
-}
-
-@keyframes fadeInPlayer {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.cabecera-player-secundario {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 12px;
-}
-
-.icono-onda {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #2563eb;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
-}
-
-.etiqueta-secundario {
-    color: #38bdf8;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-#secundario-titulo {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 2px 0 0 0;
-}
-
-#secundario-audio {
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    outline: none;
-}
-
-/* Grilla de Prédicas Anteriores */
-.grid-predicas-archivo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 18px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.tarjeta-predica-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 18px;
-    border-radius: 14px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-align: left;
-}
-
-.tarjeta-predica-card:hover {
-    background: #ffffff;
-    border-color: #2563eb;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.1);
-}
-
-.tarjeta-predica-card.activa {
-    background: #eff6ff;
-    border-color: #2563eb;
-}
-
-.card-play-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #e2e8f0;
-    color: #0f274a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
-}
-
-.tarjeta-predica-card:hover .card-play-btn,
-.tarjeta-predica-card.activa .card-play-btn {
-    background: #2563eb;
-    color: #ffffff;
-    transform: scale(1.08);
-}
-
-.card-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-fecha {
-    font-size: 0.75rem;
-    color: #2563eb;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.card-titulo {
-    color: #1e293b;
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin: 4px 0 6px 0;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.card-accion {
-    font-size: 0.78rem;
-    color: #64748b;
-    font-weight: 500;
-}
-
-.cargando-estado {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: #64748b;
-    padding: 30px;
-    font-size: 0.95rem;
-}
-
-/* ========================================================
-   10. SECCIÓN REDES SOCIALES
+   9. SECCIÓN SPOTIFY Y REDES
    ======================================================== */
 #Redes {
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 50px 30px;
+    padding: 60px 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     text-align: center;
     margin-bottom: 50px;
     border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.bloque-predicacion {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.insignia-audio {
+    display: inline-block;
+    color: #10b981;
+    background-color: #ecfdf5;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+#Redes h2 {
+    color: #0f274a;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    border-bottom: none;
+}
+
+.subtitulo-predicacion {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0 auto 30px auto;
+    max-width: 580px;
+    line-height: 1.5;
+}
+
+.reproductor-spotify {
+    background-color: #181818;
+    border-radius: 16px;
+    padding: 6px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reproductor-spotify:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.divisor-seccion {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    margin: 55px auto;
+    max-width: 700px;
 }
 
 .bloque-redes h3 {
@@ -1362,7 +1289,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   11. PIE DE PÁGINA (FOOTER)
+   10. PIE DE PÁGINA (FOOTER)
    ======================================================== */
 .pie-pagina {
     background: linear-gradient(180deg, #0f172a 0%, #090d16 100%);
@@ -1504,7 +1431,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   12. BOTÓN FLOTANTE DE WHATSAPP
+   11. BOTÓN FLOTANTE DE WHATSAPP
    ======================================================== */
 .btn-flotante-whatsapp {
     position: fixed;
