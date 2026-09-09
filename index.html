@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>TBB Progreso de Adoración | Inicio</title>
-<meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
-<meta name="robots" content="index, follow">
+    <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
+    <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
@@ -34,7 +33,9 @@
             <a href="#Cultos">NUESTROS CULTOS</a>
             <a href="#Ministerios">NUESTROS MINISTERIOS</a>
             <a href="#Pastor">TESTIMONIO PASTOR</a>
+            <a href="#Predicacion-Semana">PRÉDICA DE LA SEMANA</a>
             <a href="#Versiculo">VERSÍCULO DE LA SEMANA</a>
+            <a href="#Edificando-Fe">EDIFICANDO TU FE</a>
             <a href="#Redes">NUESTRAS REDES SOCIALES</a>
         </nav>
     </header>
@@ -176,6 +177,48 @@
             </div>
         </section>
 
+        <!-- ========================================================
+             SECCIÓN 1: LA PRÉDICA DE LA SEMANA (ANTES DE VERSÍCULO)
+             ======================================================== -->
+        <section id="Predicacion-Semana" class="seccion-predica-semana">
+            <div class="encabezado-seccion-centro">
+                <span class="insignia-audio">EL PODER DE LA PALABRA</span>
+                <h2>La Prédica de la Semana</h2>
+                <p class="subtitulo-seccion-centro">
+                    Escucha el mensaje principal de este domingo seleccionado especialmente para ti.
+                </p>
+            </div>
+
+            <div class="tarjeta-player-destacado">
+                <div class="badge-reproduciendo">
+                    <span class="onda-animada"><span></span><span></span><span></span></span>
+                    <span>Mensaje Reciente</span>
+                </div>
+
+                <div class="cuerpo-player-destacado">
+                    <div class="caratula-destacada">
+                        <img id="semana-caratula" src="img/logo.png" alt="Carátula oficial del Culto">
+                    </div>
+
+                    <div class="info-player-destacado">
+                        <span id="semana-fecha" class="fecha-destacada">Cargando fecha...</span>
+                        <h3 id="semana-titulo">Cargando la prédica de la semana...</h3>
+                        
+                        <audio id="semana-audio" controls preload="metadata">
+                            Tu navegador no soporta el reproductor de audio.
+                        </audio>
+
+                        <p class="nota-player-destacado">
+                            🎧 Dale play y continúa navegando en la web mientras escuchas la Palabra de Dios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECCIÓN VERSÍCULO DE LA SEMANA
+             ======================================================== -->
         <section id="Versiculo">
             <div class="encabezado-devocional">
                 <span class="insignia-devocional">PALABRA VIVA</span>
@@ -196,10 +239,10 @@
                             El miedo el temor y las dudas no son buenos compañeros cuando se trata de confiar en Dios, Josué, recién tomaba la batuta del liderazgo del pueblo de Israel y no sabía qué hacer.
                         </p>
                         <p>
-                           La promesa de Dios, nadie te podrá hacer frente. Está promesa daría a Josué fuerza, confianza, esperanza y fe.
+                            La promesa de Dios, nadie te podrá hacer frente. Está promesa daría a Josué fuerza, confianza, esperanza y fe.
                         </p>
                         <p class="nota-consejo">
-                            💡 Afuera el miedo el temor las dudas y la cobardía. Con Cristo somos más que verdaderas.
+                            💡 Afuera el miedo el temor las dudas y la cobardía. Con Cristo somos más que vencedores.
                         </p>
                         <p class="despedida-bendicion">¡Bendiciones!</p>
                     </div>
@@ -211,28 +254,42 @@
             </div>
         </section>
 
-        <section id="Redes">
-            <div class="bloque-predicacion">
-                <span class="insignia-audio">MENSAJE RECOMENDADO</span>
-                <h2>Predicación de la Semana</h2>
-                <p class="subtitulo-predicacion">Escucha el mensaje especial seleccionado para ti directamente en Spotify</p>
-
-                <div class="reproductor-spotify">
-    <iframe 
-        style="border-radius:12px;" 
-        src="https://open.spotify.com/embed//episode/3gNj7M6T24FSFBYeX89rHj" 
-        width="100%" 
-        height="152" 
-        frameborder="0" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-        loading="lazy"
-        title="Episodio recomendado en Spotify">
-    </iframe>
-</div>
+        <!-- ========================================================
+             SECCIÓN 2: EDIFICANDO TU FE (AL FINAL)
+             ======================================================== -->
+        <section id="Edificando-Fe" class="seccion-edificando-fe">
+            <div class="encabezado-seccion-centro">
+                <span class="insignia-audio">NUESTRAS PREDICACIONES</span>
+                <h2>Edificando tu Fe</h2>
+                <p class="subtitulo-seccion-centro">
+                    Escucha una palabra que Dios tiene para ti. Selecciona cualquiera de nuestras prédicas anteriores y reprodúcela al instante.
+                </p>
             </div>
 
-            <div class="divisor-seccion"></div>
+            <!-- Mini reproductor dinámico para esta sección -->
+            <div class="reproductor-secundario-activo" id="caja-player-secundario">
+                <div class="cabecera-player-secundario">
+                    <span class="icono-onda">▶</span>
+                    <div>
+                        <span class="etiqueta-secundario">Reproduciendo ahora:</span>
+                        <h4 id="secundario-titulo">Selecciona una prédica de la lista</h4>
+                    </div>
+                </div>
+                <audio id="secundario-audio" controls preload="metadata">
+                    Tu navegador no soporta el reproductor de audio.
+                </audio>
+            </div>
 
+            <!-- Grilla interactiva de prédicas -->
+            <div class="grid-predicas-archivo" id="contenedor-grid-predicas">
+                <div class="cargando-estado">Sincronizando mensajes desde iVoox...</div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             SECCIÓN REDES SOCIALES
+             ======================================================== -->
+        <section id="Redes">
             <div class="bloque-redes">
                 <h3>Conéctate con Nosotros</h3>
                 <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
@@ -285,7 +342,10 @@
                     <li><a href="#Cultos">Nuestros Cultos</a></li>
                     <li><a href="#Ministerios">Nuestros Ministerios</a></li>
                     <li><a href="#Pastor">Testimonio del Pastor</a></li>
+                    <li><a href="#Predicacion-Semana">Prédica de la Semana</a></li>
                     <li><a href="#Versiculo">Versículo Semanal</a></li>
+                    <li><a href="#Edificando-Fe">Edificando tu Fe</a></li>
+                    <li><a href="#Redes">Redes Sociales</a></li>
                 </ul>
             </div>
 
@@ -324,6 +384,10 @@
 
     <script>
         const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
+
+        // Feed RSS Oficial de iVoox
+        const IVOOX_RSS_URL = "https://www.ivoox.com/podcast-predicaciones-tbb-progreso-adoracion_fg_f11561816_filtro_1.xml";
+        const IMAGEN_DEFAULT = "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&q=80";
 
         function esUrlFacebookValida(cadenaUrl) {
             try {
@@ -370,6 +434,123 @@
                 });
             }
 
+            // Sincronización de ambas secciones con iVoox
+            async function sincronizarPredicas() {
+                // Elementos de la Sección 1 (Prédica de la Semana)
+                const semanaCaratula = document.getElementById('semana-caratula');
+                const semanaFecha = document.getElementById('semana-fecha');
+                const semanaTitulo = document.getElementById('semana-titulo');
+                const semanaAudio = document.getElementById('semana-audio');
+
+                // Elementos de la Sección 2 (Edificando tu Fe)
+                const gridContenedor = document.getElementById('contenedor-grid-predicas');
+                const secundarioTitulo = document.getElementById('secundario-titulo');
+                const secundarioAudio = document.getElementById('secundario-audio');
+                const cajaSecundario = document.getElementById('caja-player-secundario');
+
+                semanaCaratula.onerror = function() {
+                    this.src = IMAGEN_DEFAULT;
+                };
+
+                try {
+                    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(IVOOX_RSS_URL)}`);
+                    const datos = await res.json();
+
+                    if (datos.status === 'ok' && datos.items && datos.items.length > 0) {
+                        const items = datos.items;
+
+                        // 1. CARGAR LA PRÉDICA MÁS RECIENTE EN LA SECCIÓN 1
+                        const masReciente = items[0];
+                        const fechaRecienteObj = new Date(masReciente.pubDate);
+                        const fechaRecienteTexto = isNaN(fechaRecienteObj) ? "Último Culto" : fechaRecienteObj.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+                        
+                        semanaTitulo.textContent = masReciente.title;
+                        semanaFecha.textContent = fechaRecienteTexto;
+                        semanaAudio.src = (masReciente.enclosure && masReciente.enclosure.link) ? masReciente.enclosure.link : "";
+                        semanaCaratula.src = masReciente.thumbnail || (datos.feed && datos.feed.image) || IMAGEN_DEFAULT;
+
+                        // 2. CARGAR LA LISTA EN LA SECCIÓN 2 (EDIFICANDO TU FE)
+                        gridContenedor.innerHTML = "";
+
+                        items.forEach((item, index) => {
+                            const fechaObj = new Date(item.pubDate);
+                            const fechaTexto = isNaN(fechaObj) ? "Culto" : fechaObj.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+                            const urlAudio = (item.enclosure && item.enclosure.link) ? item.enclosure.link : "";
+
+                            const card = document.createElement('div');
+                            card.className = `tarjeta-predica-card ${index === 0 ? 'activa' : ''}`;
+                            card.innerHTML = `
+                                <div class="card-play-btn">▶</div>
+                                <div class="card-info">
+                                    <span class="card-fecha">${fechaTexto}</span>
+                                    <h5 class="card-titulo">${item.title}</h5>
+                                    <span class="card-accion">Toca para escuchar</span>
+                                </div>
+                            `;
+
+                            card.addEventListener('click', () => {
+                                document.querySelectorAll('.tarjeta-predica-card').forEach(c => c.classList.remove('activa'));
+                                card.classList.add('activa');
+
+                                // Si la sección 1 estaba sonando, la pausamos
+                                semanaAudio.pause();
+
+                                // Activamos el reproductor de la sección 2
+                                cajaSecundario.classList.add('visible');
+                                secundarioTitulo.textContent = item.title;
+                                secundarioAudio.src = urlAudio;
+                                secundarioAudio.play();
+
+                                // Desplazamiento suave al reproductor
+                                cajaSecundario.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            });
+
+                            gridContenedor.appendChild(card);
+                        });
+                    } else {
+                        cargarRespaldo();
+                    }
+                } catch (e) {
+                    cargarRespaldo();
+                }
+
+                function cargarRespaldo() {
+                    semanaTitulo.textContent = "Culto Dominical: Fe que Vence";
+                    semanaFecha.textContent = "Mensaje Reciente";
+                    semanaCaratula.src = IMAGEN_DEFAULT;
+
+                    gridContenedor.innerHTML = `
+                        <div class="tarjeta-predica-card activa">
+                            <div class="card-play-btn">▶</div>
+                            <div class="card-info">
+                                <span class="card-fecha">Domingo</span>
+                                <h5 class="card-titulo">Culto Dominical: Fe que Vence</h5>
+                                <span class="card-accion">Toca para escuchar</span>
+                            </div>
+                        </div>
+                        <div class="tarjeta-predica-card">
+                            <div class="card-play-btn">▶</div>
+                            <div class="card-info">
+                                <span class="card-fecha">Miércoles</span>
+                                <h5 class="card-titulo">Estudio Bíblico: El Poder de la Oración Continua</h5>
+                                <span class="card-accion">Toca para escuchar</span>
+                            </div>
+                        </div>
+                        <div class="tarjeta-predica-card">
+                            <div class="card-play-btn">▶</div>
+                            <div class="card-info">
+                                <span class="card-fecha">Viernes</span>
+                                <h5 class="card-titulo">Culto de Adoración: Buscando la Presencia de Dios</h5>
+                                <span class="card-accion">Toca para escuchar</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            sincronizarPredicas();
+
+            // Sincronización En Vivo de Facebook
             async function sincronizarEnVivo() {
                 try {
                     const respuesta = await fetch(`${API_URL}?t=${Date.now()}`, {
