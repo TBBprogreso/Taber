@@ -8,13 +8,19 @@
     <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
     <meta name="robots" content="index, follow">
 
+    <!-- Preconexión a servicios externos para acelerar la carga -->
+    <link rel="preconnect" href="https://api.rss2json.com">
+    <link rel="preconnect" href="https://www.ivoox.com">
+    <link rel="preconnect" href="https://open.spotify.com">
+    <link rel="preconnect" href="https://www.facebook.com">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header> 
         <div class="logo-contenedor">
-            <img src="img/logo.png" alt="Logotipo TBB Progreso de Adoración" width="50" height="50">
+            <img src="img/logo.png" alt="Logotipo TBB Progreso de Adoración" width="50" height="50" fetchpriority="high">
             <div class="texto-iglesia">
                 <span class="titulo-sitio">TBB Progreso de Adoración</span>
                 <p>13 años para la gloria de Dios</p>
@@ -177,9 +183,7 @@
             </div>
         </section>
 
-        <!-- ========================================================
-             SECCIÓN 1: LA PRÉDICA DE LA SEMANA (SPOTIFY / MANUAL)
-             ======================================================== -->
+        <!-- SECCIÓN 1: LA PRÉDICA DE LA SEMANA -->
         <section id="Predicacion-Semana" class="seccion-predica-semana">
             <div class="encabezado-seccion-centro">
                 <span class="insignia-audio">EL PODER DE LA PALABRA</span>
@@ -190,13 +194,11 @@
             </div>
 
             <div class="tarjeta-player-destacado" id="contenedor-predica-semana">
-                <!-- Se llenará automáticamente con Spotify o iVoox según configures abajo -->
+                <!-- Se llenará automáticamente con Spotify -->
             </div>
         </section>
 
-        <!-- ========================================================
-             SECCIÓN VERSÍCULO DE LA SEMANA
-             ======================================================== -->
+        <!-- SECCIÓN VERSÍCULO DE LA SEMANA -->
         <section id="Versiculo">
             <div class="encabezado-devocional">
                 <span class="insignia-devocional">PALABRA VIVA</span>
@@ -232,9 +234,7 @@
             </div>
         </section>
 
-        <!-- ========================================================
-             SECCIÓN 2: EDIFICANDO TU FE (IVOOX - PRIMEROS 10 EPISODIOS)
-             ======================================================== -->
+        <!-- SECCIÓN 2: EDIFICANDO TU FE (IVOOX) -->
         <section id="Edificando-Fe" class="seccion-edificando-fe">
             <div class="encabezado-seccion-centro">
                 <span class="insignia-audio insignia-verde">NUESTRAS PREDICACIONES</span>
@@ -244,7 +244,6 @@
                 </p>
             </div>
 
-            <!-- Contenedor compacto con scroll vertical estilizado -->
             <div class="contenedor-scroll-moderno">
                 <div class="grid-predicas-estilo-captura" id="contenedor-grid-predicas">
                     <div class="cargando-estado">Cargando prédicas recientes...</div>
@@ -252,9 +251,7 @@
             </div>
         </section>
 
-        <!-- ========================================================
-             SECCIÓN REDES SOCIALES
-             ======================================================== -->
+        <!-- SECCIÓN REDES SOCIALES -->
         <section id="Redes">
             <div class="bloque-redes">
                 <h3>Conéctate con Nosotros</h3>
@@ -442,10 +439,6 @@
                 }
 
                 try {
-                    // =========================================================================
-                    // 📌 CONFIGURACIÓN DE LA PRÉDICA DE LA SEMANA (SPOTIFY)
-                    // Pega aquí abajo tu enlace de inserción de Spotify:
-                    // =========================================================================
                     const urlSpotifySemana = "https://open.spotify.com/embed//episode/3gNj7M6T24FSFBYeX89rHj";
 
                     if (urlSpotifySemana.trim() !== "") {
@@ -460,9 +453,6 @@
                         `;
                     }
 
-                    // =========================================================================
-                    // SECCIÓN INFERIOR: Edificando tu Fe (Toma automáticamente los primeros 10 de iVoox)
-                    // =========================================================================
                     const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(IVOOX_RSS_URL)}`);
                     const datos = await res.json();
 
@@ -563,7 +553,7 @@
                         }
                     } else {
                         if (seccionVivo) seccionVivo.classList.add("oculto");
-                        if (enlaceNav) seccionNav.classList.add("oculto");
+                        if (enlaceNav) enlaceNav.classList.add("oculto"); // Corregido de seccionNav a enlaceNav
                         if (contenedor) {
                             contenedor.removeAttribute("data-actual");
                             contenedor.innerHTML = "";
