@@ -467,7 +467,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   5. SECCIÓN MINISTERIOS (Optimizado con content-visibility)
+   5. SECCIÓN MINISTERIOS
    ======================================================== */
 #Ministerios {
     text-align: center;
@@ -552,7 +552,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   6. SECCIÓN TESTIMONIO PASTOR
+   6. SECCIÓN TESTIMONIO PASTOR (Optimizado contra CLS)
    ======================================================== */
 #Pastor {
     background-color: #f8fafc;
@@ -561,6 +561,7 @@ nav a:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     content-visibility: auto;
     contain-intrinsic-size: auto 700px;
+    min-height: 650px; /* Previene CLS reservando altura inicial */
 }
 
 .titulo-pastor-destacado {
@@ -771,7 +772,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   7. SECCIÓN 1: LA PRÉDICA DE LA SEMANA (DESTACADA)
+   7. SECCIÓN 1: LA PRÉDICA DE LA SEMANA
    ======================================================== */
 .seccion-predica-semana {
     background-color: #ffffff;
@@ -1094,7 +1095,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   9. SECCIÓN 2: EDIFICANDO TU FE (SCROLL VERTICAL MODERNO)
+   9. SECCIÓN 2: EDIFICANDO TU FE
    ======================================================== */
 .seccion-edificando-fe {
     background-color: #ffffff;
@@ -1656,7 +1657,6 @@ nav a:hover {
     }
 }
 
-/* Optimización para movimiento reducido (Accesibilidad) */
 @media (prefers-reduced-motion: reduce) {
     .carrusel-pista,
     .btn-flotante-whatsapp,
