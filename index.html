@@ -8,6 +8,9 @@
     <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
     <meta name="robots" content="index, follow">
 
+    <!-- Precarga de la imagen principal para solucionar el retraso de LCP -->
+    <link rel="preload" as="image" href="img/inicio.png">
+
     <!-- Preconexión a servicios externos para acelerar la carga -->
     <link rel="preconnect" href="https://api.rss2json.com">
     <link rel="preconnect" href="https://www.ivoox.com">
@@ -130,7 +133,7 @@
             <div class="tarjeta-pastor-editorial">
                 <aside class="pastor-perfil">
                     <div class="marco-foto-pastor">
-                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async">
+                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async" width="190" height="190">
                     </div>
                     <h3>Roger Alí Caballero</h3>
                     <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
@@ -555,7 +558,7 @@
                         }
                     } else {
                         if (seccionVivo) seccionVivo.classList.add("oculto");
-                        if (enlaceNav) enlaceNav.classList.add("oculto"); // Corregido de seccionNav a enlaceNav
+                        if (enlaceNav) enlaceNav.classList.add("oculto");
                         if (contenedor) {
                             contenedor.removeAttribute("data-actual");
                             contenedor.innerHTML = "";
