@@ -94,19 +94,18 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE ANIVERSARIO (SOLO VIDEO VERTICAL CON AUDIO HABILITADO) -->
+        <!-- SECCIÓN DE ANIVERSARIO -->
         <section id="Aniversario" class="seccion-aniversario animar-seccion">
             <div class="encabezado-seccion-centro">
                 <span class="insignia-audio">CELEBRACIÓN ESPECIAL</span>
                 <h2>¡13 Años para la Gloria de Dios!</h2>
                 <p class="subtitulo-seccion-centro">
-                    Invitación de nuestro Pastor Roger Caballero
+                    Fiesta de aniversario : Inicio Miércoles 30 de Septiembre - 4 de Octubre
                 </p>
             </div>
 
             <div class="contenedor-aniversario-video-centrado">
                 <div class="marco-video-vertical">
-                    <!-- Se quitó 'muted' para que el video tenga sonido y se agregaron controles -->
                     <video id="videoAniversario" controls autoplay playsinline loop preload="metadata" poster="img/13aniversario.png">
                         <source src="img/WhatsApp Video 2026-09-16 at 9.43.40 PM.mp4" type="video/mp4">
                         Tu navegador no soporta videos HTML5.
@@ -200,7 +199,7 @@
                 </article>
             </div>
 
-            <!-- MOMENTOS DE MINISTERIO (CARRUSEL AJUSTADO) -->
+            <!-- MOMENTOS DE MINISTERIO -->
             <div class="galeria-carrusel-seccion">
                 <h4>Momentos del Ministerio</h4>
                 <div class="carrusel-mascara">
@@ -429,7 +428,6 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         
-                        // Iniciar video vertical al entrar en pantalla (si el navegador lo permite con audio)
                         const video = entry.target.querySelector('#videoAniversario');
                         if (video) {
                             video.play().catch(() => {});
@@ -520,7 +518,7 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
                 }
 
                 try {
-                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/5LairGm6RHDVXz08dWkkP0";
+                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/4swRXBOZhu9B9RX3q3pAnm";
 
                     if (urlSpotifySemana.trim() !== "") {
                         contenedorPredicaSemana.innerHTML = `
