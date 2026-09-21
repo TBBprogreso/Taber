@@ -8,10 +8,10 @@
     <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
     <meta name="robots" content="index, follow">
 
-    <!-- Precarga de la imagen principal para solucionar el retraso de LCP -->
+    <!-- Precarga de la imagen principal -->
     <link rel="preload" as="image" href="img/inicio.png">
 
-    <!-- Preconexión a servicios externos para acelerar la carga -->
+    <!-- Preconexión a servicios externos -->
     <link rel="preconnect" href="https://api.rss2json.com">
     <link rel="preconnect" href="https://www.ivoox.com">
     <link rel="preconnect" href="https://open.spotify.com">
@@ -22,6 +22,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ANIMACIÓN DE CARGA / SPLASH SCREEN CON LA IMAGEN DE 13 AÑOS -->
+    <div id="splash-aniversario" class="splash-contenedor">
+        <div class="splash-contenido">
+            <img src="img/13aniversario.png" alt="13 Años Aniversario" class="splash-imagen-animada">
+            <h1 class="splash-texto">¡13 Años para la Gloria de Dios!</h1>
+            <div class="splash-spinner"></div>
+        </div>
+    </div>
 
     <header> 
         <div class="logo-contenedor">
@@ -38,6 +47,7 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
+            <a href="#Aniversario">ANIVERSARIO 13</a>
             <a href="#seccion-en-vivo" class="btn-nav-vivo oculto" id="enlace-nav-vivo">
                 <span class="punto-rojo-mini"></span> EN VIVO
             </a>
@@ -67,7 +77,7 @@
     </section>
 
     <main>
-        <section id="Inicio">
+        <section id="Inicio" class="animar-seccion">
             <h1>Bienvenidos a TBB Progreso de Adoración</h1>
             <p>Nos gozamos en recibirte, sé parte de la bendición</p>
             
@@ -84,7 +94,28 @@
             </div>
         </section>
 
-        <section id="Cultos">
+        <!-- SECCIÓN DE ANIVERSARIO (SOLO VIDEO VERTICAL CON AUDIO HABILITADO) -->
+        <section id="Aniversario" class="seccion-aniversario animar-seccion">
+            <div class="encabezado-seccion-centro">
+                <span class="insignia-audio">CELEBRACIÓN ESPECIAL</span>
+                <h2>¡13 Años para la Gloria de Dios!</h2>
+                <p class="subtitulo-seccion-centro">
+                    Invitación de nuestro Pastor Roger Caballero
+                </p>
+            </div>
+
+            <div class="contenedor-aniversario-video-centrado">
+                <div class="marco-video-vertical">
+                    <!-- Se quitó 'muted' para que el video tenga sonido y se agregaron controles -->
+                    <video id="videoAniversario" controls autoplay playsinline loop preload="metadata" poster="img/13aniversario.png">
+                        <source src="img/WhatsApp Video 2026-09-16 at 9.43.40 PM.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="Cultos" class="animar-seccion">
             <h2>NUESTROS CULTOS</h2>
             <p class="descripcion-seccion">Te invitamos a acompañarnos en nuestras reuniones semanales de adoración y enseñanza</p>
 
@@ -112,7 +143,7 @@
             </div>
         </section>
 
-        <section id="Ministerios">
+        <section id="Ministerios" class="animar-seccion">
             <h2>Nuestros Ministerios</h2>
             <div class="galeria-ministerios">
                 <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate" loading="lazy" decoding="async"></div>
@@ -128,7 +159,7 @@
             </div>
         </section>
 
-        <section id="Pastor">
+        <section id="Pastor" class="animar-seccion">
             <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
             <div class="tarjeta-pastor-editorial">
                 <aside class="pastor-perfil">
@@ -169,6 +200,7 @@
                 </article>
             </div>
 
+            <!-- MOMENTOS DE MINISTERIO (CARRUSEL AJUSTADO) -->
             <div class="galeria-carrusel-seccion">
                 <h4>Momentos del Ministerio</h4>
                 <div class="carrusel-mascara">
@@ -178,18 +210,22 @@
                         <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas" loading="lazy">
                         <img src="img/RogerGraduacion.jpg" alt="Roger Graduación" loading="lazy">
                         <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción" loading="lazy">
+                        <img src="img/familia1.jpeg" alt="Familia 1" loading="lazy">
+                        <img src="img/familia2.jpeg" alt="Familia 2" loading="lazy">
                         <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón copia" loading="lazy">
                         <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2 copia" loading="lazy">
                         <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas copia" loading="lazy">
                         <img src="img/RogerGraduacion.jpg" alt="Roger Graduación copia" loading="lazy">
                         <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción copia" loading="lazy">
+                        <img src="img/familia1.jpeg" alt="Familia 1 copia" loading="lazy">
+                        <img src="img/familia2.jpeg" alt="Familia 2 copia" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN 1: LA PRÉDICA DE LA SEMANA -->
-        <section id="Predicacion-Semana" class="seccion-predica-semana">
+        <section id="Predicacion-Semana" class="seccion-predica-semana animar-seccion">
             <div class="encabezado-seccion-centro">
                 <span class="insignia-audio">EL PODER DE LA PALABRA</span>
                 <h2>La Prédica de la Semana</h2>
@@ -204,7 +240,7 @@
         </section>
 
         <!-- SECCIÓN VERSÍCULO DE LA SEMANA -->
-        <section id="Versiculo">
+        <section id="Versiculo" class="animar-seccion">
             <div class="encabezado-devocional">
                 <span class="insignia-devocional">PALABRA VIVA</span>
                 <h2>Versículo de la Semana</h2>
@@ -243,7 +279,7 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
         </section>
 
         <!-- SECCIÓN 2: EDIFICANDO TU FE (IVOOX) -->
-        <section id="Edificando-Fe" class="seccion-edificando-fe">
+        <section id="Edificando-Fe" class="seccion-edificando-fe animar-seccion">
             <div class="encabezado-seccion-centro">
                 <span class="insignia-audio insignia-verde">NUESTRAS PREDICACIONES</span>
                 <h2>Edificando tu Fe</h2>
@@ -260,7 +296,7 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
         </section>
 
         <!-- SECCIÓN REDES SOCIALES -->
-        <section id="Redes">
+        <section id="Redes" class="animar-seccion">
             <div class="bloque-redes">
                 <h3>Conéctate con Nosotros</h3>
                 <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
@@ -325,6 +361,7 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
                 <h4>Navegación</h4>
                 <ul>
                     <li><a href="#Inicio">Inicio</a></li>
+                    <li><a href="#Aniversario">Aniversario 13</a></li>
                     <li><a href="#Cultos">Nuestros Cultos</a></li>
                     <li><a href="#Ministerios">Nuestros Ministerios</a></li>
                     <li><a href="#Pastor">Testimonio del Pastor</a></li>
@@ -369,9 +406,45 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
     </a>
 
     <script>
+        // Ocultar Splash Screen de Aniversario al cargar la página
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-aniversario');
+            if (splash) {
+                setTimeout(() => {
+                    splash.classList.add('splash-oculto');
+                }, 1400); 
+            }
+        });
+
+        // Reproducir video vertical al hacer scroll y animar secciones
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Iniciar video vertical al entrar en pantalla (si el navegador lo permite con audio)
+                        const video = entry.target.querySelector('#videoAniversario');
+                        if (video) {
+                            video.play().catch(() => {});
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animar-seccion').forEach(seccion => {
+                observer.observe(seccion);
+            });
+        });
+
         const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
         const IVOOX_RSS_URL = "https://www.ivoox.com/podcast-predicaciones-tbb-progreso-adoracion_fg_f11561816_filtro_1.xml";
-        const IMAGEN_DEFAULT = "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80";
 
         function limpiarUrlAudio(item) {
             let url = "";
@@ -447,7 +520,7 @@ Zaqueo un hombre despreciado y marginado por los judíos, pudo encontrar en Jes�
                 }
 
                 try {
-                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/4swRXBOZhu9B9RX3q3pAnm";
+                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/5LairGm6RHDVXz08dWkkP0";
 
                     if (urlSpotifySemana.trim() !== "") {
                         contenedorPredicaSemana.innerHTML = `
