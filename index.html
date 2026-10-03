@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>TBB Progreso de Adoración | Inicio</title>
-    <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones, transmisiones y eventos.">
+    <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones y eventos.">
     <meta name="robots" content="index, follow">
 
     <!-- Precarga de la imagen principal -->
@@ -15,22 +15,12 @@
     <link rel="preconnect" href="https://api.rss2json.com">
     <link rel="preconnect" href="https://www.ivoox.com">
     <link rel="preconnect" href="https://open.spotify.com">
-    <link rel="preconnect" href="https://www.facebook.com">
 
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b6401c3a8345429c89d669ae6c915110"}'></script><!-- End Cloudflare Web Analytics -->
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ANIMACIÓN DE CARGA / SPLASH SCREEN CON LA IMAGEN DE 13 AÑOS -->
-    <div id="splash-aniversario" class="splash-contenedor">
-        <div class="splash-contenido">
-            <img src="img/13aniversario.png" alt="13 Años Aniversario" class="splash-imagen-animada">
-            <h1 class="splash-texto">¡13 Años para la Gloria de Dios!</h1>
-            <div class="splash-spinner"></div>
-        </div>
-    </div>
 
     <header> 
         <div class="logo-contenedor">
@@ -47,10 +37,6 @@
 
         <nav id="navbar">
             <a href="#Inicio">INICIO</a>
-            <a href="#Aniversario">ANIVERSARIO 13</a>
-            <a href="#seccion-en-vivo" class="btn-nav-vivo oculto" id="enlace-nav-vivo">
-                <span class="punto-rojo-mini"></span> EN VIVO
-            </a>
             <a href="#Cultos">NUESTROS CULTOS</a>
             <a href="#Ministerios">NUESTROS MINISTERIOS</a>
             <a href="#Pastor">TESTIMONIO PASTOR</a>
@@ -60,21 +46,6 @@
             <a href="#Redes">NUESTRAS REDES SOCIALES</a>
         </nav>
     </header>
-
-    <section id="seccion-en-vivo" class="seccion-vivo oculto">
-        <div class="vivo-contenedor">
-            <div class="vivo-badge" id="badge-vivo">
-                <span class="punto-rojo"></span> TRANSMISIÓN EN DIRECTO
-            </div>
-            
-            <h2 id="titulo-vivo">Culto en Vivo</h2>
-            <p id="subtitulo-vivo">
-                Acompáñanos y sé parte de nuestro servicio en directo.
-            </p>
-
-            <div class="marco-reproductor-vivo" id="contenedor-reproductor"></div>
-        </div>
-    </section>
 
     <main>
         <section id="Inicio" class="animar-seccion">
@@ -91,26 +62,6 @@
                    class="btn-hero btn-hero-secundario">
                     Escríbenos por WhatsApp
                 </a>
-            </div>
-        </section>
-
-        <!-- SECCIÓN DE ANIVERSARIO -->
-        <section id="Aniversario" class="seccion-aniversario animar-seccion">
-            <div class="encabezado-seccion-centro">
-                <span class="insignia-audio">CELEBRACIÓN ESPECIAL</span>
-                <h2>¡13 Años para la Gloria de Dios!</h2>
-                <p class="subtitulo-seccion-centro">
-                    Invitacion de Nuestro Pastor Roger Caballero 
-                </p>
-            </div>
-
-            <div class="contenedor-aniversario-video-centrado">
-                <div class="marco-video-vertical">
-                    <video id="videoAniversario" controls autoplay playsinline loop preload="metadata" poster="img/13aniversario.png">
-                        <source src="img/WhatsApp Video 2026-09-16 at 9.43.40 PM.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
             </div>
         </section>
 
@@ -162,9 +113,18 @@
             <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
             <div class="tarjeta-pastor-editorial">
                 <aside class="pastor-perfil">
-                    <div class="marco-foto-pastor">
-                        <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async" width="190" height="190">
+                    <!-- Contenedor con efecto giro tipo moneda y ajuste perfecto de imagen sin espacios blancos -->
+                    <div class="flip-coin-container" id="coinContainer">
+                        <div class="flip-coin-inner" id="coinInner">
+                            <div class="flip-coin-front">
+                                <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async" width="190" height="190">
+                            </div>
+                            <div class="flip-coin-back">
+                                <img src="img/familia3.jpeg" alt="Familia" loading="lazy" decoding="async" width="190" height="190">
+                            </div>
+                        </div>
                     </div>
+                    
                     <h3>Roger Alí Caballero</h3>
                     <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
                     
@@ -251,7 +211,7 @@
                     <blockquote class="caja-versiculo">
                         <span class="comilla-grande">“</span>
                         <p class="cita-texto">Él convierte en nada a los poderosos, y a los que gobiernan la tierra hace como cosa vana.</p>
-                        <cite class="referencia">— Isaías 40:23. .</cite>
+                        <cite class="referencia">— Isaías 40:23.</cite>
                     </blockquote>
 
                     <div class="cuerpo-reflexion">
@@ -261,10 +221,9 @@
                         </p>
                         <p>
                           Tomando en cuenta que convierte en nada a los poderosos, nuestra actitud y comportamiento para con él, debe ser de respeto y humildad, que las cosas que llegan a nuestras manos sean para su gloria y honra.
-                            
                         </p>
                         <p class="nota-consejo">
-                            💡 Él controla todo, él lo ve todo y él lo sabe todo. El único poderoso aquí y en todos partes es nuestro señor Jesucristo.
+                            💡 Él controla todo, él lo ve todo y él lo sabe todo. El único poderoso aquí y en todas partes es nuestro señor Jesucristo.
                         </p>
                         <p class="despedida-bendicion">¡Bendiciones!</p>
                     </div>
@@ -359,7 +318,6 @@
                 <h4>Navegación</h4>
                 <ul>
                     <li><a href="#Inicio">Inicio</a></li>
-                    <li><a href="#Aniversario">Aniversario 13</a></li>
                     <li><a href="#Cultos">Nuestros Cultos</a></li>
                     <li><a href="#Ministerios">Nuestros Ministerios</a></li>
                     <li><a href="#Pastor">Testimonio del Pastor</a></li>
@@ -398,49 +356,12 @@
         rel="noopener noreferrer" 
         aria-label="Contactar por WhatsApp para información y consejería">
         <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
-            <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.643.17.88-.102.237-.27 1.014-1.183 1.284-1.589.27-.406.54-.338.914-.203.372.135 2.366 1.116 2.772 1.32.406.203.676.304.778.473.101.17.101.98-.227 1.904z"/>
+            <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.676.304.778.473.101.17.101.98-.227 1.904z"/>
         </svg>
         <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
     </a>
 
     <script>
-        // Ocultar Splash Screen de Aniversario al cargar la página
-        window.addEventListener('load', () => {
-            const splash = document.getElementById('splash-aniversario');
-            if (splash) {
-                setTimeout(() => {
-                    splash.classList.add('splash-oculto');
-                }, 1400); 
-            }
-        });
-
-        // Reproducir video vertical al hacer scroll y animar secciones
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        
-                        const video = entry.target.querySelector('#videoAniversario');
-                        if (video) {
-                            video.play().catch(() => {});
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.animar-seccion').forEach(seccion => {
-                observer.observe(seccion);
-            });
-        });
-
-        const API_URL = "https://script.google.com/macros/s/AKfycbyclXRBDoIn9UhIA17EYgtKq31SMuINopxxlTIvPJK3AnBfQA9ndTjn9iyyosEufP5i/exec";
         const IVOOX_RSS_URL = "https://www.ivoox.com/podcast-predicaciones-tbb-progreso-adoracion_fg_f11561816_filtro_1.xml";
 
         function limpiarUrlAudio(item) {
@@ -456,26 +377,35 @@
             return url;
         }
 
-        function esUrlFacebookValida(cadenaUrl) {
-            try {
-                const urlObjeto = new URL(cadenaUrl);
-                if (urlObjeto.protocol !== "https:") return false;
-
-                const dominiosPermitidos = [
-                    "facebook.com",
-                    "www.facebook.com",
-                    "web.facebook.com",
-                    "m.facebook.com",
-                    "fb.watch"
-                ];
-
-                return dominiosPermitidos.includes(urlObjeto.hostname.toLowerCase());
-            } catch (e) {
-                return false;
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
+            // Giro automático tipo moneda cada 4 segundos para la foto del pastor
+            setInterval(() => {
+                const coinContainer = document.getElementById('coinContainer');
+                if (coinContainer) {
+                    coinContainer.classList.toggle('flipped');
+                }
+            }, 4000);
+
+            // Animación de aparición de secciones al hacer scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animar-seccion').forEach(seccion => {
+                observer.observe(seccion);
+            });
+
+            // Control del menú hamburguesa móvil
             const menuToggle = document.getElementById('menuToggle');
             const navbar = document.getElementById('navbar');
 
@@ -501,6 +431,7 @@
                 });
             }
 
+            // Sincronización de prédicas (Spotify + iVoox RSS)
             async function sincronizarPredicas() {
                 const contenedorPredicaSemana = document.getElementById('contenedor-predica-semana');
                 const gridContenedor = document.getElementById('contenedor-grid-predicas');
@@ -582,68 +513,6 @@
             }
 
             sincronizarPredicas();
-
-            async function sincronizarEnVivo() {
-                try {
-                    const respuesta = await fetch(`${API_URL}?t=${Date.now()}`, {
-                        method: "GET",
-                        redirect: "follow"
-                    });
-                    
-                    const texto = await respuesta.text();
-                    let datos;
-                    try {
-                        datos = JSON.parse(texto);
-                    } catch (errJson) {
-                        return;
-                    }
-
-                    let urlVideo = datos.url ? String(datos.url).trim() : "";
-
-                    const seccionVivo = document.getElementById("seccion-en-vivo");
-                    const enlaceNav = document.getElementById("enlace-nav-vivo");
-                    const contenedor = document.getElementById("contenedor-reproductor");
-
-                    if (urlVideo && esUrlFacebookValida(urlVideo)) {
-                        urlVideo = urlVideo.split('?')[0].split('#')[0];
-
-                        if (seccionVivo) seccionVivo.classList.remove("oculto");
-                        if (enlaceNav) enlaceNav.classList.remove("oculto");
-
-                        if (contenedor && contenedor.getAttribute("data-actual") !== urlVideo) {
-                            contenedor.setAttribute("data-actual", urlVideo);
-                            const urlIframe = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(urlVideo)}&show_text=false&width=720`;
-                            
-                            contenedor.innerHTML = `
-                                <iframe 
-                                    src="${urlIframe}" 
-                                    width="100%" 
-                                    height="100%" 
-                                    title="Transmisión del Culto en Directo"
-                                    style="border:none;overflow:hidden;border-radius:14px;" 
-                                    scrolling="no" 
-                                    frameborder="0" 
-                                    allowfullscreen="true" 
-                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                                    sandbox="allow-scripts allow-same-origin allow-presentation">
-                                </iframe>
-                            `;
-                        }
-                    } else {
-                        if (seccionVivo) seccionVivo.classList.add("oculto");
-                        if (enlaceNav) enlaceNav.classList.add("oculto");
-                        if (contenedor) {
-                            contenedor.removeAttribute("data-actual");
-                            contenedor.innerHTML = "";
-                        }
-                    }
-                } catch (e) {
-                    console.error("Error al sincronizar transmisión:", e);
-                }
-            }
-
-            sincronizarEnVivo();
-            setInterval(sincronizarEnVivo, 60000);
         });
     </script>
 </body>
