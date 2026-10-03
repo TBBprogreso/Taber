@@ -6,7 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Evita que la página se mueva o desborde hacia la derecha en celulares */
+    overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f6f9;
     color: #333333;
@@ -14,71 +14,6 @@ html, body {
 
 .oculto {
     display: none !important;
-}
-
-/* ========================================================
-   0. SPLASH SCREEN / ANIMACIÓN INICIAL
-   ======================================================== */
-.splash-contenedor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0f172a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.splash-contenedor.splash-oculto {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.splash-contenido {
-    text-align: center;
-    max-width: 90%;
-    padding: 20px;
-}
-
-.splash-imagen-animada {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: pulsoSplash 1.2s infinite alternate ease-in-out;
-}
-
-.splash-texto {
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-top: 20px;
-    letter-spacing: 0.5px;
-}
-
-.splash-spinner {
-    width: 36px;
-    height: 36px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #38bdf8;
-    border-radius: 50%;
-    margin: 20px auto 0 auto;
-    animation: girarSpinner 0.8s linear infinite;
-}
-
-@keyframes pulsoSplash {
-    0% { transform: scale(0.95); }
-    100% { transform: scale(1.05); }
-}
-
-@keyframes girarSpinner {
-    to { transform: rotate(360deg); }
 }
 
 /* ========================================================
@@ -169,27 +104,6 @@ nav a:hover {
     color: #fdf907;
 }
 
-.btn-nav-vivo {
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid #ef4444;
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-}
-
-.punto-rojo-mini {
-    width: 8px;
-    height: 8px;
-    background-color: #ef4444;
-    border-radius: 50%;
-    animation: pulsarAlerta 1.4s infinite;
-}
-
 @media (max-width: 990px) {
     .menu-toggle {
         display: block;
@@ -225,89 +139,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   2. SECCIÓN EN VIVO
-   ======================================================== */
-.seccion-vivo {
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-    color: #ffffff;
-    padding: 50px 16px;
-    text-align: center;
-}
-
-.vivo-contenedor {
-    max-width: 850px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.vivo-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(239, 68, 68, 0.18);
-    border: 1px solid #ef4444;
-    color: #fca5a5;
-    padding: 6px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
-}
-
-.punto-rojo {
-    width: 10px;
-    height: 10px;
-    background-color: #ef4444;
-    border-radius: 50%;
-    animation: pulsarAlerta 1.4s infinite;
-}
-
-@keyframes pulsarAlerta {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-}
-
-.seccion-vivo h2 {
-    color: #ffffff;
-    font-size: clamp(24px, 4vw, 36px);
-    font-weight: 800;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.seccion-vivo p {
-    color: #cbd5e1;
-    margin-bottom: 30px;
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
-    line-height: 1.5;
-}
-
-.marco-reproductor-vivo {
-    position: relative;
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-    background: #000000;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.marco-reproductor-vivo iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* ========================================================
-   3. SECCIÓN INICIO (HERO)
+   2. SECCIÓN INICIO (HERO)
    ======================================================== */
 #Inicio {
     background-image: 
@@ -388,47 +220,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   3.1 SECCIÓN ANIVERSARIO 13
-   ======================================================== */
-.seccion-aniversario {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 40px 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    margin: 30px auto;
-    max-width: 95%;
-    width: 100%;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-}
-
-.contenedor-aniversario-video-centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    width: 100%;
-}
-
-.marco-video-vertical {
-    width: 100%;
-    max-width: 280px;
-    aspect-ratio: 9 / 16;
-    background: #000000;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 3px solid #1e293b;
-}
-
-.marco-video-vertical video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* ========================================================
-   4. SECCIÓN CULTOS
+   3. SECCIÓN CULTOS
    ======================================================== */
 #Cultos {
     text-align: center;
@@ -498,7 +290,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   5. SECCIÓN MINISTERIOS
+   4. SECCIÓN MINISTERIOS
    ======================================================== */
 #Ministerios {
     text-align: center;
@@ -554,7 +346,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   6. SECCIÓN TESTIMONIO PASTOR
+   5. SECCIÓN TESTIMONIO PASTOR (Con efecto giro moneda 3D optimizado)
    ======================================================== */
 #Pastor {
     background-color: #f8fafc;
@@ -608,23 +400,67 @@ nav a:hover {
     padding-right: 20px;
 }
 
-.marco-foto-pastor {
+/* Efecto moneda 3D */
+.flip-coin-container {
+    perspective: 1000px;
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    padding: 6px;
-    background: linear-gradient(135deg, #2563eb, #60a5fa);
-    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
-    margin-bottom: 20px;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 auto 20px auto;
 }
 
-.marco-foto-pastor img {
+.flip-coin-inner {
+    position: relative;
     width: 100%;
     height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
     border-radius: 50%;
-    object-fit: cover;
-    display: block;
+}
+
+.flip-coin-container.flipped .flip-coin-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-coin-front, .flip-coin-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+    border: 3px solid #60a5fa;
     background-color: #ffffff;
+}
+
+.flip-coin-front {
+    z-index: 2;
+}
+
+.flip-coin-back {
+    transform: rotateY(180deg);
+}
+
+.flip-coin-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 50%;
+}
+
+.flip-coin-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%; /* Desplaza la foto hacia abajo para mostrar bien los rostros */
+    display: block;
+    border-radius: 50%;
 }
 
 .pastor-perfil h3 {
@@ -765,7 +601,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   7. SECCIÓN PRÉDICA DE LA SEMANA
+   6. SECCIÓN PRÉDICA DE LA SEMANA
    ======================================================== */
 .seccion-predica-semana {
     background-color: #ffffff;
@@ -852,7 +688,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   8. SECCIÓN VERSÍCULO DE LA SEMANA
+   7. SECCIÓN VERSÍCULO DE LA SEMANA
    ======================================================== */
 #Versiculo {
     background-color: #ffffff;
@@ -981,7 +817,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   9. SECCIÓN EDIFICANDO TU FE
+   8. SECCIÓN EDIFICANDO TU FE
    ======================================================== */
 .seccion-edificando-fe {
     background-color: #ffffff;
@@ -1021,7 +857,7 @@ nav a:hover {
     transition: all 0.25s ease;
     text-align: left;
     width: 100%;
-    min-width: 0; /* Vital para que los textos largos no fuercen el ancho */
+    min-width: 0;
 }
 
 .tarjeta-predica-card.activa {
@@ -1065,7 +901,7 @@ nav a:hover {
     line-height: 1.3;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Recorta los títulos largos con puntos suspensivos para que no rompan el diseño */
+    text-overflow: ellipsis;
     width: 100%;
 }
 
@@ -1176,7 +1012,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   10. SECCIÓN REDES SOCIALES
+   9. SECCIÓN REDES SOCIALES
    ======================================================== */
 #Redes {
     background-color: #ffffff;
@@ -1264,7 +1100,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   11. PIE DE PÁGINA (FOOTER)
+   10. PIE DE PÁGINA (FOOTER)
    ======================================================== */
 .pie-pagina {
     background: linear-gradient(180deg, #0f172a 0%, #090d16 100%);
@@ -1375,7 +1211,7 @@ nav a:hover {
 }
 
 /* ========================================================
-   12. BOTÓN FLOTANTE DE WHATSAPP
+   11. BOTÓN FLOTANTE DE WHATSAPP
    ======================================================== */
 .btn-flotante-whatsapp {
     position: fixed;
