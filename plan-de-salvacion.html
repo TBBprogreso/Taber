@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiqueta CRÍTICA para ocultar la página de Google y otros buscadores -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Plan de Salvación - TBB Progreso de Adoración</title>
+    <style>
+        :root {
+            --primary-color: #0c2340;
+            --secondary-color: #f4f6f8;
+            --accent-color: #d32f2f;
+            --text-color: #333;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --btn-hover: #08172a;
+            --whatsapp-color: #25D366;
+            --gold-accent: #f1c40f;
+        }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Navbar Superior */
+        .navbar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 800px;
+            width: 100%;
+            justify-content: center;
+        }
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .navbar-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Sección de Imagen Principal (Hero) */
+        .hero {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem 1rem;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(12, 35, 64, 0.7);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 800px;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+        }
+        
+        /* Nuevo cuadro llamativo para la pregunta principal */
+        .main-question-box {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.9), rgba(153, 27, 27, 0.9));
+            border: 3px solid var(--gold-accent);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transform: scale(1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 12px 25px rgba(211, 47, 47, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        }
+
+        .main-question-text {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            color: white;
+            line-height: 1.4;
+        }
+        .highlight-cielo {
+            color: #87CEEB; /* Azul claro / Cielo */
+            text-transform: uppercase;
+            font-size: 1.8rem;
+        }
+        .highlight-infierno {
+            color: #FF6347; /* Rojo anaranjado / Fuego */
+            text-transform: uppercase;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -2rem auto 2rem;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-color);
+        }
+        .question {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .question-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .bible-verse {
+            font-style: italic;
+            color: #444;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+        .bible-ref {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .prayer-section {
+            background-color: #f0f7ff;
+            border: 2px solid var(--primary-color);
+            text-align: center;
+            border-top: none;
+        }
+        .prayer-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .congratulations {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+        }
+        
+        /* Botones de Acción */
+        .cta-section {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+            gap: 10px;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: white;
+            border: 2px solid var(--whatsapp-color);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .footer a {
+            color: #90caf9;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .main-question-text {
+                font-size: 1.3rem;
+            }
+            .highlight-cielo, .highlight-infierno {
+                font-size: 1.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de Navegación Superior -->
+<nav class="navbar">
+    <div class="navbar-content">
+        <img src="img/logo.png" alt="Logo TBB Progreso de Adoración" class="navbar-logo" onerror="this.style.display='none'">
+        <h2 class="navbar-title">TBB Progreso de Adoración</h2>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>JESÚS TE AMA</h1>
+        
+        <div class="main-question-box">
+            <p class="main-question-text">
+                Si usted muriera hoy,<br>
+                ¿a dónde iría su alma?<br>
+                ¿Al <span class="highlight-cielo">CIELO</span> o al <span class="highlight-infierno">INFIERNO</span>?
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <div class="question"><span class="question-number">1</span> ¿Cree usted que Jesús es Dios?</div>
+        <div class="bible-verse">
+            "Que si confesares con tu boca que Jesús es el Señor, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo." <br>
+            <span class="bible-ref">(Romanos 10:9)</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="question"><span class="question-number">2</span> ¿Cree usted que Jesús resucitó al tercer día?</div>
+        <div class="bible-verse">
+            <span class="bible-ref">1º Corintios 15:4 dice:</span> "Y que fue sepultado, y que resucitó al tercer día, conforme las Escrituras".
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="question"><span class="question-number">3</span> ¿Cree usted que Cristo murió por los pecadores?</div>
+        <div class="bible-verse">
+            <span class="bible-ref">Romanos 5:8 dice:</span> "Mas Dios muestra su amor para con nosotros, en que siendo aun pecadores, Cristo murió por nosotros".
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="question"><span class="question-number">4</span> ¿Ha pecado usted alguna vez?</div>
+        <p>Si muere sin Cristo, irá usted al infierno.</p>
+        <div class="bible-verse">
+            <span class="bible-ref">Romanos 3:23 dice:</span> "Por cuanto todos pecaron, y están destituidos de la gloria de Dios".
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="question"><span class="question-number">5</span> ¿Quiere tener la seguridad que al morir iría al cielo?</div>
+        <div class="bible-verse">
+            <span class="bible-ref">Romanos 10:13 dice:</span> "Porque todo aquel que invocare el nombre del Señor, será salvo"
+        </div>
+    </div>
+
+    <div class="card prayer-section">
+        <div class="prayer-title">Invite a Jesús a su corazón y recíbale como su Salvador Personal</div>
+        <h3 style="color: var(--accent-color);">¡HÁGALO HOY MISMO!</h3>
+        <p>Invóquele de esta manera:</p>
+        <div class="question" style="justify-content: center; margin-top: 1.5rem;"><span class="question-number">6</span></div>
+        <p style="font-size: 1.1rem; font-style: italic; color: #444;">
+            "Señor Jesús, yo te recibo hoy como mi único y suficiente Salvador personal; creo que eres Dios, que moriste en la cruz por mis pecados y que resucitaste al tercer día. Me arrepiento, soy pecador. Perdóname Señor.<br><br>
+            Gracias doy al Padre por enviar a su hijo a morir en mi lugar. Gracias Jesús por salvar mi alma hoy. En Cristo Jesús mi Salvador, Amén".
+        </p>
+    </div>
+
+    <div class="congratulations">¡Felicidades!</div>
+
+    <div class="card">
+        <div class="question"><span class="question-number">7</span> Ahora ha nacido de nuevo a la familia de Dios</div>
+        <div class="bible-verse">
+            <span class="bible-ref">Juan 1:12 dice:</span> "Mas a todos los que le recibieron, a los que creen en su nombre, les dio potestad de ser hechos hijos de Dios"
+        </div>
+        <p style="margin-top: 1.5rem; text-align: justify;">
+            Damos gracias a Dios por su decisión de recibir a Cristo como su Salvador y Señor. Ahora queremos que crezca en conocimiento. Congréguese en nuestra iglesia y aprenda más de Jesús.
+        </p>
+        
+        <!-- Enlaces / Botones de Acción -->
+        <div class="cta-section">
+            <a href="https://www.tbbprogresodeadoracion.com/" class="btn btn-primary">
+                Visitar Página Web
+            </a>
+            <a href="https://wa.me/50375714132?text=Hola,%20deseo%20información%20y%20consejería%20pastoral%20en%20TBB%20Progreso%20de%20Adoración" target="_blank" class="btn btn-whatsapp">
+                Escríbenos (WhatsApp)
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <h3>TBB Progreso de Adoración</h3>
+    <p>Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
+    <p><a href="https://www.tbbprogresodeadoracion.com/" target="_blank">www.tbbprogresodeadoracion.com</a></p>
+</div>
+
+</body>
+</html>
