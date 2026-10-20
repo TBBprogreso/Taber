@@ -1,0 +1,38 @@
+name: Sincronizar predicaciones y publicar web
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Actualizar RSS sin perder respaldo si falla
+        run: python scripts/sincronizar.py || echo 'RSS no disponible; se conserva JSON anterior'
+      - name: Guardar catálogo de respaldo en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/predicaciones.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar catálogo de predicaciones"
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Publicar GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
