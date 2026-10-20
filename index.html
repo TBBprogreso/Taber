@@ -320,6 +320,12 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
 <script>
         const IVOOX_RSS_URL = "https://www.ivoox.com/podcast-predicaciones-tbb-progreso-adoracion_fg_f11561816_filtro_1.xml";
 
+            if (typeof window.tbbTranslate !== "function") {
+    window.tbbTranslate = function(texto) {
+        return texto;
+    };
+}
+
         function limpiarUrlAudio(item) {
             let url = "";
             if (item.enclosure && item.enclosure.link) {
