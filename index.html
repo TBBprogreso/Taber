@@ -400,6 +400,28 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                 const barraFlotante = document.getElementById('barra-reproductor-flotante');
                 const barraTitulo = document.getElementById('barra-titulo');
                 const flotanteAudio = document.getElementById('flotante-audio');
+                        flotanteAudio.controls = true;
+                        const btnDetener = document.createElement('button');
+btnDetener.type = 'button';
+btnDetener.textContent = '■ Detener';
+btnDetener.title = 'Detener la predicación';
+
+btnDetener.style.cssText = `
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 8px;
+`;
+
+flotanteAudio.insertAdjacentElement('afterend', btnDetener);
+
+btnDetener.addEventListener('click', () => {
+    flotanteAudio.pause();
+    flotanteAudio.currentTime = 0;
+});
                 const btnCerrarBarra = document.getElementById('btnCerrarBarra');
 
                 if (btnCerrarBarra) {
