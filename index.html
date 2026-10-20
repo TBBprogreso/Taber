@@ -1,369 +1,323 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>TBB Progreso de Adoración | Inicio</title>
-    <meta name="description" content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones y eventos.">
-    <meta name="robots" content="index, follow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<title>TBB Progreso de Adoración | Inicio</title>
+<meta content="Sitio oficial de TBB Progreso de Adoración. Encuentra información sobre nuestras reuniones y eventos." name="description"/>
+<meta content="index, follow" name="robots"/>
+<!-- Precarga de la imagen principal -->
+<link as="image" href="img/inicio.png" rel="preload"/>
+<!-- Preconexión a servicios externos -->
 
-    <!-- Precarga de la imagen principal -->
-    <link rel="preload" as="image" href="img/inicio.png">
-
-    <!-- Preconexión a servicios externos -->
-    <link rel="preconnect" href="https://api.rss2json.com">
-    <link rel="preconnect" href="https://www.ivoox.com">
-    <link rel="preconnect" href="https://open.spotify.com">
-
-    <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b6401c3a8345429c89d669ae6c915110"}'></script><!-- End Cloudflare Web Analytics -->
-
-    <link rel="stylesheet" href="style.css">
-</head>
+<link href="https://www.ivoox.com" rel="preconnect"/>
+<link href="https://open.spotify.com" rel="preconnect"/>
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "b6401c3a8345429c89d669ae6c915110"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><!-- End Cloudflare Web Analytics -->
+<link href="style.css" rel="stylesheet"/>
+<link href="img/logo.png" rel="icon" type="image/png"/><link href="img/logo.png" rel="shortcut icon" type="image/png"/><link href="img/logo.png" rel="apple-touch-icon" type="image/png"/><meta content="#474d55" name="theme-color"/><script defer="True" src="js/idiomas.js"></script></head>
 <body>
-
-    <header> 
-        <div class="logo-contenedor">
-            <img src="img/logo.png" alt="Logotipo TBB Progreso de Adoración" width="50" height="50" fetchpriority="high">
-            <div class="texto-iglesia">
-                <span class="titulo-sitio">TBB Progreso de Adoración</span>
-                <p>13 años para la gloria de Dios</p>
-            </div>
-        </div>
-        
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+<header>
+<div class="logo-contenedor">
+<img alt="Logotipo TBB Progreso de Adoración" data-i18n-alt="Logotipo TBB Progreso de Adoración" fetchpriority="high" height="50" src="img/logo.png" width="50"/>
+<div class="texto-iglesia">
+<span class="titulo-sitio">TBB Progreso de Adoración</span>
+<p data-i18n="t1">13 años para la gloria de Dios</p>
+</div>
+</div>
+<button aria-label="Switch website to English" class="boton-idioma" id="idiomaToggle" type="button">EN</button><button aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" data-i18n-aria-label="Abrir menú" id="menuToggle">
             ☰
         </button>
-
-        <nav id="navbar">
-            <a href="#Inicio">INICIO</a>
-            <a href="#Cultos">NUESTROS CULTOS</a>
-            <a href="#Ministerios">NUESTROS MINISTERIOS</a>
-            <a href="#Pastor">TESTIMONIO PASTOR</a>
-            <a href="#Predicacion-Semana">PRÉDICA DE LA SEMANA</a>
-            <a href="#Versiculo">VERSÍCULO DE LA SEMANA</a>
-            <a href="#Edificando-Fe">EDIFICANDO TU FE</a>
-            <a href="#Redes">NUESTRAS REDES SOCIALES</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="Inicio" class="animar-seccion">
-            <h1>Bienvenidos a TBB Progreso de Adoración</h1>
-            <p>Nos gozamos en recibirte, sé parte de la bendición</p>
-            
-            <div class="hero-acciones">
-                <a href="#Cultos" class="btn-hero btn-hero-primario">
+<nav id="navbar">
+<a data-i18n="t2" href="#Inicio">INICIO</a>
+<a data-i18n="t3" href="#Cultos">NUESTROS CULTOS</a>
+<a data-i18n="t4" href="#Ministerios">NUESTROS MINISTERIOS</a>
+<a data-i18n="t5" href="#Pastor">TESTIMONIO PASTOR</a>
+<a data-i18n="t6" href="#Predicacion-Semana">PRÉDICA DE LA SEMANA</a>
+<a data-i18n="t7" href="#Versiculo">VERSÍCULO DE LA SEMANA</a>
+<a data-i18n="t8" href="#Edificando-Fe">EDIFICANDO TU FE</a>
+<a data-i18n="t9" href="#Redes">NUESTRAS REDES SOCIALES</a>
+</nav>
+</header>
+<main>
+<section class="animar-seccion" id="Inicio">
+<h1 data-i18n="t10">Bienvenidos a TBB Progreso de Adoración</h1>
+<p data-i18n="t11">Nos gozamos en recibirte, sé parte de la bendición</p>
+<div class="hero-acciones">
+<a class="btn-hero btn-hero-primario" data-i18n="t12" href="#Cultos">
                     Ver horarios de cultos
                 </a>
-                <a href="https://wa.me/50375714132?text=Hola,%20quisiera%20más%20información%20sobre%20la%20iglesia" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn-hero btn-hero-secundario">
+<a class="btn-hero btn-hero-secundario" data-i18n="t13" href="https://wa.me/50375714132?text=Hola,%20quisiera%20más%20información%20sobre%20la%20iglesia" rel="noopener noreferrer" target="_blank">
                     Escríbenos por WhatsApp
                 </a>
-            </div>
-        </section>
-
-        <section id="Cultos" class="animar-seccion">
-            <h2>NUESTROS CULTOS</h2>
-            <p class="descripcion-seccion">Te invitamos a acompañarnos en nuestras reuniones semanales de adoración y enseñanza</p>
-
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta-culto">
-                    <img src="img/estudiobiblico.jpg" alt="Estudio bíblico" loading="lazy" decoding="async">
-                    <h3>Miércoles</h3>
-                    <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
-                    <p>Cada miércoles, aprendemos más de la Palabra de Dios y fortalecemos nuestra fe.</p>
-                </div>
-
-                <div class="tarjeta-culto">
-                    <img src="img/adoracionyoracion.jpg" alt="Tiempo de Adoración y Oración" loading="lazy" decoding="async">
-                    <h3>Viernes</h3>
-                    <p class="hora"><strong>Hora:</strong> 6:30 PM</p>
-                    <p>Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
-                </div>
-
-                <div class="tarjeta-culto">
-                    <img src="img/diadelSeñor.jpg" alt="Culto Dominical Día del Señor" loading="lazy" decoding="async">
-                    <h3>Domingo</h3>
-                    <p class="hora"><strong>Hora:</strong> 9:00 am - 5:00 pm</p>
-                    <p>Un día para reunirnos como iglesia, adorar a Dios y escuchar Su Palabra.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="Ministerios" class="animar-seccion">
-            <h2>Nuestros Ministerios</h2>
-            <div class="galeria-ministerios">
-                <div class="tarjeta-ministerio"><img src="img/panychocolate.jpg" alt="Ministerio Pan y Chocolate" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/salmo41.jpg" alt="Ministerio Salmo 41" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/cafeteria.jpg" alt="Ministerio Cafetería" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/sonido.jpg" alt="Ministerio Sonido" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/taberkid.jpg" alt="Ministerio Taber Kid" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/acomodacion.jpg" alt="Ministerio Acomodación" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/evangelismo.jpg" alt="Ministerio Evangelismo" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/multimedia.jpg" alt="Ministerio Multimedia" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/libreria.jpg" alt="Ministerio Librería" loading="lazy" decoding="async"></div>
-                <div class="tarjeta-ministerio"><img src="img/mujeresobreras.jpg" alt="Ministerio Mujeres Obreras" loading="lazy" decoding="async"></div>
-            </div>
-        </section>
-
-        <section id="Pastor" class="animar-seccion">
-            <h2 class="titulo-pastor-destacado">Testimonio del Pastor</h2>
-            <div class="tarjeta-pastor-editorial">
-                <aside class="pastor-perfil">
-                    <!-- Contenedor con efecto giro tipo moneda y ajuste perfecto de imagen sin espacios blancos -->
-                    <div class="flip-coin-container" id="coinContainer">
-                        <div class="flip-coin-inner" id="coinInner">
-                            <div class="flip-coin-front">
-                                <img src="img/Roger Caballero.jpg" alt="Pastor Roger Caballero" loading="lazy" decoding="async" width="190" height="190">
-                            </div>
-                            <div class="flip-coin-back">
-                                <img src="img/familia3.jpeg" alt="Familia" loading="lazy" decoding="async" width="190" height="190">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h3>Roger Alí Caballero</h3>
-                    <span class="etiqueta-cargo">Ex-vocalista Grupo Algodón</span>
-                    
-                    <div class="tarjeta-cita">
-                        <span class="icono-comillas">“</span>
-                        <p class="versiculo-clave">
+</div>
+</section>
+<section class="animar-seccion" id="Cultos">
+<h2 data-i18n="t14">NUESTROS CULTOS</h2>
+<p class="descripcion-seccion" data-i18n="t15">Te invitamos a acompañarnos en nuestras reuniones semanales de adoración y enseñanza</p>
+<div class="contenedor-tarjetas">
+<div class="tarjeta-culto">
+<img alt="Estudio bíblico" data-i18n-alt="Estudio bíblico" decoding="async" loading="lazy" src="img/estudiobiblico.jpg"/>
+<h3 data-i18n="t16">Miércoles</h3>
+<p class="hora"><strong data-i18n="t17">Hora:</strong> 6:30 PM</p>
+<p data-i18n="t18">Cada miércoles, aprendemos más de la Palabra de Dios y fortalecemos nuestra fe.</p>
+</div>
+<div class="tarjeta-culto">
+<img alt="Tiempo de Adoración y Oración" data-i18n-alt="Tiempo de Adoración y Oración" decoding="async" loading="lazy" src="img/adoracionyoracion.jpg"/>
+<h3 data-i18n="t19">Viernes</h3>
+<p class="hora"><strong data-i18n="t20">Hora:</strong> 6:30 PM</p>
+<p data-i18n="t21">Un momento para nuestro Dios, para adorarle, buscar Su presencia y fortalecer nuestra fe.</p>
+</div>
+<div class="tarjeta-culto">
+<img alt="Culto Dominical Día del Señor" data-i18n-alt="Culto Dominical Día del Señor" decoding="async" loading="lazy" src="img/diadelSeñor.jpg"/>
+<h3 data-i18n="t22">Domingo</h3>
+<p class="hora"><strong data-i18n="t23">Hora:</strong> 9:00 am - 5:00 pm</p>
+<p data-i18n="t24">Un día para reunirnos como iglesia, adorar a Dios y escuchar Su Palabra.</p>
+</div>
+</div>
+</section>
+<section class="animar-seccion" id="Ministerios">
+<h2 data-i18n="t25">Nuestros Ministerios</h2>
+<div class="galeria-ministerios">
+<div class="tarjeta-ministerio"><img alt="Ministerio Pan y Chocolate" data-i18n-alt="Ministerio Pan y Chocolate" decoding="async" loading="lazy" src="img/panychocolate.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Salmo 41" data-i18n-alt="Ministerio Salmo 41" decoding="async" loading="lazy" src="img/salmo41.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Cafetería" data-i18n-alt="Ministerio Cafetería" decoding="async" loading="lazy" src="img/cafeteria.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Sonido" data-i18n-alt="Ministerio Sonido" decoding="async" loading="lazy" src="img/sonido.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Taber Kid" data-i18n-alt="Ministerio Taber Kid" decoding="async" loading="lazy" src="img/taberkid.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Acomodación" data-i18n-alt="Ministerio Acomodación" decoding="async" loading="lazy" src="img/acomodacion.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Evangelismo" data-i18n-alt="Ministerio Evangelismo" decoding="async" loading="lazy" src="img/evangelismo.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Multimedia" data-i18n-alt="Ministerio Multimedia" decoding="async" loading="lazy" src="img/multimedia.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Librería" data-i18n-alt="Ministerio Librería" decoding="async" loading="lazy" src="img/libreria.jpg"/></div>
+<div class="tarjeta-ministerio"><img alt="Ministerio Mujeres Obreras" data-i18n-alt="Ministerio Mujeres Obreras" decoding="async" loading="lazy" src="img/mujeresobreras.jpg"/></div>
+</div>
+</section>
+<section class="animar-seccion" id="Pastor">
+<h2 class="titulo-pastor-destacado" data-i18n="t26">Testimonio del Pastor</h2>
+<div class="tarjeta-pastor-editorial">
+<aside class="pastor-perfil">
+<!-- Contenedor con efecto giro tipo moneda y ajuste perfecto de imagen sin espacios blancos -->
+<div class="flip-coin-container" id="coinContainer">
+<div class="flip-coin-inner" id="coinInner">
+<div class="flip-coin-front">
+<img alt="Pastor Roger Caballero" decoding="async" height="190" loading="lazy" src="img/Roger Caballero.jpg" width="190"/>
+</div>
+<div class="flip-coin-back">
+<img alt="Familia" decoding="async" height="190" loading="lazy" src="img/familia3.jpeg" width="190"/>
+</div>
+</div>
+</div>
+<h3>Roger Alí Caballero</h3>
+<span class="etiqueta-cargo" data-i18n="t27">Ex-vocalista Grupo Algodón</span>
+<div class="tarjeta-cita">
+<span class="icono-comillas">“</span>
+<p class="versiculo-clave" data-i18n="t28">
                             Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.
                         </p>
-                        <span class="referencia-biblica">— Jeremías 33:3</span>
-                    </div>
-                </aside>
-
-                <article class="pastor-historia">
-                    <p class="parrafo-destacado">
+<span class="referencia-biblica" data-i18n="t29">— Jeremías 33:3</span>
+</div>
+</aside>
+<article class="pastor-historia">
+<p class="parrafo-destacado" data-i18n="t30">
                         Este versículo resume una poderosa enseñanza: debemos acercarnos a Dios, buscarlo y clamar a Él en todo momento, tanto en las dificultades como en los tiempos de bendición. El testimonio de Roger es una muestra viva de cómo Dios transforma vidas.
                     </p>
-                    <p>
+<p data-i18n="t31">
                         Desde muy joven enfrentó dificultades económicas y comenzó a trabajar en diferentes oficios hasta que, a los 17 años, llegó al Grupo Algodón. La popularidad le permitió viajar y ganar reconocimiento, pero junto con el éxito llegaron el alcohol, las drogas y otros vicios que consumieron todo a su paso. Las amistades desaparecieron, la vida familiar cayó en caos y llegó a perder su hogar y dormir en las calles.
                     </p>
-                    <p>
+<p data-i18n="t32">
                         En medio de la crisis y en completa soledad, escuchó una predicación televisada y el llamado de Jeremías 33:3. Comprendió el mensaje: para salir de esa condición debía clamar con sinceridad. Comenzó a orar y a buscar una oportunidad. Primero experimentó la reconciliación familiar y, tras meses de perseverancia, abandonó por completo las adicciones.
                     </p>
-                    <p>
+<p data-i18n="t33">
                         Estudió teología en medio de severas pruebas económicas, fue ordenado como pastor y dedicó su vida al ministerio y a la alabanza. Hoy su testimonio proclama que no importa la adversidad presente: quien busca y clama a Dios encuentra transformación completa y un propósito eterno.
                     </p>
-
-                    <div class="declaracion-cierre">
-                        <blockquote>
+<div class="declaracion-cierre">
+<blockquote data-i18n="t34">
                             “Ahora ya no soy el hombre derrotado de las calles; soy un hijo de Dios que le sirve con todo el corazón.”
                         </blockquote>
-                    </div>
-                </article>
-            </div>
-
-            <!-- MOMENTOS DE MINISTERIO -->
-            <div class="galeria-carrusel-seccion">
-                <h4>Momentos del Ministerio</h4>
-                <div class="carrusel-mascara">
-                    <div class="carrusel-pista">
-                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón" loading="lazy">
-                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2" loading="lazy">
-                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas" loading="lazy">
-                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación" loading="lazy">
-                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción" loading="lazy">
-                        <img src="img/familia1.jpeg" alt="Familia 1" loading="lazy">
-                        <img src="img/familia2.jpeg" alt="Familia 2" loading="lazy">
-                        <img src="img/RogerAlgodon.jpg" alt="Roger en Algodón copia" loading="lazy">
-                        <img src="img/Roger Algodon2.jpg" alt="Roger en Algodón 2 copia" loading="lazy">
-                        <img src="img/Roger CantandoAlabanzas.jpg" alt="Roger Alabanzas copia" loading="lazy">
-                        <img src="img/RogerGraduacion.jpg" alt="Roger Graduación copia" loading="lazy">
-                        <img src="img/Roger Ultima Producion.jpg" alt="Roger Producción copia" loading="lazy">
-                        <img src="img/familia1.jpeg" alt="Familia 1 copia" loading="lazy">
-                        <img src="img/familia2.jpeg" alt="Familia 2 copia" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 1: LA PRÉDICA DE LA SEMANA -->
-        <section id="Predicacion-Semana" class="seccion-predica-semana animar-seccion">
-            <div class="encabezado-seccion-centro">
-                <span class="insignia-audio">EL PODER DE LA PALABRA</span>
-                <h2>La Prédica de la Semana</h2>
-                <p class="subtitulo-seccion-centro">
+</div>
+</article>
+</div>
+<!-- MOMENTOS DE MINISTERIO -->
+<div class="galeria-carrusel-seccion">
+<h4 data-i18n="t35">Momentos del Ministerio</h4>
+<div class="carrusel-mascara">
+<div class="carrusel-pista">
+<img alt="Roger en Algodón" loading="lazy" src="img/RogerAlgodon.jpg"/>
+<img alt="Roger en Algodón 2" loading="lazy" src="img/Roger Algodon2.jpg"/>
+<img alt="Roger Alabanzas" loading="lazy" src="img/Roger CantandoAlabanzas.jpg"/>
+<img alt="Roger Graduación" loading="lazy" src="img/RogerGraduacion.jpg"/>
+<img alt="Roger Producción" loading="lazy" src="img/Roger Ultima Producion.jpg"/>
+<img alt="Familia 1" loading="lazy" src="img/familia1.jpeg"/>
+<img alt="Familia 2" loading="lazy" src="img/familia2.jpeg"/>
+<img alt="Roger en Algodón copia" loading="lazy" src="img/RogerAlgodon.jpg"/>
+<img alt="Roger en Algodón 2 copia" loading="lazy" src="img/Roger Algodon2.jpg"/>
+<img alt="Roger Alabanzas copia" loading="lazy" src="img/Roger CantandoAlabanzas.jpg"/>
+<img alt="Roger Graduación copia" loading="lazy" src="img/RogerGraduacion.jpg"/>
+<img alt="Roger Producción copia" loading="lazy" src="img/Roger Ultima Producion.jpg"/>
+<img alt="Familia 1 copia" loading="lazy" src="img/familia1.jpeg"/>
+<img alt="Familia 2 copia" loading="lazy" src="img/familia2.jpeg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 1: LA PRÉDICA DE LA SEMANA -->
+<section class="seccion-predica-semana animar-seccion" id="Predicacion-Semana">
+<div class="encabezado-seccion-centro">
+<span class="insignia-audio" data-i18n="t36">EL PODER DE LA PALABRA</span>
+<h2 data-i18n="t37">La Prédica de la Semana</h2>
+<p class="subtitulo-seccion-centro" data-i18n="t38">
                     Escucha el mensaje principal de este domingo seleccionado especialmente para ti.
                 </p>
-            </div>
-
-            <div class="tarjeta-player-destacado" id="contenedor-predica-semana">
-                <!-- Se llenará automáticamente con Spotify -->
-            </div>
-        </section>
-
-        <!-- SECCIÓN VERSÍCULO DE LA SEMANA -->
-        <section id="Versiculo" class="animar-seccion">
-            <div class="encabezado-devocional">
-                <span class="insignia-devocional">PALABRA VIVA</span>
-                <h2>Versículo de la Semana</h2>
-                <div class="linea-adorno"></div>
-            </div>
-
-            <div class="contenedor-devocional">
-                <div class="tarjeta-lectura">
-                    <blockquote class="caja-versiculo">
-                        <span class="comilla-grande">“</span>
-                        <p class="cita-texto">Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.</p>
-                        <cite class="referencia">— Eclesiastés 3:1</cite>
-                    </blockquote>
-
-                    <div class="cuerpo-reflexion">
-                        <p>
+</div>
+<div class="tarjeta-player-destacado" id="contenedor-predica-semana">
+<!-- Se llenará automáticamente con Spotify -->
+</div>
+</section>
+<!-- SECCIÓN VERSÍCULO DE LA SEMANA -->
+<section class="animar-seccion" id="Versiculo">
+<div class="encabezado-devocional">
+<span class="insignia-devocional" data-i18n="t39">PALABRA VIVA</span>
+<h2 data-i18n="t40">Versículo de la Semana</h2>
+<div class="linea-adorno"></div>
+</div>
+<div class="contenedor-devocional">
+<div class="tarjeta-lectura">
+<blockquote class="caja-versiculo">
+<span class="comilla-grande">“</span>
+<p class="cita-texto" data-i18n="t41">Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.</p>
+<cite class="referencia" data-i18n="t42">— Eclesiastés 3:1</cite>
+</blockquote>
+<div class="cuerpo-reflexion">
+<p data-i18n="t43">
 De todas las cosas que tenemos el tiempo es el más valioso, cualquier bien material, cualquier cantidad de dinero, la perdida de un trabajo todo esto con esfuerzo se puede recuperar, pero no así el tiempo. 
 
 Seguido oigo decir no tengo tiempo para ir a la iglesia, no tengo tiempo para orar, no tengo tiempo para servir al señor, no tengo tiempo para salir con la familia. etc. 
                         </p>
-                        <p>
+<p data-i18n="t44">
                          La palabra dice todo tiene su tiempo. 
 Qué es lo que nos hace falta, simplemente tener prioridades claras y organizarse mejor, alguien dijo, querer es poder.  
                         </p>
-                        <p class="nota-consejo">
+<p class="nota-consejo" data-i18n="t45">
                             💡Aprovecha tu tiempo y destribuye tu tiempo y siempre aparta un tiempo para estar con el señor Jesús.  
                         </p>
-                        <p class="despedida-bendicion">¡Bendiciones!</p>
-                    </div>
-                </div>
-
-                <div class="tarjeta-imagen-devocional">
-                    <img src="img/Imagen Semanal.jpg" alt="Imagen del Versículo Semanal" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 2: EDIFICANDO TU FE (IVOOX) -->
-        <section id="Edificando-Fe" class="seccion-edificando-fe animar-seccion">
-            <div class="encabezado-seccion-centro">
-                <span class="insignia-audio insignia-verde">NUESTRAS PREDICACIONES</span>
-                <h2>Edificando tu Fe</h2>
-                <p class="subtitulo-seccion-centro">
+<p class="despedida-bendicion" data-i18n="t46">¡Bendiciones!</p>
+</div>
+</div>
+<div class="tarjeta-imagen-devocional">
+<img alt="Imagen del Versículo Semanal" data-i18n-alt="Imagen del Versículo Semanal" decoding="async" loading="lazy" src="img/Imagen Semanal.jpg"/>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: EDIFICANDO TU FE (IVOOX) -->
+<section class="seccion-edificando-fe animar-seccion" id="Edificando-Fe">
+<div class="encabezado-seccion-centro">
+<span class="insignia-audio insignia-verde" data-i18n="t47">NUESTRAS PREDICACIONES</span>
+<h2 data-i18n="t48">Edificando tu Fe</h2>
+<p class="subtitulo-seccion-centro" data-i18n="t49">
                     Escucha una palabra que Dios tiene para ti. Selecciona cualquiera de nuestras prédicas recientes de iVoox y reprodúcela al instante.
                 </p>
-            </div>
-
-            <div class="contenedor-scroll-moderno">
-                <div class="grid-predicas-estilo-captura" id="contenedor-grid-predicas">
-                    <div class="cargando-estado">Cargando prédicas recientes...</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN REDES SOCIALES -->
-        <section id="Redes" class="animar-seccion">
-            <div class="bloque-redes">
-                <h3>Conéctate con Nosotros</h3>
-                <p class="subtitulo-redes">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
-
-                <div class="tarjetas-sociales">
-                    <a href="https://www.facebook.com/taberelprogreso" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" aria-label="Visitar página oficial de Facebook">
-                        <div class="icono-red">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </div>
-                        <div class="texto-social">
-                            <span class="nombre-red">Facebook</span>
-                            <span class="accion-red">Seguir en nuestra página →</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.tiktok.com/@taber.progreso.de?_r=1" target="_blank" rel="noopener noreferrer" class="btn-social btn-tiktok" aria-label="Visitar perfil oficial de TikTok">
-                        <div class="icono-red">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                            </svg>
-                        </div>
-                        <div class="texto-social">
-                            <span class="nombre-red">TikTok</span>
-                            <span class="accion-red">Ver contenido diario →</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Barra reproductora flotante -->
-    <div class="reproductor-barra-flotante" id="barra-reproductor-flotante">
-        <div class="contenido-barra-flotante">
-            <div class="info-barra-audio">
-                <span class="etiqueta-barra-reproduciendo">REPRODUCIENDO AHORA:</span>
-                <span class="titulo-barra-reproduciendo" id="barra-titulo">Selecciona una prédica</span>
-            </div>
-            
-            <div class="reproductor-nativo-contenedor">
-                <audio id="flotante-audio" controls preload="metadata"></audio>
-            </div>
-            <button class="btn-cerrar-barra" id="btnCerrarBarra" aria-label="Cerrar reproductor">✕</button>
-        </div>
-    </div>
-
-    <footer class="pie-pagina">
-        <div class="contenedor-footer">
-            <div class="columna-footer info-iglesia">
-                <div class="logo-footer">
-                    <img src="img/logo.png" alt="Logotipo TBB Progreso" width="45" height="45" loading="lazy">
-                    <h3>TBB Progreso de Adoración</h3>
-                </div>
-                <p class="lema-footer">
+</div>
+<div class="contenedor-scroll-moderno">
+<div class="grid-predicas-estilo-captura" id="contenedor-grid-predicas">
+<div class="cargando-estado" data-i18n="t50">Cargando prédicas recientes...</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN REDES SOCIALES -->
+<section class="animar-seccion" id="Redes">
+<div class="bloque-redes">
+<h3 data-i18n="t51">Conéctate con Nosotros</h3>
+<p class="subtitulo-redes" data-i18n="t52">Sigue nuestras transmisiones, fotos y actividades en nuestras redes oficiales</p>
+<div class="tarjetas-sociales">
+<a aria-label="Visitar página oficial de Facebook" class="btn-social btn-facebook" data-i18n-aria-label="Visitar página oficial de Facebook" href="https://www.facebook.com/taberelprogreso" rel="noopener noreferrer" target="_blank">
+<div class="icono-red">
+<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</div>
+<div class="texto-social">
+<span class="nombre-red">Facebook</span>
+<span class="accion-red" data-i18n="t53">Seguir en nuestra página →</span>
+</div>
+</a>
+<a aria-label="Visitar perfil oficial de TikTok" class="btn-social btn-tiktok" data-i18n-aria-label="Visitar perfil oficial de TikTok" href="https://www.tiktok.com/@taber.progreso.de?_r=1" rel="noopener noreferrer" target="_blank">
+<div class="icono-red">
+<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28">
+<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path>
+</svg>
+</div>
+<div class="texto-social">
+<span class="nombre-red">TikTok</span>
+<span class="accion-red" data-i18n="t54">Ver contenido diario →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Barra reproductora flotante -->
+<div class="reproductor-barra-flotante" id="barra-reproductor-flotante">
+<div class="contenido-barra-flotante">
+<div class="info-barra-audio">
+<span class="etiqueta-barra-reproduciendo" data-i18n="t55">REPRODUCIENDO AHORA:</span>
+<span class="titulo-barra-reproduciendo" data-i18n="t56" id="barra-titulo">Selecciona una prédica</span>
+</div>
+<div class="reproductor-nativo-contenedor">
+<audio controls="" id="flotante-audio" preload="metadata"></audio>
+</div>
+<button aria-label="Cerrar reproductor" class="btn-cerrar-barra" data-i18n-aria-label="Cerrar reproductor" id="btnCerrarBarra">✕</button>
+</div>
+</div>
+<footer class="pie-pagina">
+<div class="contenedor-footer">
+<div class="columna-footer info-iglesia">
+<div class="logo-footer">
+<img alt="Logotipo TBB Progreso" data-i18n-alt="Logotipo TBB Progreso" height="45" loading="lazy" src="img/logo.png" width="45"/>
+<h3>TBB Progreso de Adoración</h3>
+</div>
+<p class="lema-footer" data-i18n="t57">
                     13 años proclamando el evangelio de Jesucristo para la gloria de Dios.
                 </p>
-            </div>
-
-            <div class="columna-footer enlaces-rapidos">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#Inicio">Inicio</a></li>
-                    <li><a href="#Cultos">Nuestros Cultos</a></li>
-                    <li><a href="#Ministerios">Nuestros Ministerios</a></li>
-                    <li><a href="#Pastor">Testimonio del Pastor</a></li>
-                    <li><a href="#Predicacion-Semana">Prédica de la Semana</a></li>
-                    <li><a href="#Versiculo">Versículo Semanal</a></li>
-                    <li><a href="#Edificando-Fe">Edificando tu Fe</a></li>
-                    <li><a href="#Redes">Redes Sociales</a></li>
-                </ul>
-            </div>
-
-            <div class="columna-footer contacto-footer">
-                <h4>Visítanos</h4>
-                <div class="item-contacto">
-                    <span class="icono-contacto">📍</span>
-                    <p>Col. Ascensión, calle El Amatillo #6, Ayutuxtepeque, San Salvador, El Salvador.</p>
-                </div>
-                <div class="item-contacto">
-                    <span class="icono-contacto">💬</span>
-                    <p>
-                        <strong>WhatsApp:</strong> 
-                        <a href="https://wa.me/50375714132" target="_blank" rel="noopener noreferrer">+503 7571-4132</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="barra-derechos">
-            <p>© 2026 TBB Progreso de Adoración. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-        
-    <a 
-        href="https://wa.me/50375714132?text=Hola,%20deseo%20información%20y%20consejería%20pastoral%20en%20TBB%20Progreso%20de%20Adoración" 
-        class="btn-flotante-whatsapp" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        aria-label="Contactar por WhatsApp para información y consejería">
-        <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
-            <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.676.304.778.473.101.17.101.98-.227 1.904z"/>
-        </svg>
-        <span class="texto-flotante">¿Necesitas consejería? Escríbenos</span>
-    </a>
-
-    <script>
+</div>
+<div class="columna-footer enlaces-rapidos">
+<h4 data-i18n="t58">Navegación</h4>
+<ul>
+<li><a data-i18n="t59" href="#Inicio">Inicio</a></li>
+<li><a data-i18n="t60" href="#Cultos">Nuestros Cultos</a></li>
+<li><a data-i18n="t61" href="#Ministerios">Nuestros Ministerios</a></li>
+<li><a data-i18n="t62" href="#Pastor">Testimonio del Pastor</a></li>
+<li><a data-i18n="t63" href="#Predicacion-Semana">Prédica de la Semana</a></li>
+<li><a data-i18n="t64" href="#Versiculo">Versículo Semanal</a></li>
+<li><a data-i18n="t65" href="#Edificando-Fe">Edificando tu Fe</a></li>
+<li><a data-i18n="t66" href="#Redes">Redes Sociales</a></li>
+</ul>
+</div>
+<div class="columna-footer contacto-footer">
+<h4 data-i18n="t67">Visítanos</h4>
+<div class="item-contacto">
+<span class="icono-contacto">📍</span>
+<p>Col. Ascensión, calle El Amatillo #6, Ayutuxtepeque, San Salvador, El Salvador.</p>
+</div>
+<div class="item-contacto">
+<span class="icono-contacto">💬</span>
+<p>
+<strong>WhatsApp:</strong>
+<a href="https://wa.me/50375714132" rel="noopener noreferrer" target="_blank">+503 7571-4132</a>
+</p>
+</div>
+</div>
+</div>
+<div class="barra-derechos">
+<p data-i18n="t68">© 2026 TBB Progreso de Adoración. Todos los derechos reservados.</p>
+</div>
+</footer>
+<a aria-label="Contactar por WhatsApp para información y consejería" class="btn-flotante-whatsapp" data-i18n-aria-label="Contactar por WhatsApp para información y consejería" href="https://wa.me/50375714132?text=Hola,%20deseo%20información%20y%20consejería%20pastoral%20en%20TBB%20Progreso%20de%20Adoración" rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="34" viewbox="0 0 32 32" width="34">
+<path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.653.766 5.127 2.088 7.217L2.6 30l7.003-1.942A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.784c-.328.924-1.637 1.706-2.656 1.838-.724.093-1.666.133-4.838-1.18-4.058-1.68-6.685-5.795-6.887-6.064-.203-.27-1.642-2.185-1.642-4.167 0-1.982 1.04-2.957 1.41-3.35.372-.394.81-.493 1.08-.493.27 0 .54.003.776.014.25.012.584-.095.914.697.338.812 1.15 2.805 1.252 3.013.102.208.17.452.034.722-.136.27-.204.438-.406.674-.203.236-.426.527-.61.707-.203.203-.414.423-.178.828.236.406 1.05 1.733 2.257 2.81 1.554 1.385 2.864 1.815 3.27 2.018.406.203.676.304.778.473.101.17.101.98-.227 1.904z"></path>
+</svg>
+<span class="texto-flotante" data-i18n="t69">¿Necesitas consejería? Escríbenos</span>
+</a>
+<script>
         const IVOOX_RSS_URL = "https://www.ivoox.com/podcast-predicaciones-tbb-progreso-adoracion_fg_f11561816_filtro_1.xml";
 
         function limpiarUrlAudio(item) {
@@ -450,13 +404,13 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                 }
 
                 try {
-                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/6Tc8bTbX1DIJV6GqpVhQWp?si=Xj39gFgKRu6WB7Z7OJBBAQ";
+                    const urlSpotifySemana = "https://open.spotify.com/embed/episode/7pziq3jtvYlowV5O8c5bWF?si=32f30fa455d34145";
 
                     if (urlSpotifySemana.trim() !== "") {
                         contenedorPredicaSemana.innerHTML = `
                             <div class="badge-reproduciendo">
                                 <span class="onda-animada"><span></span><span></span><span></span></span>
-                                <span>Prédica Oficial en Spotify</span>
+                                <span>${window.tbbTranslate("Prédica Oficial en Spotify")}</span>
                             </div>
                             <div style="width:100%; border-radius:14px; overflow:hidden;">
                                 <iframe src="${urlSpotifySemana.trim()}" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -464,7 +418,8 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                         `;
                     }
 
-                    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(IVOOX_RSS_URL)}`);
+                    const res = await fetch("data/predicaciones.json", {cache: "no-store"});
+                    if (!res.ok) throw new Error("No se pudo cargar el catálogo de prédicas");
                     const datos = await res.json();
 
                     if (datos.status === 'ok' && datos.items && datos.items.length > 0) {
@@ -475,8 +430,8 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                         listaDiez.forEach((item, index) => {
                             const fechaObj = new Date(item.pubDate);
                             const diaNum = isNaN(fechaObj) ? "" : fechaObj.getDate();
-                            const mesTexto = isNaN(fechaObj) ? "CULTO" : fechaObj.toLocaleDateString('es-ES', { month: 'short' }).toUpperCase();
-                            const fechaCorta = isNaN(fechaObj) ? "CULTO" : `${diaNum} ${mesTexto}`;
+                            const mesTexto = isNaN(fechaObj) ? window.tbbTranslate("CULTO") : fechaObj.toLocaleDateString(document.documentElement.lang === "en" ? "en-US" : "es-ES", { month: "short" }).toUpperCase();
+                            const fechaCorta = isNaN(fechaObj) ? window.tbbTranslate("CULTO") : `${diaNum} ${mesTexto}`;
                             const urlAudio = limpiarUrlAudio(item);
 
                             const card = document.createElement('div');
@@ -485,8 +440,8 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                                 <div class="card-play-btn">▶</div>
                                 <div class="card-info">
                                     <span class="card-fecha">${fechaCorta}</span>
-                                    <h5 class="card-titulo">${item.title}</h5>
-                                    <span class="card-accion">Toca para escuchar</span>
+                                    <h5 class="card-titulo">${item.title.replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</h5>
+                                    <span class="card-accion">${window.tbbTranslate("Toca para escuchar")}</span>
                                 </div>
                             `;
 
@@ -497,6 +452,7 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
                                 barraTitulo.textContent = item.title;
                                 barraFlotante.classList.add('activa');
 
+                                if (!urlAudio) { if (item.link && /^https:\/\//.test(item.link)) window.open(item.link, "_blank", "noopener,noreferrer"); return; }
                                 flotanteAudio.src = urlAudio;
                                 flotanteAudio.load();
                                 
@@ -508,9 +464,12 @@ Qué es lo que nos hace falta, simplemente tener prioridades claras y organizars
 
                             gridContenedor.appendChild(card);
                         });
+                    } else {
+                        gridContenedor.textContent = window.tbbTranslate("Todavía no hay prédicas disponibles. Inténtalo más tarde.");
                     }
                 } catch (e) {
-                    console.error("Error al sincronizar con iVoox:", e);
+                    gridContenedor.textContent = window.tbbTranslate("No se pudo cargar la biblioteca. Visita nuestro canal de iVoox mientras tanto.");
+                    console.error("Error al cargar prédicas:", e);
                 }
             }
 
