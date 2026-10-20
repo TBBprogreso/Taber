@@ -1247,3 +1247,8 @@ nav a:hover {
         display: none;
     }
 }
+/* Selector de idioma - no altera el diseño original */
+.boton-idioma { border:1px solid rgba(255,255,255,.55); color:#fff; background:#2563eb; padding:8px 13px; border-radius:8px; font-weight:800; font-size:.8rem; cursor:pointer; margin-left:auto; margin-right:12px; flex-shrink:0; }
+.boton-idioma:hover,.boton-idioma:focus-visible { background:#1d4ed8; outline:2px solid #fff; outline-offset:2px; }
+@media (max-width:990px) { .boton-idioma { margin-left:auto; margin-right:12px; } }
+
