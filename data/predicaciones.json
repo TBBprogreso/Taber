@@ -2,6 +2,14 @@
   "status": "ok",
   "items": [
     {
+      "title": "la Glorias es de Dios",
+      "pubDate": "2026-10-22 16:57:18",
+      "link": "https://www.ivoox.com/glorias-es-dios-audios-mp3_rf_182635656_1.html",
+      "enclosure": {
+        "link": "https://www.ivoox.com/glorias-es-dios_mf_182635656_feed_1.mp3"
+      }
+    },
+    {
       "title": "Tema: cada cosa en su lugar",
       "pubDate": "2026-10-19 21:34:21",
       "link": "https://www.ivoox.com/tema-cada-cosa-su-lugar-audios-mp3_rf_182436479_1.html",
@@ -231,14 +239,6 @@
       "link": "https://www.ivoox.com/mujer-del-flujo-sangre-audios-mp3_rf_178589006_1.html",
       "enclosure": {
         "link": "https://www.ivoox.com/mujer-del-flujo-sangre_mf_178589006_feed_1.mp3"
-      }
-    },
-    {
-      "title": "Que Dios pelee mi batalla.",
-      "pubDate": "2026-08-04 23:42:48",
-      "link": "https://www.ivoox.com/que-dios-pelee-mi-batalla-audios-mp3_rf_178439355_1.html",
-      "enclosure": {
-        "link": "https://www.ivoox.com/que-dios-pelee-mi-batalla_mf_178439355_feed_1.mp3"
       }
     }
   ]
