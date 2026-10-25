@@ -2,6 +2,14 @@
   "status": "ok",
   "items": [
     {
+      "title": "Tema: Ataques espirituales",
+      "pubDate": "2026-10-25 02:45:17",
+      "link": "https://www.ivoox.com/tema-ataques-espirituales-audios-mp3_rf_182728518_1.html",
+      "enclosure": {
+        "link": "https://www.ivoox.com/tema-ataques-espirituales_mf_182728518_feed_1.mp3"
+      }
+    },
+    {
       "title": "la Glorias es de Dios",
       "pubDate": "2026-10-22 16:57:18",
       "link": "https://www.ivoox.com/glorias-es-dios-audios-mp3_rf_182635656_1.html",
@@ -231,14 +239,6 @@
       "link": "https://www.ivoox.com/titulo-los-ojos-dios-audios-mp3_rf_178717071_1.html",
       "enclosure": {
         "link": "https://www.ivoox.com/titulo-los-ojos-dios_mf_178717071_feed_1.mp3"
-      }
-    },
-    {
-      "title": "La mujer del flujo de Sangre.",
-      "pubDate": "2026-08-07 18:11:03",
-      "link": "https://www.ivoox.com/mujer-del-flujo-sangre-audios-mp3_rf_178589006_1.html",
-      "enclosure": {
-        "link": "https://www.ivoox.com/mujer-del-flujo-sangre_mf_178589006_feed_1.mp3"
       }
     }
   ]
