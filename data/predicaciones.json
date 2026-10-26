@@ -2,6 +2,22 @@
   "status": "ok",
   "items": [
     {
+      "title": "Cristianos sabios ll",
+      "pubDate": "2026-10-26 15:10:30",
+      "link": "https://www.ivoox.com/cristianos-sabios-ll-audios-mp3_rf_182793011_1.html",
+      "enclosure": {
+        "link": "https://www.ivoox.com/cristianos-sabios-ll_mf_182793011_feed_1.mp3"
+      }
+    },
+    {
+      "title": "Cristianos sabios",
+      "pubDate": "2026-10-26 15:02:47",
+      "link": "https://www.ivoox.com/cristianos-sabios-audios-mp3_rf_182792572_1.html",
+      "enclosure": {
+        "link": "https://www.ivoox.com/cristianos-sabios_mf_182792572_feed_1.mp3"
+      }
+    },
+    {
       "title": "Tema: Ataques espirituales",
       "pubDate": "2026-10-25 02:45:17",
       "link": "https://www.ivoox.com/tema-ataques-espirituales-audios-mp3_rf_182728518_1.html",
@@ -223,22 +239,6 @@
       "link": "https://www.ivoox.com/titulo-mantenga-calma-audios-mp3_rf_179044678_1.html",
       "enclosure": {
         "link": "https://www.ivoox.com/titulo-mantenga-calma_mf_179044678_feed_1.mp3"
-      }
-    },
-    {
-      "title": "Tema : Dios es un Dios de orden",
-      "pubDate": "2026-08-11 07:07:01",
-      "link": "https://www.ivoox.com/tema-dios-es-dios-orden-audios-mp3_rf_178717358_1.html",
-      "enclosure": {
-        "link": "https://www.ivoox.com/tema-dios-es-dios-orden_mf_178717358_feed_1.mp3"
-      }
-    },
-    {
-      "title": "Título: Los ojos de Dios",
-      "pubDate": "2026-08-11 06:54:27",
-      "link": "https://www.ivoox.com/titulo-los-ojos-dios-audios-mp3_rf_178717071_1.html",
-      "enclosure": {
-        "link": "https://www.ivoox.com/titulo-los-ojos-dios_mf_178717071_feed_1.mp3"
       }
     }
   ]
