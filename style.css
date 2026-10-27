@@ -290,6 +290,172 @@ nav a:hover {
 }
 
 /* ========================================================
+   3.1 SECCIÓN DISCIPULADO GAMALIEL (ESTILO PROFESIONAL AZUL)
+   ======================================================== */
+.seccion-discipulado {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 45px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 40px auto;
+    max-width: 1200px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.contenedor-discipulado {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 35px;
+    align-items: center;
+    width: 100%;
+}
+
+.col-discipulado-imagen {
+    width: 100%;
+}
+
+.col-discipulado-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    display: block;
+    object-fit: cover;
+}
+
+.insignia-discipulado {
+    display: inline-block;
+    color: #2563eb;
+    background-color: #eff6ff;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.col-discipulado-info h2 {
+    color: #0f274a;
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+}
+
+.subtitulo-escuela {
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.subtitulo-escuela strong {
+    color: #1e3a8a;
+    letter-spacing: 1px;
+}
+
+.descripcion-discipulado {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 18px 0;
+}
+
+.cita-discipulado {
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 0 0 22px 0;
+}
+
+.cita-texto-discipulado {
+    color: #334155;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0 0 6px 0;
+}
+
+.referencia-discipulado {
+    color: #2563eb;
+    font-size: 11.5px;
+    font-weight: 800;
+    display: block;
+}
+
+/* Tarjeta elegante para el horario */
+.tarjeta-horario-discipulado {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e0edff 100%);
+    border: 1.5px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+
+.icono-horario-discipulado {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.texto-horario-discipulado {
+    display: flex;
+    flex-direction: column;
+}
+
+.etiqueta-horario {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #2563eb;
+    text-transform: uppercase;
+}
+
+.detalle-horario {
+    margin: 3px 0 0 0;
+    font-size: 1rem;
+    color: #0f274a;
+    font-weight: 500;
+}
+
+.detalle-horario strong {
+    color: #1e3a8a;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .contenedor-discipulado {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .col-discipulado-imagen {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    .cita-discipulado {
+        text-align: left;
+    }
+    .tarjeta-horario-discipulado {
+        width: 100%;
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+/* ========================================================
    4. SECCIÓN MINISTERIOS
    ======================================================== */
 #Ministerios {
@@ -301,7 +467,7 @@ nav a:hover {
 
 #Ministerios h2 {
     color: #1a365d;
-    font-size: clamp(26px, 4vw, 36px);
+    font-size: clamp(26px, 4vw, 38px);
     font-weight: 800;
     margin-bottom: 30px;
 }
@@ -458,7 +624,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%; /* Desplaza la foto hacia abajo para mostrar bien los rostros */
+    object-position: center 30%;
     display: block;
     border-radius: 50%;
 }
@@ -1247,8 +1413,32 @@ nav a:hover {
         display: none;
     }
 }
-/* Selector de idioma - no altera el diseño original */
-.boton-idioma { border:1px solid rgba(255,255,255,.55); color:#fff; background:#2563eb; padding:8px 13px; border-radius:8px; font-weight:800; font-size:.8rem; cursor:pointer; margin-left:auto; margin-right:12px; flex-shrink:0; }
-.boton-idioma:hover,.boton-idioma:focus-visible { background:#1d4ed8; outline:2px solid #fff; outline-offset:2px; }
-@media (max-width:990px) { .boton-idioma { margin-left:auto; margin-right:12px; } }
 
+/* Selector de idioma */
+.boton-idioma {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    background: #2563eb;
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.boton-idioma:hover,
+.boton-idioma:focus-visible {
+    background: #1d4ed8;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 990px) {
+    .boton-idioma {
+        margin-left: auto;
+        margin-right: 12px;
+    }
+}
